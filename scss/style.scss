@@ -65,3 +65,7 @@ $theme-colors: (
 @import "vendor/utilities/api";
 
 // 8. Add additional custom code here
+
+.background {
+  min-height: 80vh;
+}
