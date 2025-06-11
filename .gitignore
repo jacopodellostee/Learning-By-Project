@@ -1,0 +1,5 @@
+prepros.config
+
+**/vendor/
+
+/dist/css/style.css
