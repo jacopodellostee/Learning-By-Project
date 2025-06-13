@@ -48,7 +48,155 @@
 </head>
 
 <body>
-    <h1>Hello!</h1>
+    <header>
+        <div class="container">
+            <div class="row">
+                <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#">Navbar</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Link</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        Dropdown
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Action</a></li>
+                                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                                </li>
+                            </ul>
+                            <form class="d-flex" role="search">
+                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                                <button class="btn btn-outline-success" type="submit">Search</button>
+                            </form>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class="background">
+                    <div class="d-flex justify-content-center align-items-center flex-column">
+                        <h1>Lorem</h1>
+                        <h2>Lorem Ipsum</h2>
+                        <button type="button" class="btn btn-primary">Calcola Preventivo</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="blockchain-info d-flex flex-row">
+                    <div class="d-flex flex-column">
+                        <h2>Blockchain Info</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad deleniti facere accusantium vel tenetur cumque ducimus vero nemo veniam vitae dignissimos aspernatur odio nulla iusto dolorem iste, velit beatae veritatis doloremque? Fugiat deserunt nobis quo accusantium! Asperiores ut saepe a.</p>
+                        <button type="button" class="btn btn-primary">Scopri di più</button>
+                    </div>
+                
+                    <figure>
+                        <picture>
+                            <source srcset="immagine.webp" type="image/webp">
+                            <source srcset="immagine.jpg" type="image/jpeg">
+                            <img src="immagine.jpg" alt="Descrizione dell'immagine">
+                        </picture>
+                        <figcaption>Questa è la didascalia dell'immagine.</figcaption>
+                    </figure>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <h2>Info Pacchetti</h2>
+
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit maxime a esse illo nesciunt voluptatum vero architecto, perferendis minus. Maiores unde harum officia quas dignissimos?</p>
+                <p>Explicabo voluptatem ab enim voluptates numquam sequi voluptatibus aliquid iure adipisci et sapiente quam possimus non nesciunt, necessitatibus quos blanditiis, harum inventore debitis veniam! Exercitationem?</p>
+                <p>Architecto distinctio saepe officiis quia vel unde facere omnis nihil veritatis aperiam voluptatum soluta doloribus tempora iusto rerum sequi, pariatur fugiat dicta eum deserunt? A!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Codice Federico -->
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="d-flex flex-row justify-content-center align-items-center">
+                    <h2>Hai in mente un altra offerta? </h2>
+                    <button type="button" class="btn btn-primary">Contattaci!</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer bg-dark text-light py-5">
+        <div class="container">
+            <div class="row gy-4">
+    
+                <!-- Logo / Descrizione -->
+                <div class="col-md-4">
+                    <h4 class="site-logo">NomeSito</h4>
+                    <p class="text-muted">Soluzioni digitali per il tuo futuro.</p>
+                </div>
+    
+                <!-- Link di navigazione -->
+                <div class="col-md-2">
+                    <h5>Link utili</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="/chi-siamo" class="footer-link">Chi siamo</a></li>
+                        <li><a href="/servizi" class="footer-link">Servizi</a></li>
+                        <li><a href="/contatti" class="footer-link">Contatti</a></li>
+                        <li><a href="/privacy" class="footer-link">Privacy</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Social -->
+                <div class="col-md-3">
+                    <h5>Seguici</h5>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="footer-link">Facebook</a>
+                        <a href="#" class="footer-link">Instagram</a>
+                        <a href="#" class="footer-link">LinkedIn</a>
+                    </div>
+                </div>
+    
+                <!-- Contatti -->
+                <div class="col-md-3">
+                    <h5>Contatti</h5>
+                    <p class="mb-1">Email: <a href="mailto:info@nomesito.com" class="footer-link">info@nomesito.com</a></p>
+                    <p class="mb-0">Tel: <a href="tel:+390123456789" class="footer-link">+39 012 3456789</a></p>
+                </div>
+    
+            </div>
+    
+            <!-- Copyright -->
+            <div class="text-center mt-4 small text-secondary">
+                &copy; 2025 NomeSito. Tutti i diritti riservati.
+            </div>
+        </div>
+    </footer>
+
 
     <section class="sezconf">
         <div class="container">
