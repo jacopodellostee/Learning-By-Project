@@ -60,12 +60,25 @@ $theme-colors: (
 @import "vendor/navbar";
 @import "vendor/dropdown";
 @import "vendor/card";
+@import "vendor/carousel";
+@import "vendor/transitions";
 
 // 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
 @import "vendor/utilities/api";
 
 // 8. Add additional custom code here
 
+
 .background {
   min-height: 80vh;
 }
+
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.active {
+  color: #F82B2B;
+}
+
+
