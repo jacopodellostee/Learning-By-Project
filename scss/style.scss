@@ -127,5 +127,12 @@ header {
 
 h1{
   font-weight: bold;
-  color: $rossokd;
+  color: $rossokd !important;
+}
+
+.ms-lg-8 {
+  @include media-breakpoint-up(lg) {
+    margin-left: 11rem !important;
+  }
+  
 }
