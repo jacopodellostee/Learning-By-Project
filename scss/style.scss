@@ -105,11 +105,13 @@ body {
   padding: 1rem;
   box-sizing: border-box;
 }
+
 .custom-card.active {
   opacity: 1;
   transform: scale(1.05);
   z-index: 2;
 }
+
 .arrow {
   position: absolute;
   top: 50%;
@@ -130,4 +132,15 @@ body {
 
 .arrow-right {
   right: 0;
+}
+
+.step {
+  display: none;
+}
+
+.step.active {
+  display: block;
+}
+.hidden {
+  display: none !important;
 }

@@ -5,290 +5,225 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WebCrafter</title>
-    <meta name="description" content="">
-    <meta name="robots" content="index, follow">
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
-        rel="stylesheet">
-
-    <!-- JSON ld -->
-    <script type="application/ld+json">
-
-    </script>
-
-    <script type="application/ld+json">
-
-    </script>
-
-    <!-- OpenGraph -->
-    <meta property="og:title" content="" />
-    <meta property="og:description" content="" />
-    <meta property="og:url" content="" />
-    <meta property="og:image" content="" />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="" />
-    <meta property="og:address" content="" />
-    <meta property="og:email" content="" />
-    <meta property="og:phone_number" content="" />
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="" />
-    <meta name="twitter:title" content="" />
-    <meta name="twitter:description" content="" />
-    <meta name="twitter:url" content="" />
-    <meta name="twitter:image" content="" />
-    <meta name="twitter:address" content="" />
-    <meta name="twitter:email" content="" />
-    <meta name="twitter:phone_number" content="" />
-
-    <!-- href lingue -->
-    <link rel="canonical" href="">
-    <link rel="alternate" hreflag="it" href="">
-    <link rel="alternate" hreflang="x-default" href="">
-
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="css/personale.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <script defer src="./scripts/main.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const btn = document.querySelector(".btn.btn-primary");
+            const intro = document.getElementById("introSection");
+            const configurator = document.getElementById("configurator");
 
+            btn.addEventListener("click", () => {
+                intro.style.display = "none";
+                configurator.style.display = "block";
+            });
+        });
+    </script>
 </head>
 
 <body>
-    <header>
-        <div class="container">
-            <div class="row">
-                <nav class="navbar navbar-expand-lg bg-body-tertiary">
-                    <div class="container-fluid">
-                        <a class="navbar-brand" href="#">Navbar</a>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                                <li class="nav-item">
-                                    <a class="active" aria-current="page" href="#">Home</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Link</a>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                        aria-expanded="false">
-                                        Dropdown
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">Action</a></li>
-                                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                                        <li>
-                                            <hr class="dropdown-divider">
-                                        </li>
-                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-                                </li>
-                            </ul>
-
+    <!-- INTRO SECTION -->
+    <div id="introSection">
+        <header>
+            <div class="container">
+                <div class="row">
+                    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                        <div class="container-fluid">
+                            <a class="navbar-brand" href="#">Navbar</a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarSupportedContent">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                    <li class="nav-item"><a class="active" href="#">Home</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" role="button"
+                                            data-bs-toggle="dropdown">Dropdown</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="#">Action</a></li>
+                                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                                            <li>
+                                                <hr class="dropdown-divider">
+                                            </li>
+                                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item"><a class="nav-link disabled">Disabled</a></li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                </nav>
+                    </nav>
 
-                <div class="background">
-                    <div class="d-flex justify-content-center align-items-center flex-column">
+                    <div class="background text-center py-5">
                         <h1>Lorem</h1>
                         <h2>Lorem Ipsum</h2>
                         <button type="button" class="btn btn-primary">Calcola Preventivo</button>
                     </div>
                 </div>
             </div>
-        </div>
-    </header>
+        </header>
 
-    <section>
-        <div class="container">
-            <div class="row">
-                <div class="blockchain-info d-flex flex-row">
-                    <div class="d-flex flex-column">
-                        <h2>Blockchain Info</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad deleniti facere accusantium vel
-                            tenetur cumque ducimus vero nemo veniam vitae dignissimos aspernatur odio nulla iusto
-                            dolorem iste, velit beatae veritatis doloremque? Fugiat deserunt nobis quo accusantium!
-                            Asperiores ut saepe a.</p>
-                        <button type="button" class="btn btn-primary">Scopri di più</button>
-                    </div>
-
-                    <figure>
-                        <picture>
-                            <source srcset="immagine.webp" type="image/webp">
-                            <source srcset="immagine.jpg" type="image/jpeg">
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="blockchain-info d-flex flex-row">
+                        <div class="d-flex flex-column">
+                            <h2>Blockchain Info</h2>
+                            <p>Lorem ipsum dolor sit amet...</p>
+                            <button class="btn btn-primary">Scopri di più</button>
+                        </div>
+                        <figure>
                             <img src="immagine.jpg" alt="Descrizione dell'immagine">
-                        </picture>
-                        <figcaption>Questa è la didascalia dell'immagine.</figcaption>
-                    </figure>
+                            <figcaption>Questa è la didascalia dell'immagine.</figcaption>
+                        </figure>
+                    </div>
                 </div>
             </div>
-    </section>
+        </section>
 
-    <section>
-        <div class="container">
-            <div class="row">
+        <section>
+            <div class="container">
                 <h2>Info Pacchetti</h2>
-
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit maxime a esse illo nesciunt
-                    voluptatum vero architecto, perferendis minus. Maiores unde harum officia quas dignissimos?</p>
-                <p>Explicabo voluptatem ab enim voluptates numquam sequi voluptatibus aliquid iure adipisci et sapiente
-                    quam possimus non nesciunt, necessitatibus quos blanditiis, harum inventore debitis veniam!
-                    Exercitationem?</p>
-                <p>Architecto distinctio saepe officiis quia vel unde facere omnis nihil veritatis aperiam voluptatum
-                    soluta doloribus tempora iusto rerum sequi, pariatur fugiat dicta eum deserunt? A!</p>
+                <p>Lorem ipsum dolor sit amet consectetur...</p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Codice Federico -->
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="d-flex flex-column align-items-center mb-3">
+                        <h2>Hai in mente un'altra offerta?</h2>
+                        <button class="btn btn-primary">Contattaci!</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 
+    <!-- CONFIGURATORE (nascosto inizialmente) -->
+    <div id="configurator" style="display: none;">
+        <div class="container my-4">
+            <!-- Step 1 -->
 
-    <section>
-        <div class="container my-4 position-relative">
-            <!-- Freccia sinistra -->
-            <button class="arrow arrow-left" id="prevBtn">&#8592;</button>
-
-            <!-- Carousel wrapper -->
-            <div class="carousel-wrapper">
-                <div class="carousel-track d-flex align-items-center" id="carouselTrack">
-                    <!-- Card 1 -->
-                    <div class="col custom-card" data-target="single">
-                        <div class="card h-100">
-                            <div class="card-body">
-                                <h5 class="card-title">1 Corso</h5>
-                                <button class="btn btn-primary btn-toggle" data-target="single">Scopri di più</button>
+            <div class="step active" id="step-1">
+                <button class="arrow arrow-left" id="prevBtn">&#8592;</button>
+                <div class="carousel-wrapper">
+                    <div class="carousel-track d-flex align-items-center" id="carouselTrack">
+                        <!-- Card 1 -->
+                        <div class="col custom-card" data-target="single">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title">1 Corso</h5>
+                                    <button class="btn btn-primary btn-toggle" data-target="single">Scopri di
+                                        più</button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-
-                    <!-- Card 2 -->
-                    <div class="col custom-card" data-target="ten">
-                        <div class="card h-100">
-                            <div class="card-body">
-                                <h5 class="card-title">10 Corsi</h5>
-                                <button class="btn btn-primary btn-toggle" data-target="ten">Scopri di più</button>
+                        <!-- Card 2 -->
+                        <div class="col custom-card" data-target="ten">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title">10 Corsi</h5>
+                                    <button class="btn btn-primary btn-toggle" data-target="ten">Scopri di più</button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-
-                    <!-- Card 3 -->
-                    <div class="col custom-card" data-target="fifty">
-                        <div class="card h-100">
-                            <div class="card-body">
-                                <h5 class="card-title">50 Corsi</h5>
-                                <button class="btn btn-primary btn-toggle" data-target="fifty">Scopri di più</button>
+                        <!-- Card 3 -->
+                        <div class="col custom-card" data-target="fifty">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title">50 Corsi</h5>
+                                    <button class="btn btn-primary btn-toggle" data-target="fifty">Scopri di
+                                        più</button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <button class="arrow arrow-right" id="nextBtn">&#8594;</button>
+                <div class="d-flex justify-content-center mt-3">
+                    <button class="btn btn-primary" onclick="nextStep(1)">Seleziona</button>
+                </div>
             </div>
 
-            <!-- Freccia destra -->
-            <button class="arrow arrow-right" id="nextBtn">&#8594;</button>
-
-        </div>
-        <div class="container">
-
-            <!-- Form dinamico con struttura già definita -->
-            <div id="collapsibleConfig" class="mt-4 d-none">
-                <div class="card border p-3 bg-light">
+            <!-- Step 2 -->
+            <div class="step" id="step-2">
+                <div class="card p-3 bg-light">
                     <h5 id="configTitle">Titolo Configurazione</h5>
                     <form id="configForm">
                         <div class="form-group mb-2 d-none" id="tipoWrapper">
                             <label for="tipo">Tipo Corso</label>
-                            <select class="form-control" id="tipo" required></select>
+                            <select class="form-control" id="tipo"></select>
                         </div>
                         <div class="form-group mb-2">
                             <label for="durata">Durata</label>
-                            <select class="form-control" id="durata" required></select>
+                            <select class="form-control" id="durata"></select>
                         </div>
                         <button type="submit" class="btn btn-success mt-2">Calcola Preventivo</button>
                     </form>
                 </div>
+                <div class="d-flex justify-content-between mt-3">
+                    <button class="btn btn-secondary" onclick="prevStep(2)">Indietro</button>
+                    <button class="btn btn-primary" onclick="nextStep(2)">Avanti</button>
+                </div>
             </div>
-            <!-- Output finale -->
-            <div id="outputPreventivo" class="alert alert-info mt-3 d-none"></div>
-        </div>
 
-    </section>
-    <section>
-        <div class="container">
-            <div class="row">
-                <div class="d-flex flex-column align-items-center mb-3">
-                    <h2>Hai in mente un altra offerta? </h2>
-                    <button type="button" class="btn btn-primary contattaci">Contattaci!</button>
+            <!-- Step 3 -->
+            <div class="step" id="step-3">
+                <div class="alert alert-info mt-3">
+                    <div class="card p-3 bg-light">
+                        <h5 id="finalTitle">Titolo Configurazione</h5>
+                        <p id="finalDetails">Dettagli preventivo</p>
+                        <p id="finalPrice">Totale: €XXX</p>
+                    </div>
+                    <div class="d-flex justify-content-between mt-3">
+                        <button class="btn btn-secondary" onclick="prevStep(3)">Indietro</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
-
+    <!-- Footer -->
     <footer class="site-footer bg-dark text-light py-5">
         <div class="container">
-            <div class="row gy-4">
-
-                <!-- Logo / Descrizione -->
+            <div class="row">
                 <div class="col-md-4">
                     <h4 class="site-logo">NomeSito</h4>
-                    <p class="text-muted">Soluzioni digitali per il tuo futuro.</p>
+                    <p>Soluzioni digitali per il tuo futuro.</p>
                 </div>
-
-                <!-- Link di navigazione -->
                 <div class="col-md-2">
                     <h5>Link utili</h5>
                     <ul class="list-unstyled">
-                        <li><a href="/chi-siamo" class="footer-link">Chi siamo</a></li>
-                        <li><a href="/servizi" class="footer-link">Servizi</a></li>
-                        <li><a href="/contatti" class="footer-link">Contatti</a></li>
-                        <li><a href="/privacy" class="footer-link">Privacy</a></li>
+                        <li><a href="#">Chi siamo</a></li>
+                        <li><a href="#">Servizi</a></li>
+                        <li><a href="#">Contatti</a></li>
+                        <li><a href="#">Privacy</a></li>
                     </ul>
                 </div>
-
-                <!-- Social -->
                 <div class="col-md-3">
                     <h5>Seguici</h5>
-                    <div class="d-flex gap-3">
-                        <a href="#" class="footer-link">Facebook</a>
-                        <a href="#" class="footer-link">Instagram</a>
-                        <a href="#" class="footer-link">LinkedIn</a>
-                    </div>
+                    <a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">LinkedIn</a>
                 </div>
-
-                <!-- Contatti -->
                 <div class="col-md-3">
                     <h5>Contatti</h5>
-                    <p class="mb-1">Email: <a href="mailto:info@nomesito.com" class="footer-link">info@nomesito.com</a>
-                    </p>
-                    <p class="mb-0">Tel: <a href="tel:+390123456789" class="footer-link">+39 012 3456789</a></p>
+                    <p>Email: <a href="mailto:info@nomesito.com">info@nomesito.com</a></p>
+                    <p>Tel: <a href="tel:+390123456789">+39 012 3456789</a></p>
                 </div>
-
             </div>
-
-            <!-- Copyright -->
             <div class="text-center mt-4 small text-secondary">
                 &copy; 2025 NomeSito. Tutti i diritti riservati.
             </div>
         </div>
     </footer>
 
-
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.min.js"
-        integrity="sha384-RuyvpeZCxMJCqVUGFI0Do1mQrods/hhxYlcVfGPOfQtPJh0JCw12tUAZ/Mv10S7D"
-        crossorigin="anonymous"></script>
-    <script defer src="./scripts/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
