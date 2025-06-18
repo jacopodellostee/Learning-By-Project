@@ -2,10 +2,12 @@
 const configData = {
   single: {
     title: "1 Corso - Studenti illimitati",
-    tipo: null,
-    options: {
-      "10 Anni - 100€": 100,
-      "100 Anni - 250€": 250
+    tipo: ["Studenti illimitati"],
+    prices: {
+      "Studenti illimitati": {
+        "10 Anni": 100,
+        "100 Anni": 250
+      }
     }
   },
   ten: {
@@ -13,12 +15,12 @@ const configData = {
     tipo: ["Individuale", "30 Studenti"],
     prices: {
       "Individuale": {
-        "10 Anni - 300€": 300,
-        "100 Anni - 750€": 750
+        "10 Anni": 300,
+        "100 Anni": 750
       },
       "30 Studenti": {
-        "10 Anni - 500€": 500,
-        "100 Anni - 1250€": 1250
+        "10 Anni": 500,
+        "100 Anni": 1250
       }
     }
   },
@@ -27,12 +29,12 @@ const configData = {
     tipo: ["Individuale", "30 Studenti"],
     prices: {
       "Individuale": {
-        "10 Anni - 800€": 800,
-        "100 Anni - 2000€": 2000
+        "10 Anni": 800,
+        "100 Anni": 2000
       },
       "30 Studenti": {
-        "10 Anni - 1000€": 1000,
-        "100 Anni - 2500€": 2500
+        "10 Anni": 1000,
+        "100 Anni": 2500
       }
     }
   }
