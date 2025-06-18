@@ -5,16 +5,17 @@
 @import "vendor/functions";
 
 // 2. Include any default variable overrides here
-$blue:    #0d6efd;
-$indigo:  #6610f2;
-$purple:  #6f42c1;
-$pink:    #d63384;
-$red:     #dc3545;
-$orange:  #fd7e14;
-$yellow:  #ffc107;
-$green:   #198754;
-$teal:    #20c997;
-$cyan:    #0dcaf0;
+$blue: #0d6efd;
+$indigo: #6610f2;
+$purple: #6f42c1;
+$pink: #d63384;
+$red: #dc3545;
+$orange: #fd7e14;
+$yellow: #ffc107;
+$green: #198754;
+$teal: #20c997;
+$cyan: #0dcaf0;
+$grkedos: #50C3A3;
 
 // 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
 @import "vendor/variables";
@@ -32,14 +33,14 @@ $spacers: (
 );
 
 $theme-colors: (
-  "primary":    $primary,
-  "secondary":  $secondary,
-  "success":    $success,
-  "info":       $info,
-  "warning":    $warning,
-  "danger":     $danger,
-  "light":      $light,
-  "dark":       $dark,
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
+  "light": $light,
+  "dark": $dark,
 );
 
 // 5. Include remainder of required parts
@@ -60,8 +61,42 @@ $theme-colors: (
 @import "vendor/navbar";
 @import "vendor/dropdown";
 @import "vendor/card";
+@import "vendor/carousel";
+@import "vendor/transitions";
 
 // 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
 @import "vendor/utilities/api";
 
+
 // 8. Add additional custom code here
+
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.active {
+  color: #F82B2B;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+header {
+  background-image: linear-gradient(to bottom, rgba(196, 193, 193, 0.5), rgba(0, 0, 0, 0)),
+    url('https://www.kedos-srl.it/wp-content/uploads/2021/10/bg_home-1.jpg');
+  background-size: cover;
+  position: relative;
+  background-position: 50%;
+  height: 80vh;
+}
+
+.vh-50 {
+  height: 50vh;
+}
+
+.card {
+  --bs-card-bg: #ffffffbd;
+}
+
