@@ -106,3 +106,26 @@ header {
   --bs-card-bg: #ffffffbd;
 }
 
+
+.btn-size {
+  height: 50px;
+  width: 190px; 
+}
+
+.w-card{
+  
+  @include media-breakpoint-up(sm) {
+    max-width: 500px;
+  }
+  @include media-breakpoint-up(md) {
+    min-width: 550px;
+  }
+  @include media-breakpoint-up(lg) {
+    max-width: 600px;
+  }
+}
+
+h1{
+  font-weight: bold;
+  color: $rossokd;
+}
