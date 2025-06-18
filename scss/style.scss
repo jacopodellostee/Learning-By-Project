@@ -99,3 +99,37 @@ header {
 .card {
   --bs-card-bg: #ffffffbd;
 }
+
+h2{
+  color: #C72939;
+}
+
+.desktop{
+  display: block;
+}
+
+.mobile{
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .desktop {
+    display: none;
+  }
+  .mobile {
+    display: block;
+  }
+}
+
+.short-divider {
+  width: 200px;
+  margin: 15px auto;
+  border: none;
+  border-top: 2px solid #407667;
+}
+
+.btn-bl{
+  text-decoration: underline;
+  color: #407667;
+  
+}
