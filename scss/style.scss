@@ -100,3 +100,22 @@ header {
   --bs-card-bg: #ffffffbd;
 }
 
+.navbar {
+  position: fixed;
+  /* Rimane sempre visibile in cima alla pagina */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  /* Sta sopra a tutto, anche al video */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(white);
+  /* sfumatura */
+  backdrop-filter: blur(5px);
+  /* effetto vetro sfocato */
+  padding: 10px 20px;
+  box-sizing: border-box;
+
+}
