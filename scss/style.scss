@@ -15,12 +15,13 @@ $yellow: #ffc107;
 $green: #198754;
 $teal: #20c997;
 $cyan: #0dcaf0;
-$grkedos: #50C3A3;
+$verdekd: #407667;
+$rossokd: #C72939;
 
 // 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
+
 @import "vendor/variables";
 @import "vendor/variables-dark";
-
 // 4. Include any default map overrides here
 $spacers: (
   0: 0,
@@ -32,6 +33,7 @@ $spacers: (
   6: $spacer * 4,
 );
 
+
 $theme-colors: (
   "primary": $primary,
   "secondary": $secondary,
@@ -41,7 +43,11 @@ $theme-colors: (
   "danger": $danger,
   "light": $light,
   "dark": $dark,
+  "verdekd": $verdekd,
+  "rossokd": $rossokd,
 );
+
+
 
 // 5. Include remainder of required parts
 @import "vendor/maps";
@@ -85,7 +91,7 @@ a {
 
 header {
   background-image: linear-gradient(to bottom, rgba(196, 193, 193, 0.5), rgba(0, 0, 0, 0)),
-    url('https://www.kedos-srl.it/wp-content/uploads/2021/10/bg_home-1.jpg');
+    url("https://www.kedos-srl.it/wp-content/uploads/2021/10/bg_home-1.jpg");
   background-size: cover;
   position: relative;
   background-position: 50%;
@@ -99,3 +105,4 @@ header {
 .card {
   --bs-card-bg: #ffffffbd;
 }
+
