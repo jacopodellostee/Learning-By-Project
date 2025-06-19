@@ -11,9 +11,8 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
-        rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
 
     <!-- JSON ld -->
     <script type="application/ld+json">
@@ -57,53 +56,90 @@
 
 <body>
     <header>
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
-                <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm p-3 mb-5 bg-body-tertiary rounded w-100">
                     <div class="container-fluid">
-                        <a class="navbar-brand" href="#">Navbar</a>
+                        <img src="img/logo.webp" height="50" alt="Logo">
+
+                        <!-- bottone hamburger mobile -->
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                             aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
+
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                                <li class="nav-item">
+
+                            <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
+                                <li class="nav-item px-3">
                                     <a class="active" aria-current="page" href="#">Home</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Link</a>
+                                <li class="nav-item px-3">
+                                    <a class="nav-link" href="#">Contatti</a>
                                 </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                        aria-expanded="false">
-                                        Dropdown
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">Action</a></li>
-                                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                                        <li>
-                                            <hr class="dropdown-divider">
-                                        </li>
-                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                    </ul>
+                                <li class="nav-item px-3">
+                                    <a class="nav-link disabled" aria-disabled="true">Configuratore</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                                <li class="nav-item px-3">
+                                    <a class="nav-link disabled" aria-disabled="true">Certificati sulla blockchain</a>
                                 </li>
                             </ul>
 
+                            <ul class="navbar-nav">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle ms-2" href="#" role="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        Lingua
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-end">
+                                        <li>
+                                            <a class="dropdown-item d-flex align-items-center gap-2" href="#">
+                                                <img src="img/bandiera-italia.png" height="20" alt="IT"> Italiano
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item d-flex align-items-center gap-2" href="#">
+                                                <img src="img/bandiera-inghilterra.png" height="20" alt="EN"> English
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item d-flex align-items-center gap-2" href="#">
+                                                <img src="img/bandiera-spagna.png" height="20" alt="ES"> Español
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </nav>
 
-                <div class="background">
-                    <div class="d-flex justify-content-center align-items-center flex-column">
-                        <h1>Lorem</h1>
-                        <h2>Lorem Ipsum</h2>
-                        <button type="button" class="btn btn-primary">Calcola Preventivo</button>
+                <div class="row-cols-md-2 ">
+                    <div class="col px-2 mx-2 ms-md-6 ms-lg-8">
+                        <div class="card vh-50 rounded-5 w-card">
+                            <div class="card-body">
+                                <div class=" d-flex flex-column-reverse">
+                                    <h1 class="card-title pt-2">Configuratore KeCert</h1>
+                                    <h2 class="card-subtitle mb-2 pt-3 ">Scopri il Nuovo</h2>
+                                </div>
+                                <p class="card-text pt-4">Personalizza il tuo software per l’emissione di certificati
+                                    blockchain.</p>
+                                <p class="card-text">Scegli le funzionalità che ti servono, confronta le opzioni e crea
+                                    la soluzione perfetta per il tuo business.</p>
+                                <div class="d-flex justify-content-center">
+                                    <a href="#" class="card-link btn btn-verdekd btn-size d-flex align-items-center mt-5">Vai al configuratore >></a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
                 </div>
             </div>
         </div>
