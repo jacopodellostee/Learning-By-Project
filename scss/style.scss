@@ -15,11 +15,13 @@ $yellow: #ffc107;
 $green: #198754;
 $teal: #20c997;
 $cyan: #0dcaf0;
+$verdekd: #407667;
+$rossokd: #C72939;
 
 // 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
+
 @import "vendor/variables";
 @import "vendor/variables-dark";
-
 // 4. Include any default map overrides here
 $spacers: (
   0: 0,
@@ -31,6 +33,7 @@ $spacers: (
   6: $spacer * 4,
 );
 
+
 $theme-colors: (
   "primary": $primary,
   "secondary": $secondary,
@@ -40,7 +43,11 @@ $theme-colors: (
   "danger": $danger,
   "light": $light,
   "dark": $dark,
+  "verdekd": $verdekd,
+  "rossokd": $rossokd,
 );
+
+
 
 // 5. Include remainder of required parts
 @import "vendor/maps";
@@ -68,6 +75,7 @@ $theme-colors: (
 
 // 8. Add additional custom code here
 
+// Stile Sito (Tutti)
 
 .background {
   min-height: 80vh;
@@ -90,13 +98,18 @@ body>main,
   color: #F82B2B;
 }
 
+a {
+  color: black;
+  text-decoration: none;
+}
 
+
+// Carosello (Jacopo - Pagletta)
 #carouselContainer {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
 }
-
 
 .carousel-wrapper {
   overflow: hidden;
@@ -122,13 +135,11 @@ body>main,
   padding: 1rem;
   box-sizing: border-box;
 }
-
 .custom-card.active {
   opacity: 1;
   transform: scale(1.05);
   z-index: 2;
 }
-
 .arrow {
   position: absolute;
   top: 50%;
@@ -151,12 +162,77 @@ body>main,
   right: 0;
 }
 
-@media (max-width: 768px) {
-  .arrow {
-    display: none;
+//Header (Federico)
+
+header {
+  background-image: linear-gradient(to bottom, rgba(196, 193, 193, 0.5), rgba(0, 0, 0, 0)),
+    url("https://www.kedos-srl.it/wp-content/uploads/2021/10/bg_home-1.jpg");
+  background-size: cover;
+  position: relative;
+  background-position: 50%;
+  height: 80vh;
+}
+
+.vh-50 {
+  height: 50vh;
+}
+
+.card {
+  --bs-card-bg: #ffffffbd;
+}
+
+// Sezioni Info (Cosmin)
+
+.btn-size {
+  height: 50px;
+  width: 190px; 
+}
+
+.w-card{
+  
+  @include media-breakpoint-up(sm) {
+    max-width: 500px;
+  }
+  @include media-breakpoint-up(md) {
+    min-width: 550px;
+  }
+  @include media-breakpoint-up(lg) {
+    max-width: 600px;
   }
 }
 
+h1{
+  font-weight: bold;
+  color: $rossokd !important;
+}
+
+.ms-lg-8 {
+  @include media-breakpoint-up(lg) {
+    margin-left: 11rem !important;
+  }
+  
+}
+
+h2{
+  color: #C72939;
+}
+
+.desktop{
+  display: block;
+}
+
+.mobile{
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .desktop {
+    display: none;
+  }
+  .mobile {
+    display: block;
+  }
+}
 .step {
   display: none;
 }
@@ -164,6 +240,7 @@ body>main,
 .step.active {
   display: block;
 }
+
 
 .hidden {
   display: none !important;
@@ -173,8 +250,18 @@ body>main,
   flex: 1;
   min-height: 100px;
 }
+.short-divider {
+  width: 200px;
+  margin: 15px auto;
+  border: none;
+  border-top: 2px solid #407667;
+}
 
-/* Per rendere le card più leggibili e fluide */
+.btn-bl{
+  text-decoration: underline;
+  color: #407667;
+  border: none;
+}
 .card-body {
   display: flex;
   flex-direction: column;

@@ -5,95 +5,273 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WebCrafter</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="css/personale.css">
+    <meta name="description" content="">
+    <meta name="robots" content="index, follow">
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
-    <script src="./scripts/main.js" defer></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <script defer src="./scripts/main.js"></script>
+    <!-- JSON ld -->
+    <script type="application/ld+json">
+
+    </script>
+
+    <script type="application/ld+json">
+
+    </script>
+
+    <!-- OpenGraph -->
+    <meta property="og:title" content="" />
+    <meta property="og:description" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="" />
+    <meta property="og:address" content="" />
+    <meta property="og:email" content="" />
+    <meta property="og:phone_number" content="" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="" />
+    <meta name="twitter:title" content="" />
+    <meta name="twitter:description" content="" />
+    <meta name="twitter:url" content="" />
+    <meta name="twitter:image" content="" />
+    <meta name="twitter:address" content="" />
+    <meta name="twitter:email" content="" />
+    <meta name="twitter:phone_number" content="" />
+
+    <!-- href lingue -->
+    <link rel="canonical" href="">
+    <link rel="alternate" hreflag="it" href="">
+    <link rel="alternate" hreflang="x-default" href="">
+
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="css/personale.css">
+
 </head>
 
 <body>
-    <!-- INTRO SECTION -->
     <div id="introSection">
         <header>
-            <div class="container">
+            <div class="container-fluid">
                 <div class="row">
-                    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm p-3 mb-5 bg-body-tertiary rounded w-100">
                         <div class="container-fluid">
-                            <a class="navbar-brand" href="#">Navbar</a>
+                            <img src="img/logo.webp" height="50" alt="Logo">
+                            <!-- bottone hamburger mobile -->
                             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#navbarSupportedContent">
+                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="navbar-toggler-icon"></span>
                             </button>
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                                    <li class="nav-item"><a class="active" href="#">Home</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+                                <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
+                                    <li class="nav-item px-3">
+                                        <a class="active" aria-current="page" href="#">Home</a>
+                                    </li>
+                                    <li class="nav-item px-3">
+                                        <a class="nav-link" href="#">Contatti</a>
+                                    </li>
+                                    <li class="nav-item px-3">
+                                        <a class="nav-link disabled" aria-disabled="true">Configuratore</a>
+                                    </li>
+                                    <li class="nav-item px-3">
+                                        <a class="nav-link disabled" aria-disabled="true">Certificati sulla blockchain</a>
+                                    </li>
+                                </ul>
+                                <ul class="navbar-nav">
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="#" role="button"
-                                            data-bs-toggle="dropdown">Dropdown</a>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#">Action</a></li>
-                                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                                        <a class="nav-link dropdown-toggle ms-2" href="#" role="button"
+                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                            Lingua
+                                        </a>
+                                        <ul class="dropdown-menu dropdown-menu-end">
+                                            <li>
+                                                <a class="dropdown-item d-flex align-items-center gap-2" href="#">
+                                                    <img src="img/bandiera-italia.png" height="20" alt="IT"> Italiano
+                                                </a>
+                                            </li>
                                             <li>
                                                 <hr class="dropdown-divider">
                                             </li>
-                                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                            <li>
+                                                <a class="dropdown-item d-flex align-items-center gap-2" href="#">
+                                                    <img src="img/bandiera-inghilterra.png" height="20" alt="EN"> English
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <hr class="dropdown-divider">
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item d-flex align-items-center gap-2" href="#">
+                                                    <img src="img/bandiera-spagna.png" height="20" alt="ES"> Español
+                                                </a>
+                                            </li>
                                         </ul>
                                     </li>
-                                    <li class="nav-item"><a class="nav-link disabled">Disabled</a></li>
                                 </ul>
                             </div>
                         </div>
                     </nav>
-
-                    <div class="background text-center py-5">
-                        <h1>Lorem</h1>
-                        <h2>Lorem Ipsum</h2>
-                        <button type="button" class="btn btn-primary">Calcola Preventivo</button>
+                    <div class="row-cols-md-2 ">
+                        <div class="col px-2 mx-2 ms-md-6 ms-lg-8">
+                            <div class="card vh-50 rounded-5 w-card">
+                                <div class="card-body">
+                                    <div class=" d-flex flex-column-reverse">
+                                        <h1 class="card-title pt-2">Configuratore KeCert</h1>
+                                        <h2 class="card-subtitle mb-2 pt-3 ">Scopri il Nuovo</h2>
+                                    </div>
+                                    <p class="card-text pt-4">Personalizza il tuo software per l’emissione di certificati
+                                        blockchain.</p>
+                                    <p class="card-text">Scegli le funzionalità che ti servono, confronta le opzioni e crea
+                                        la soluzione perfetta per il tuo business.</p>
+                                    <div class="d-flex justify-content-center">
+                                        <button type="button" class="btn btn-primary">Calcola Preventivo</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </header>
+    
 
-        <section>
-            <div class="container">
-                <div class="row">
-                    <div class="blockchain-info d-flex flex-row">
-                        <div class="d-flex flex-column">
-                            <h2>Blockchain Info</h2>
-                            <p>Lorem ipsum dolor sit amet...</p>
-                            <button class="btn btn-primary">Scopri di più</button>
+    <section class="py-6">
+        <div class="container">
+            <div class="row">
+                <div class="blockchain-info flex-row">
+                    <div class="d-flex flex-column p-5 align-items-center">
+                        <h2><span style="color: #407667 ;">La</span> Blockchain</h2>
+
+                        <hr class="short-divider desktop">
+
+                        <p class="desktop py-3"> La <b>blockchain</b> è un <b>registro pubblico</b>,
+                            <b>condiviso e immutabile</b> in cui ogni
+                            transazione corrisponde alla scrittura di
+                            un nuovo blocco nella catena. <br><br>
+                            Ogni blocco contiene sia le informazioni che si vogliono registrare, sia data e ora della
+                            transazione. <br><br>
+                            Un nuovo blocco si accoda come ultimo alla catena, senza possibilità di alterare blocchi
+                            esistenti o di inserirsi tra due blocchi consecutivi.
+                        </p>
+
+                        <p class="mobile py-3">La <b>blockchain</b> è un <b>registro pubblico</b>,
+                            <b>condiviso e immutabile</b> in cui ogni
+                            transazione corrisponde alla scrittura di
+                            un nuovo blocco nella catena
+                        </p>
+                        <button type="button" class="btn ms-auto btn-bl  ">Scopri di più ></button>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <section class="py-6">
+        <div class="container">
+            <div class="row">
+                <div class="mobile">
+                    <div class="d-flex flex-column align-items-center">
+                        <h2><span style="color: #407667; ">informazioni</span> Iscrizioni</h2>
+                    </div>
+                    <div class=" row row-cols-1 justify-content-center">
+                        <div class="col py-5">
+                            <div class="card d-flex">
+                                <div class="card-body">
+                                    <figure>
+                                        <blockquote class="blockquote text-center">
+                                            <p>Setup iniziale <b>obbligatorio</b></p>
+                                        </blockquote>
+                                    </figure>
+                                </div>
+                                <div class="card-footer justify-content-center d-flex">
+                                    € 1.000
+                                </div>
+                            </div>
                         </div>
-                        <figure>
-                            <img src="immagine.jpg" alt="Descrizione dell'immagine">
-                            <figcaption>Questa è la didascalia dell'immagine.</figcaption>
-                        </figure>
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-body">
+                                    <figure>
+                                        <blockquote class="blockquote text-center">
+                                            <p>Accesso tramite
+                                                <b>API</b>, acquistabile anche
+                                                successivamente
+                                            </p>
+                                        </blockquote>
+                                    </figure>
+                                </div>
+                                <div class="card-footer justify-content-center d-flex">
+                                    € 5.000
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <section>
-            <div class="container">
-                <h2>Info Pacchetti</h2>
-                <p>Lorem ipsum dolor sit amet consectetur...</p>
-            </div>
-        </section>
-
-        <section>
-            <div class="container">
-                <div class="row">
-                    <div class="d-flex flex-column align-items-center mb-3">
-                        <h2>Hai in mente un'altra offerta?</h2>
-                        <button class="btn btn-primary">Contattaci!</button>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="desktop">
+                    <div class="d-flex flex-column align-items-center">
+                        <h2><span style="color: #407667; ">informazioni</span> Iscrizioni</h2>
+                    </div>
+                    <div class=" row d-flex justify-content-end py-5 ">
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <figure>
+                                        <blockquote class="blockquote text-center">
+                                            <p>Setup iniziale <b>obbligatorio</b></p>
+                                        </blockquote>
+                                    </figure>
+                                </div>
+                                <div class="card-footer justify-content-center d-flex">
+                                    € 1.000
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <figure>
+                                        <blockquote class="blockquote text-center">
+                                            <p>Accesso tramite
+                                                <b>API</b>, acquistabile anche
+                                                successivamente
+                                            </p>
+                                        </blockquote>
+                                    </figure>
+                                </div>
+                                <div class="card-footer justify-content-center d-flex">
+                                    € 5.000
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
-    </div>
+        </div>
+    </section>
+</div>
+    <!-- Codice Federico -->
+
+
+    
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="d-flex flex-column align-items-center mb-3">
+                    <h2>Hai in mente un altra offerta? </h2>
+                    <button type="button" class="btn btn-primary contattaci">Contattaci!</button>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- CONFIGURATORE (nascosto inizialmente) -->
     <div id="configurator" style="display: none;">
@@ -241,7 +419,7 @@
                             <div class="row">
                                 <div class="mb-3">
                                     <input type="email" class="form-control" id="email" name="email" required
-                                        placeholder="Inserisci la tua emal">
+                                        placeholder="Inserisci la tua email">
                                 </div>
                                 <div class="mb-3">
                                     <input type="tel" class="form-control" id="phone" name="phone" required
@@ -256,39 +434,62 @@
             </div>
         </div>
     </div>
-    <!-- Footer -->
+
     <footer class="site-footer bg-dark text-light py-5">
         <div class="container">
-            <div class="row">
+            <div class="row gy-4">
+
+                <!-- Logo / Descrizione -->
                 <div class="col-md-4">
                     <h4 class="site-logo">NomeSito</h4>
-                    <p>Soluzioni digitali per il tuo futuro.</p>
+                    <p class="text-muted">Soluzioni digitali per il tuo futuro.</p>
                 </div>
+
+                <!-- Link di navigazione -->
                 <div class="col-md-2">
                     <h5>Link utili</h5>
                     <ul class="list-unstyled">
-                        <li><a href="#">Chi siamo</a></li>
-                        <li><a href="#">Servizi</a></li>
-                        <li><a href="#">Contatti</a></li>
-                        <li><a href="#">Privacy</a></li>
+                        <li><a href="/chi-siamo" class="footer-link">Chi siamo</a></li>
+                        <li><a href="/servizi" class="footer-link">Servizi</a></li>
+                        <li><a href="/contatti" class="footer-link">Contatti</a></li>
+                        <li><a href="/privacy" class="footer-link">Privacy</a></li>
                     </ul>
                 </div>
+
+                <!-- Social -->
                 <div class="col-md-3">
                     <h5>Seguici</h5>
-                    <a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">LinkedIn</a>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="footer-link">Facebook</a>
+                        <a href="#" class="footer-link">Instagram</a>
+                        <a href="#" class="footer-link">LinkedIn</a>
+                    </div>
                 </div>
+
+                <!-- Contatti -->
                 <div class="col-md-3">
                     <h5>Contatti</h5>
-                    <p>Email: <a href="mailto:info@nomesito.com">info@nomesito.com</a></p>
-                    <p>Tel: <a href="tel:+390123456789">+39 012 3456789</a></p>
+                    <p class="mb-1">Email: <a href="mailto:info@nomesito.com" class="footer-link">info@nomesito.com</a>
+                    </p>
+                    <p class="mb-0">Tel: <a href="tel:+390123456789" class="footer-link">+39 012 3456789</a></p>
                 </div>
+
             </div>
+
+            <!-- Copyright -->
             <div class="text-center mt-4 small text-secondary">
                 &copy; 2025 NomeSito. Tutti i diritti riservati.
             </div>
         </div>
     </footer>
 
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.min.js"
+        integrity="sha384-RuyvpeZCxMJCqVUGFI0Do1mQrods/hhxYlcVfGPOfQtPJh0JCw12tUAZ/Mv10S7D"
+        crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         function updateSummarySelections() {

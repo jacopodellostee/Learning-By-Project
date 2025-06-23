@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!certQtySelected || !certDurationSelected) {
         alert('Seleziona la quantità e la durata del certificato prima di proseguire.');
-        return; // 👈 NON andare avanti se mancano le selezioni
+        return; // NON andare avanti se mancano le selezioni
     }
 
     updateSummary();
