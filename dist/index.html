@@ -5,24 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WebCrafter</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="css/personale.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
-    <script defer src="./scripts/main.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const btn = document.querySelector(".btn.btn-primary");
-            const intro = document.getElementById("introSection");
-            const configurator = document.getElementById("configurator");
-
-            btn.addEventListener("click", () => {
-                intro.style.display = "none";
-                configurator.style.display = "block";
-            });
-        });
-    </script>
+    <script src="./scripts/main.js" defer></script>
 </head>
 
 <body>
@@ -108,88 +97,165 @@
 
     <!-- CONFIGURATORE (nascosto inizialmente) -->
     <div id="configurator" style="display: none;">
+        <a href="index.html">Torna alla home</a>
         <div class="container my-4">
             <!-- Step 1 -->
 
             <div class="step active" id="step-1">
-                <button class="arrow arrow-left" id="prevBtn">&#8592;</button>
-                <div class="carousel-wrapper">
-                    <div class="carousel-track d-flex align-items-center" id="carouselTrack">
-                        <!-- Card 1 -->
-                        <div class="col custom-card" data-target="single">
-                            <div class="card h-100">
-                                <div class="card-body">
-                                    <h5 class="card-title">1 Corso</h5>
-                                    <button class="btn btn-primary btn-toggle" data-target="single">Scopri di
-                                        più</button>
+                <h3 class="h2 text-center">Seleziona il numero di corsi</h3>
+                <div class="d-flex align-items-center justify-content-between position-relative" id="carouselContainer">
+                    <button class="arrow arrow-left" id="prevBtn">&#8592;</button>
+
+                    <div class="carousel-wrapper flex-grow-1 mx-3">
+                        <div class="carousel-track d-flex align-items-center" id="carouselTrack">
+                            <!-- Card 1 -->
+                            <div class="col custom-card" data-courses="1">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h5 class="card-title">1 Corso</h5>
+
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <!-- Card 2 -->
-                        <div class="col custom-card" data-target="ten">
-                            <div class="card h-100">
-                                <div class="card-body">
-                                    <h5 class="card-title">10 Corsi</h5>
-                                    <button class="btn btn-primary btn-toggle" data-target="ten">Scopri di più</button>
+                            <!-- Card 2 -->
+                            <div class="col custom-card" data-courses="10">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h5 class="card-title">10 Corsi</h5>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <!-- Card 3 -->
-                        <div class="col custom-card" data-target="fifty">
-                            <div class="card h-100">
-                                <div class="card-body">
-                                    <h5 class="card-title">50 Corsi</h5>
-                                    <button class="btn btn-primary btn-toggle" data-target="fifty">Scopri di
-                                        più</button>
+                            <!-- Card 3 -->
+                            <div class="col custom-card" data-courses="50">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h5 class="card-title">50 Corsi</h5>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                    <button class="arrow arrow-right" id="nextBtn">&#8594;</button>
                 </div>
-                <button class="arrow arrow-right" id="nextBtn">&#8594;</button>
+
                 <div class="d-flex justify-content-center mt-3">
-                    <button class="btn btn-primary" onclick="nextStep(1)">Seleziona</button>
+                    <button class="btn btn-primary">Seleziona</button>
                 </div>
             </div>
 
             <!-- Step 2 -->
             <div class="step" id="step-2">
-                <div class="card p-3 bg-light">
-                    <h5 id="configTitle">Titolo Configurazione</h5>
-                    <form id="configForm">
-                        <div class="form-group mb-2 d-none" id="tipoWrapper">
-                            <label for="tipo">Tipo Corso</label>
-                            <select class="form-control" id="tipo"></select>
-                        </div>
-                        <div class="form-group mb-2">
-                            <label for="durata">Durata</label>
-                            <select class="form-control" id="durata"></select>
-                        </div>
-                        <button type="submit" class="btn btn-success mt-2">Calcola Preventivo</button>
-                    </form>
-                </div>
-                <div class="d-flex justify-content-between mt-3">
-                    <button class="btn btn-secondary" onclick="prevStep(2)">Indietro</button>
-                    <button class="btn btn-primary" onclick="nextStep(2)">Avanti</button>
-                </div>
-            </div>
 
+                <button class="btn btn-secondary">Indietro</button>
+                <h3 class="h2 text-center">Configuratore del pacchetto scelto</h3>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6" id="summaryContainer">
+                            <h3>Riepilogo Corsi</h3>
+                            <p>Totale corsi: <span id="total-selected">0</span></p>
+                            <p>Quantità certificati: <span id="summary-cert-qty">-</span></p>
+                            <p>Durata certificato: <span id="summary-cert-duration">-</span></p>
+                            <p>Servizio API: <span id="summary-api">Non attivo</span></p>
+                            <div class="d-flex justify-content-center mt-3">
+                                <button class="btn btn-primary" id="toStep3">Calcola preventivo</button>
+                            </div>
+                            <a href="#">contattaci per personalizzare il tuo pacchetto</a>
+                        </div>
+                        <div class="col-6 gap-3 ">
+                            <!-- Card 1: Quantità Certificati -->
+                            <div class="card my-3">
+                                <div class="card-body">
+                                    <h5 class="card-title">Quantità Certificati</h5>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="certQty" id="singleCert"
+                                            value="single">
+                                        <label class="form-check-label" for="singleCert">Certificati per singola
+                                            persona</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="certQty" id="multiCert"
+                                            value="multi">
+                                        <label class="form-check-label" for="multiCert">Certificati per 30
+                                            persone</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card 2: Durata Certificato -->
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <h5 class="card-title">Durata Certificato</h5>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="certDuration" id="dur10"
+                                            value="10">
+                                        <label class="form-check-label" for="dur10">Durata di 10 anni dal
+                                            rilascio</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="certDuration" id="illimitata"
+                                            value="illimitata">
+                                        <label class="form-check-label" for="illimitata">Durata illimitata</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card 3: Servizio API -->
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Integrazione tramite API</h5>
+                                    <p class="card-text">
+                                        Integra <strong>KeCert</strong> direttamente nei tuoi sistemi aziendali grazie
+                                        all’accesso tramite API.<br><br>
+                                        Questa opzione ti consente di automatizzare l’emissione dei certificati
+                                        blockchain,
+                                        migliorando efficienza e scalabilità nei tuoi flussi operativi.<br><br>
+                                        L’attivazione ha un costo una tantum di <strong>5.000€</strong> per cliente ed è
+                                        acquistabile anche in un secondo momento, senza vincoli di canone annuale.
+                                    </p>
+                                    <div class="form-check mt-2">
+                                        <input class="form-check-input" type="checkbox" id="apiAccess">
+                                        <label class="form-check-label" for="apiAccess">Attiva servizio API</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
             <!-- Step 3 -->
             <div class="step" id="step-3">
                 <div class="alert alert-info mt-3">
-                    <div class="card p-3 bg-light">
-                        <h5 id="finalTitle">Titolo Configurazione</h5>
-                        <p id="finalDetails">Dettagli preventivo</p>
-                        <p id="finalPrice">Totale: €XXX</p>
-                    </div>
                     <div class="d-flex justify-content-between mt-3">
-                        <button class="btn btn-secondary" onclick="prevStep(3)">Indietro</button>
+                        <button class="btn btn-secondary">Indietro</button>
                     </div>
+                    <h2>Preventivo stimato:</h5>
+                    <p>Il totale delle opzioni selezionate ammonta a circa</p>
+                    <p id="finalPrice">€XXX</p>
+                    <h5>Interessato alla proposta?</h5>
+                    <p>Lascia i tuoi recapiti e il nostro team ti contatterà al più presto per fornirti tutti i
+                        dettagli.</p>
+                    <form id="contactForm">
+                        <div class="container">
+                            <div class="row">
+                                <div class="mb-3">
+                                    <input type="email" class="form-control" id="email" name="email" required
+                                        placeholder="Inserisci la tua emal">
+                                </div>
+                                <div class="mb-3">
+                                    <input type="tel" class="form-control" id="phone" name="phone" required
+                                        placeholder="Inserisci il tuo telefono">
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Invia</button>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
-
     <!-- Footer -->
     <footer class="site-footer bg-dark text-light py-5">
         <div class="container">
@@ -224,6 +290,35 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function updateSummarySelections() {
+            const certQtyInput = document.querySelector('input[name="certQty"]:checked');
+            const certDurationInput = document.querySelector('input[name="certDuration"]:checked');
+            const apiCheckbox = document.getElementById('apiAccess');
+
+            function getLabelText(input) {
+                if (!input) return '-';
+                const label = document.querySelector(`label[for="${input.id}"]`);
+                return label ? label.textContent.trim() : '-';
+            }
+
+            document.getElementById('summary-cert-qty').textContent = getLabelText(certQtyInput);
+            document.getElementById('summary-cert-duration').textContent = getLabelText(certDurationInput);
+            document.getElementById('summary-api').textContent = apiCheckbox.checked ? 'Attivo' : 'Non attivo';
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const certQtyRadios = document.querySelectorAll('input[name="certQty"]');
+            const certDurationRadios = document.querySelectorAll('input[name="certDuration"]');
+            const apiCheckbox = document.getElementById('apiAccess');
+
+            certQtyRadios.forEach(radio => radio.addEventListener('change', updateSummarySelections));
+            certDurationRadios.forEach(radio => radio.addEventListener('change', updateSummarySelections));
+            apiCheckbox.addEventListener('change', updateSummarySelections);
+
+            updateSummarySelections();
+        });
+    </script>
 </body>
 
 </html>

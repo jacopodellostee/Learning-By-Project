@@ -73,8 +73,17 @@ $theme-colors: (
   min-height: 80vh;
 }
 
+html,
 body {
+  height: 100%;
   font-family: "Lato", sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+body>main,
+#configurator {
+  flex: 1;
 }
 
 .active {
@@ -82,14 +91,22 @@ body {
 }
 
 
+#carouselContainer {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+
 .carousel-wrapper {
-  margin: 0 auto;
-  width: 50%;
+  overflow: hidden;
   position: relative;
+  padding: 0 10%;
 }
 
 .carousel-track {
   transition: transform 0.5s ease-in-out;
+  display: flex;
   width: 100%;
   /* 3 card */
 }
@@ -134,6 +151,12 @@ body {
   right: 0;
 }
 
+@media (max-width: 768px) {
+  .arrow {
+    display: none;
+  }
+}
+
 .step {
   display: none;
 }
@@ -141,6 +164,30 @@ body {
 .step.active {
   display: block;
 }
+
 .hidden {
   display: none !important;
+}
+
+.gap-3>.card {
+  flex: 1;
+  min-height: 100px;
+}
+
+/* Per rendere le card più leggibili e fluide */
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#step-2 .card-title {
+  margin-bottom: 1rem;
+}
+
+.custom-card.active .card {
+  border: 2px solid #007bff;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+  transform: scale(1.05);
+  transition: all 0.3s ease;
 }
