@@ -11,9 +11,8 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
-        rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
 
     <!-- JSON ld -->
     <script type="application/ld+json">
@@ -118,8 +117,6 @@
                                     </ul>
                                 </li>
                             </ul>
-                            </ul>
-
                         </div>
                     </div>
                 </nav>
@@ -148,95 +145,171 @@
         </div>
     </header>
 
-    <section>
+    <section class="py-6">
         <div class="container">
             <div class="row">
-                <div class="blockchain-info d-flex flex-row">
-                    <div class="d-flex flex-column">
-                        <h2>Blockchain Info</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad deleniti facere accusantium vel
-                            tenetur cumque ducimus vero nemo veniam vitae dignissimos aspernatur odio nulla iusto
-                            dolorem iste, velit beatae veritatis doloremque? Fugiat deserunt nobis quo accusantium!
-                            Asperiores ut saepe a.</p>
-                        <button type="button" class="btn btn-primary">Scopri di più</button>
-                    </div>
+                <div class="blockchain-info flex-row">
+                    <div class="d-flex flex-column p-5 align-items-center">
+                        <h2><span style="color: #407667 ;">La</span> Blockchain</h2>
 
-                    <figure>
-                        <picture>
-                            <source srcset="immagine.webp" type="image/webp">
-                            <source srcset="immagine.jpg" type="image/jpeg">
-                            <img src="immagine.jpg" alt="Descrizione dell'immagine">
-                        </picture>
-                        <figcaption>Questa è la didascalia dell'immagine.</figcaption>
-                    </figure>
+                        <hr class="short-divider desktop">
+
+                        <p class="desktop py-3"> La <b>blockchain</b> è un <b>registro pubblico</b>,
+                            <b>condiviso e immutabile</b> in cui ogni
+                            transazione corrisponde alla scrittura di
+                            un nuovo blocco nella catena. <br><br>
+                            Ogni blocco contiene sia le informazioni che si vogliono registrare, sia data e ora della
+                            transazione. <br><br>
+                            Un nuovo blocco si accoda come ultimo alla catena, senza possibilità di alterare blocchi
+                            esistenti o di inserirsi tra due blocchi consecutivi.
+                        </p>
+
+                        <p class="mobile py-3">La <b>blockchain</b> è un <b>registro pubblico</b>,
+                            <b>condiviso e immutabile</b> in cui ogni
+                            transazione corrisponde alla scrittura di
+                            un nuovo blocco nella catena
+                        </p>
+                        <button type="button" class="btn ms-auto btn-bl  ">Scopri di più ></button>
+                    </div>
                 </div>
             </div>
     </section>
 
-    <section>
+    <section class="py-6">
         <div class="container">
             <div class="row">
-                <h2>Info Pacchetti</h2>
-
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit maxime a esse illo nesciunt
-                    voluptatum vero architecto, perferendis minus. Maiores unde harum officia quas dignissimos?</p>
-                <p>Explicabo voluptatem ab enim voluptates numquam sequi voluptatibus aliquid iure adipisci et sapiente
-                    quam possimus non nesciunt, necessitatibus quos blanditiis, harum inventore debitis veniam!
-                    Exercitationem?</p>
-                <p>Architecto distinctio saepe officiis quia vel unde facere omnis nihil veritatis aperiam voluptatum
-                    soluta doloribus tempora iusto rerum sequi, pariatur fugiat dicta eum deserunt? A!</p>
+                <div class="mobile">
+                    <div class="d-flex flex-column align-items-center">
+                        <h2><span style="color: #407667; ">informazioni</span> Iscrizioni</h2>
+                    </div>
+                    <div class=" row row-cols-1 justify-content-center">
+                        <div class="col py-5">
+                            <div class="card d-flex">
+                                <div class="card-body">
+                                    <figure>
+                                        <blockquote class="blockquote text-center">
+                                            <p>Setup iniziale <b>obbligatorio</b></p>
+                                        </blockquote>
+                                    </figure>
+                                </div>
+                                <div class="card-footer justify-content-center d-flex">
+                                    € 1.000
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-body">
+                                    <figure>
+                                        <blockquote class="blockquote text-center">
+                                            <p>Accesso tramite
+                                                <b>API</b>, acquistabile anche
+                                                successivamente
+                                            </p>
+                                        </blockquote>
+                                    </figure>
+                                </div>
+                                <div class="card-footer justify-content-center d-flex">
+                                    € 5.000
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="desktop">
+                    <div class="d-flex flex-column align-items-center">
+                        <h2><span style="color: #407667; ">informazioni</span> Iscrizioni</h2>
+                    </div>
+                    <div class=" row d-flex justify-content-end py-5 ">
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <figure>
+                                        <blockquote class="blockquote text-center">
+                                            <p>Setup iniziale <b>obbligatorio</b></p>
+                                        </blockquote>
+                                    </figure>
+                                </div>
+                                <div class="card-footer justify-content-center d-flex">
+                                    € 1.000
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <figure>
+                                        <blockquote class="blockquote text-center">
+                                            <p>Accesso tramite
+                                                <b>API</b>, acquistabile anche
+                                                successivamente
+                                            </p>
+                                        </blockquote>
+                                    </figure>
+                                </div>
+                                <div class="card-footer justify-content-center d-flex">
+                                    € 5.000
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Codice Federico -->
 
+
     <section>
-        <div class="container">
-            <div class="row">
-                <div class="d-flex flex-row justify-content-center align-items-center">
-                    <h2>Hai in mente un altra offerta? </h2>
-                    <button type="button" class="btn btn-primary">Contattaci!</button>
+        <div class="container my-4 position-relative">
+            <!-- Freccia sinistra -->
+            <button class="arrow arrow-left" id="prevBtn">&#8592;</button>
+
+            <!-- Carousel wrapper -->
+            <div class="carousel-wrapper">
+                <div class="carousel-track d-flex align-items-center" id="carouselTrack">
+                    <!-- Card 1 -->
+                    <div class="col custom-card" data-target="single">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">1 Corso</h5>
+                                <button class="btn btn-primary btn-toggle" data-target="single">Scopri di più</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="col custom-card" data-target="ten">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">10 Corsi</h5>
+                                <button class="btn btn-primary btn-toggle" data-target="ten">Scopri di più</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="col custom-card" data-target="fifty">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">50 Corsi</h5>
+                                <button class="btn btn-primary btn-toggle" data-target="fifty">Scopri di più</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+
+            <!-- Freccia destra -->
+            <button class="arrow arrow-right" id="nextBtn">&#8594;</button>
+
         </div>
-    </section>
-
-    <section>
-        <div class="container my-4">
-
-            <!-- Cards Row -->
-            <div class="row row-cols-1 row-cols-lg-3 g-4">
-                <!-- 1 Corso -->
-                <div class="col">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">1 Corso</h5>
-                            <button class="btn btn-primary btn-toggle" data-target="single">Scopri di più</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 10 Corsi -->
-                <div class="col">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">10 Corsi</h5>
-                            <button class="btn btn-primary btn-toggle" data-target="ten">Scopri di più</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 50 Corsi -->
-                <div class="col">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">50 Corsi</h5>
-                            <button class="btn btn-primary btn-toggle" data-target="fifty">Scopri di più</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="container">
 
             <!-- Form dinamico con struttura già definita -->
             <div id="collapsibleConfig" class="mt-4 d-none">
@@ -255,9 +328,19 @@
                     </form>
                 </div>
             </div>
-
             <!-- Output finale -->
             <div id="outputPreventivo" class="alert alert-info mt-3 d-none"></div>
+        </div>
+
+    </section>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="d-flex flex-column align-items-center mb-3">
+                    <h2>Hai in mente un altra offerta? </h2>
+                    <button type="button" class="btn btn-primary contattaci">Contattaci!</button>
+                </div>
+            </div>
         </div>
     </section>
 

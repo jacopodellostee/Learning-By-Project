@@ -81,6 +81,11 @@ $theme-colors: (
 
 // 8. Add additional custom code here
 
+// Stile Sito (Tutti)
+
+.background {
+  min-height: 80vh;
+}
 
 body {
   font-family: "Lato", sans-serif;
@@ -94,6 +99,61 @@ a {
   color: black;
   text-decoration: none;
 }
+
+
+// Carosello (Jacopo - Pagletta)
+
+.carousel-wrapper {
+  margin: 0 auto;
+  width: 50%;
+  position: relative;
+}
+
+.carousel-track {
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+  /* 3 card */
+}
+
+.custom-card {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0.5;
+  transform: scale(0.9);
+
+  width: 100%;
+  flex: 0 0 100%;
+  /* Ogni card prende tutta la larghezza visibile */
+  padding: 1rem;
+  box-sizing: border-box;
+}
+.custom-card.active {
+  opacity: 1;
+  transform: scale(1.05);
+  z-index: 2;
+}
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.445);
+  color: white;
+  border: none;
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.arrow-left {
+  left: 0;
+}
+
+.arrow-right {
+  right: 0;
+}
+
+//Header (Federico)
 
 header {
   background-image: linear-gradient(to bottom, rgba(196, 193, 193, 0.5), rgba(0, 0, 0, 0)),
@@ -112,6 +172,7 @@ header {
   --bs-card-bg: #ffffffbd;
 }
 
+// Sezioni Info (Cosmin)
 
 .btn-size {
   height: 50px;
@@ -139,6 +200,7 @@ header {
   font-weight: 900; 
 }
 
+
 .zoom-img {
   transition: transform 0.3s ease;
 }
@@ -146,3 +208,45 @@ header {
 .zoom-img:hover {
   transform: scale(1.1);
 }
+
+.ms-lg-8 {
+  @include media-breakpoint-up(lg) {
+    margin-left: 11rem !important;
+  }
+  
+}
+
+h2{
+  color: #C72939;
+}
+
+.desktop{
+  display: block;
+}
+
+.mobile{
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .desktop {
+    display: none;
+  }
+  .mobile {
+    display: block;
+  }
+}
+
+.short-divider {
+  width: 200px;
+  margin: 15px auto;
+  border: none;
+  border-top: 2px solid #407667;
+}
+
+.btn-bl{
+  text-decoration: underline;
+  color: #407667;
+  border: none;
+}
+
