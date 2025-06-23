@@ -1,166 +1,137 @@
-// Configurazioni dei pacchetti
-const configData = {
-  single: {
-    title: "1 Corso - Studenti illimitati",
-    tipo: ["Studenti illimitati"],
-    prices: {
-      "Studenti illimitati": {
-        "10 Anni": 100,
-        "100 Anni": 250
-      }
-    }
-  },
-  ten: {
-    title: "10 Corsi",
-    tipo: ["Individuale", "30 Studenti"],
-    prices: {
-      "Individuale": {
-        "10 Anni": 300,
-        "100 Anni": 750
-      },
-      "30 Studenti": {
-        "10 Anni": 500,
-        "100 Anni": 1250
-      }
-    }
-  },
-  fifty: {
-    title: "50 Corsi",
-    tipo: ["Individuale", "30 Studenti"],
-    prices: {
-      "Individuale": {
-        "10 Anni": 800,
-        "100 Anni": 2000
-      },
-      "30 Studenti": {
-        "10 Anni": 1000,
-        "100 Anni": 2500
-      }
-    }
-  }
-};
+document.addEventListener('DOMContentLoaded', () => {
+  // Variabili DOM
+  const introSection = document.getElementById('introSection');
+  const configurator = document.getElementById('configurator');
 
-const collapsible = document.getElementById("collapsibleConfig");
+  // Carousel
+  const carouselTrack = document.getElementById('carouselTrack');
+  const cards = carouselTrack.querySelectorAll('.custom-card');
+  const btnCarouselPrev = document.getElementById('prevBtn');
+  const btnCarouselNext = document.getElementById('nextBtn');
 
-const tipoWrapper = document.getElementById("tipoWrapper");
+  // Step navigation buttons
+  const btnSelect = document.querySelector('#step-1 button.btn-primary'); // Seleziona button
+  const btnStep2Next = document.querySelector('#step-2 button.btn-primary'); // Avanti step 2
+  const btnStep2Prev = document.querySelector('#step-2 button.btn-secondary'); // Indietro step 2
+  const btnStep3Prev = document.querySelector('#step-3 button.btn-secondary'); // Indietro step 3
 
-const title = document.getElementById("configTitle");
+  // Step div
+  const step1 = document.getElementById('step-1');
+  const step2 = document.getElementById('step-2');
+  const step3 = document.getElementById('step-3');
 
-const tipoSelect = document.getElementById("tipo");
+  // Riepilogo elementi
+  const totalSelectedSpan = document.getElementById('total-selected');
+  const selectedCoursesList = document.getElementById('selected-courses-list');
 
-const durataSelect = document.getElementById("durata");
+  // Configurazione selezionata (usiamo oggetto semplice)
+  let selectedCourseCount = 0;
 
-const form = document.getElementById("configForm");
+  // Carousel index
+  let currentIndex = 0;
 
-const preventivoOutput = document.getElementById("outputPreventivo");
-
-// Funzione per aggiornare le opzioni di durata dinamicamente
-function updateDurataOptions(key, tipo) {
-
-  const durations = configData[key].prices[tipo];
-
-  durataSelect.innerHTML = Object.entries(durations).map(([label, val]) => `<option value="${val}">${label}</option>`).join("");
-}
-
-// Funzione principale per mostrare e popolare il modulo
-function renderConfig(key) {
-
-  const data = configData[key];
-
-  collapsible.classList.remove("d-none");
-
-  title.textContent = data.title;
-
-  if (data.tipo) {
-
-    tipoWrapper.classList.remove("d-none");
-
-    tipoSelect.innerHTML = data.tipo.map(tipo => `<option value="${tipo}">${tipo}</option>`).join("");
-
-    // Aggiorna la durata in base al tipo selezionato
-    updateDurataOptions(key, tipoSelect.value);
-
-    // Listener per cambiare la durata quando cambia il tipo
-    tipoSelect.onchange = () => {
-      updateDurataOptions(key, tipoSelect.value);
-    };
-
-  } else {
-
-    tipoWrapper.classList.add("d-none");
-
-    // Popola direttamente le opzioni "Durata"
-    durataSelect.innerHTML = Object.entries(data.options)
-      .map(([label, val]) => `<option value="${val}">${label}</option>`)
-      .join("");
+  // Funzione per mostrare uno step solo
+  function showStep(stepNumber) {
+    step1.style.display = stepNumber === 1 ? 'block' : 'none';
+    step2.style.display = stepNumber === 2 ? 'block' : 'none';
+    step3.style.display = stepNumber === 3 ? 'block' : 'none';
   }
 
-  preventivoOutput.classList.add("d-none");
-}
+  // Inizializza visibilità
+  showStep(1);
 
-// Prepara la gestione del submit
-form.onsubmit = function (e) {
+  // Funzione aggiorna carousel e classe active
+  function updateCarousel() {
+    const translateX = -currentIndex * 100;
+    carouselTrack.style.transform = `translateX(${translateX}%)`;
+    cards.forEach((card, i) => {
+      if (i === currentIndex) card.classList.add('active');
+      else card.classList.remove('active');
+    });
+  }
 
-  e.preventDefault();
+  // Eventi carousel
+  btnCarouselPrev.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+    updateCarousel();
+  });
+  btnCarouselNext.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % cards.length;
+    updateCarousel();
+  });
 
-  const prezzo = parseFloat(durataSelect.value);
+  // Seleziona card cliccata
+  cards.forEach((card, i) => {
+    card.addEventListener('click', () => {
+      currentIndex = i;
+      updateCarousel();
+    });
+  });
 
-  preventivoOutput.classList.remove("d-none");
+  updateCarousel();
 
-  preventivoOutput.innerHTML = `Prezzo totale: <strong>${prezzo.toFixed(2)}€</strong>`;
-};
+  // Funzione per ottenere corsi selezionati
+  function getSelectedCourses() {
+    const activeCard = carouselTrack.querySelector('.custom-card.active');
+    if (!activeCard) return 0;
+    return parseInt(activeCard.dataset.courses, 10) || 0;
+  }
 
-// Aggiunge i listener ai pulsanti "Scopri di più"
-document.querySelectorAll(".btn-toggle").forEach(btn => {
+  // Aggiorna riepilogo step 2
+  function updateSummary() {
+    selectedCourseCount = getSelectedCourses();
+    totalSelectedSpan.textContent = selectedCourseCount;
 
-  btn.addEventListener("click", () => {
-    const key = btn.getAttribute("data-target");
-    // Se il modulo è già aperto per lo stesso pacchetto, lo chiudiamo
-    if (!collapsible.classList.contains("d-none") && collapsible.dataset.opened === key) {
-      collapsible.classList.add("d-none");
-      collapsible.dataset.opened = "";
+    const certQty = document.querySelector('input[name="certQty"]:checked')?.nextElementSibling?.textContent.trim() || "Quantità non selezionata";
+    const certDuration = document.querySelector('input[name="certDuration"]:checked')?.nextElementSibling?.textContent.trim() || "Durata non selezionata";
+    const apiActive = document.getElementById('apiAccess')?.checked ? "Servizio API attivato" : "Servizio API non attivato";
+
+  }
+  // Avvio configuratore (dal bottone della intro)
+  const btnStart = introSection.querySelector('button.btn-primary');
+  btnStart.addEventListener('click', () => {
+    introSection.style.display = 'none';
+    configurator.style.display = 'block';
+  });
+
+  // Pulsante Seleziona (step 1 -> step 2)
+  btnSelect.addEventListener('click', () => {
+    selectedCourseCount = getSelectedCourses();
+    if (selectedCourseCount === 0) {
+      alert('Seleziona un pacchetto corsi prima di continuare');
       return;
     }
-
-    // Altrimenti lo mostriamo con i nuovi dati
-    renderConfig(key);
-    collapsible.dataset.opened = key;
+    updateSummary();
+    showStep(2);
   });
-});
 
+  // Pulsante Indietro step 2 -> step 1
+  btnStep2Prev.addEventListener('click', () => {
+    showStep(1);
+  });
 
-let currentIndex = 0; // Inizia dalla seconda card
-const track = document.getElementById('carouselTrack');
-const totalCards = track.children.length;
+  // Pulsante Avanti step 2 -> step 3
+  btnStep2Next.addEventListener('click', () => {
+    const certQtySelected = document.querySelector('input[name="certQty"]:checked');
+    const certDurationSelected = document.querySelector('input[name="certDuration"]:checked');
 
-document.getElementById('prevBtn').addEventListener('click', () => {
-  currentIndex = (currentIndex - 1 + totalCards) % totalCards;
-  updateCarousel();
-});
-
-document.getElementById('nextBtn').addEventListener('click', () => {
-  currentIndex = (currentIndex + 1) % totalCards;
-  updateCarousel();
-});
-
-function updateCarousel() {
-  const offset = -currentIndex * 100;
-  track.style.transform = `translateX(${offset}%)`;
-
-  // Gestione classe "active"
-  Array.from(track.children).forEach((card, i) => {
-    card.classList.remove("active");
-    if (i === currentIndex) {
-      card.classList.add("active");
+    if (!certQtySelected || !certDurationSelected) {
+        alert('Seleziona la quantità e la durata del certificato prima di proseguire.');
+        return; // NON andare avanti se mancano le selezioni
     }
+
+    updateSummary();
+    showStep(3);
+
+
+    // Qui puoi aggiungere il calcolo finale prezzo e dettagli
+    document.getElementById('finalPrice').textContent = '€XXX'; // Calcolo prezzo da fare
   });
 
-  // Se il modulo è aperto, aggiorna i dati con la nuova card visibile
-  if (!collapsible.classList.contains("d-none")) {
-    const visibleCard = track.children[currentIndex];
-    const key = visibleCard.getAttribute("data-target");
-    renderConfig(key);
-    collapsible.dataset.opened = key;
-  }
-}
-updateCarousel(); 
+  // Pulsante Indietro step 3 -> step 2
+  btnStep3Prev.addEventListener('click', () => {
+    showStep(2);
+  });
+
+});
+
