@@ -10,10 +10,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const btnCarouselNext = document.getElementById('nextBtn');
 
   // Step navigation buttons
-  const btnSelect = document.querySelector('#step-1 button.btn-primary'); // Seleziona button
-  const btnStep2Next = document.querySelector('#step-2 button.btn-primary'); // Avanti step 2
-  const btnStep2Prev = document.querySelector('#step-2 button.btn-secondary'); // Indietro step 2
-  const btnStep3Prev = document.querySelector('#step-3 button.btn-secondary'); // Indietro step 3
+  const btnSelect = document.querySelector('#step-1 button.btn-verdekd'); // Seleziona button
+  const btnStep2Next = document.querySelector('#step-2 button.btn-verdekd'); // Avanti step 2
+  const btnStep2Prev = document.querySelector('#step-2 button.btn-rossokd'); // Indietro step 2
+  const btnStep3Prev = document.querySelector('#step-3 button.btn-rossokd'); // Indietro step 3
 
   // Step div
   const step1 = document.getElementById('step-1');
@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   }
   // Avvio configuratore (dal bottone della intro)
-  const btnStart = introSection.querySelector('button.btn-primary');
+  const btnStart = introSection.querySelector('button.btn-verdekd');
   btnStart.addEventListener('click', () => {
     introSection.style.display = 'none';
     configurator.style.display = 'block';
