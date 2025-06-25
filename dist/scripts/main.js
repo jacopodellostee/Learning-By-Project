@@ -86,6 +86,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const certDuration = document.querySelector('input[name="certDuration"]:checked')?.nextElementSibling?.textContent.trim() || "Durata non selezionata";
     const apiActive = document.getElementById('apiAccess')?.checked ? "Servizio API attivato" : "Servizio API non attivato";
 
+    const cardQty = document.getElementById('cardQty');
+    if (cardQty) {
+      if (selectedCourseCount === 1) {
+        cardQty.style.display = 'none';
+      } else {
+        cardQty.style.display = 'block';
+      }
+    }
   }
   // Avvio configuratore (dal bottone della intro)
   const btnStart = introSection.querySelector('button.btn-verdekd');
@@ -115,9 +123,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const certQtySelected = document.querySelector('input[name="certQty"]:checked');
     const certDurationSelected = document.querySelector('input[name="certDuration"]:checked');
 
-    if (!certQtySelected || !certDurationSelected) {
+    if (selectedCourseCount > 1) {
+      if (!certQtySelected || !certDurationSelected) {
         alert('Seleziona la quantità e la durata del certificato prima di proseguire.');
         return; // NON andare avanti se mancano le selezioni
+      }
+    }
+    else {
+      const SummaryCertQty = document.getElementById('summary-cert-qty');
+      SummaryCertQty.style.display = 'none';
+      if (!certDurationSelected) {
+        alert('Seleziona la durata del certificato prima di proseguire.');
+        return; // NON andare avanti se mancano le selezioni
+      }
     }
 
     updateSummary();
@@ -135,3 +153,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+function updateSummarySelections() {
+  const certQtyInput = document.querySelector('input[name="certQty"]:checked');
+  const certDurationInput = document.querySelector('input[name="certDuration"]:checked');
+  const apiCheckbox = document.getElementById('apiAccess');
+
+  function getLabelText(input) {
+    if (!input) return '-';
+    const label = document.querySelector(`label[for="${input.id}"]`);
+    return label ? label.textContent.trim() : '-';
+  }
+
+  document.getElementById('summary-cert-qty').textContent = getLabelText(certQtyInput);
+  document.getElementById('summary-cert-duration').textContent = getLabelText(certDurationInput);
+  document.getElementById('summary-api').textContent = apiCheckbox.checked ? 'Attivo' : 'Non attivo';
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const certQtyRadios = document.querySelectorAll('input[name="certQty"]');
+  const certDurationRadios = document.querySelectorAll('input[name="certDuration"]');
+  const apiCheckbox = document.getElementById('apiAccess');
+
+  certQtyRadios.forEach(radio => radio.addEventListener('change', updateSummarySelections));
+  certDurationRadios.forEach(radio => radio.addEventListener('change', updateSummarySelections));
+  apiCheckbox.addEventListener('change', updateSummarySelections);
+
+  updateSummarySelections();
+});
