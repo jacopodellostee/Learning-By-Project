@@ -4,6 +4,7 @@
 // 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
 @import "vendor/functions";
 
+
 // 2. Include any default variable overrides here
 $spacer: 1rem;
 
@@ -193,17 +194,19 @@ header {
 
 .btn-size {
   height: 50px;
-  width: 190px; 
+  width: 190px;
 }
 
-.w-card{
-  
+.w-card {
+
   @include media-breakpoint-up(sm) {
     max-width: 500px;
   }
+
   @include media-breakpoint-up(md) {
     min-width: 550px;
   }
+
   @include media-breakpoint-up(lg) {
     max-width: 600px;
   }
@@ -293,3 +296,4 @@ h2{
   transition: all 0.3s ease;
 
 }
+
