@@ -218,6 +218,7 @@ header {
   font-weight: 900; 
 }
 
+
 .zoom-img {
   transition: transform 0.3s ease;
 }
@@ -297,3 +298,8 @@ h2{
 
 }
 
+.h-md-167{
+ @include media-breakpoint(sm) {
+    height: 167px;
+  }
+}
