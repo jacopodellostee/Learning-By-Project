@@ -87,8 +87,17 @@ $theme-colors: (
   min-height: 80vh;
 }
 
+html,
 body {
+  height: 100%;
   font-family: "Lato", sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+body>main,
+#configurator {
+  flex: 1;
 }
 
 .active {
@@ -103,14 +112,23 @@ a {
 
 // Carosello (Jacopo - Pagletta)
 
+
+#carouselContainer {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+
 .carousel-wrapper {
-  margin: 0 auto;
-  width: 50%;
+  overflow: hidden;
   position: relative;
+  padding: 0 10%;
 }
 
 .carousel-track {
   transition: transform 0.5s ease-in-out;
+  display: flex;
   width: 100%;
   /* 3 card */
 }
@@ -200,7 +218,6 @@ header {
   font-weight: 900; 
 }
 
-
 .zoom-img {
   transition: transform 0.3s ease;
 }
@@ -209,15 +226,8 @@ header {
   transform: scale(1.1);
 }
 
-.ms-lg-8 {
-  @include media-breakpoint-up(lg) {
-    margin-left: 11rem !important;
-  }
-  
-}
-
 h2{
-  color: #C72939;
+  color:#F82B2B;
 }
 
 .desktop{
@@ -237,6 +247,24 @@ h2{
   }
 }
 
+.step {
+  display: none;
+}
+
+.step.active {
+  display: block;
+}
+
+
+.hidden {
+  display: none !important;
+}
+
+.gap-3>.card {
+  flex: 1;
+  min-height: 100px;
+}
+
 .short-divider {
   width: 200px;
   margin: 15px auto;
@@ -248,5 +276,24 @@ h2{
   text-decoration: underline;
   color: #407667;
   border: none;
+}
+
+
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+#step-2 .card-title {
+  margin-bottom: 1rem;
+}
+
+.custom-card.active .card {
+  border: 2px solid #007bff;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+
 }
 
