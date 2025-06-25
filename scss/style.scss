@@ -20,6 +20,7 @@ $teal: #20c997;
 $cyan: #0dcaf0;
 $verdekd: #407667;
 $rossokd: #C72939;
+$blukd: #3A426E;
 
 // 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
 
@@ -51,6 +52,7 @@ $theme-colors: (
   "dark": $dark,
   "verdekd": $verdekd,
   "rossokd": $rossokd,
+  "blukd": $blukd,
 );
 
 
@@ -104,9 +106,14 @@ body>main,
   color: #F82B2B;
 }
 
-a {
+.nav-item a {
   color: black;
   text-decoration: none;
+}
+
+.txt-footer{
+  text-decoration: none;
+  color: white;
 }
 
 
@@ -351,7 +358,7 @@ h2 {
   }
 
   @include media-breakpoint-up(lg) {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
   }
 }
