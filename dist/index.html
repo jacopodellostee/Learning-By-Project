@@ -11,9 +11,14 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link
         href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
         rel="stylesheet">
+
+
+
+    <script defer src="./scripts/main.js"></script>
 
     <!-- JSON ld -->
     <script type="application/ld+json">
@@ -56,240 +61,394 @@
 </head>
 
 <body>
-    <header>
-        <div class="container-fluid">
-            <div class="row">
-                <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm p-3 mb-5 bg-body-tertiary rounded w-100">
-                    <div class="container-fluid ">
-                        <img src="img/logo.webp" height="50" alt="Logo">
 
-                        <!-- bottone hamburger mobile -->
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
+    <div id="introSection">
+        <header>
+            <div class="container-fluid">
+                <div class="row">
+                    <nav
+                        class="navbar navbar-expand-lg bg-body-tertiary shadow-sm p-3 mb-5 bg-body-tertiary rounded w-100">
+                        <div class="container-fluid">
+                            <img src="img/logo.webp" height="50" alt="Logo">
 
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-                            <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
-                                <li class="nav-item px-3">
-                                    <a class="active" aria-current="page" href="#">Home</a>
-                                </li>
-                                <li class="nav-item px-3">
-                                    <a class="nav-link" href="#">Contatti</a>
-                                </li>
-                                <li class="nav-item px-3">
-                                    <a class="nav-link disabled" aria-disabled="true">Configuratore</a>
-                                </li>
-                                <li class="nav-item px-3">
-                                    <a class="nav-link disabled" aria-disabled="true">Certificati sulla blockchain</a>
-                                </li>
-                            </ul>
-
-                            <ul class="navbar-nav">
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle ms-2" href="#" role="button"
-                                        data-bs-toggle="dropdown" aria-expanded="false">
-                                        Lingua
-                                    </a>
-                                    <ul class="dropdown-menu dropdown-menu-end">
-                                        <li>
-                                            <a class="dropdown-item d-flex align-items-center gap-2" href="#">
-                                                <img src="img/bandiera-italia.png" height="20" alt="IT"> Italiano
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <hr class="dropdown-divider">
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item d-flex align-items-center gap-2" href="#">
-                                                <img src="img/bandiera-inghilterra.png" height="20" alt="EN"> English
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <hr class="dropdown-divider">
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item d-flex align-items-center gap-2" href="#">
-                                                <img src="img/bandiera-spagna.png" height="20" alt="ES"> Español
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                            </ul>
-
+                            <!-- bottone hamburger mobile -->
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
+                                    <li class="nav-item px-3">
+                                        <a class="active" aria-current="page" href="#">Home</a>
+                                    </li>
+                                    <li class="nav-item px-3">
+                                        <a class="nav-link" href="#">Contatti</a>
+                                    </li>
+                                    <li class="nav-item px-3">
+                                        <a class="nav-link" href="">Configuratore</a>
+                                    </li>
+                                    <li class="nav-item px-3">
+                                        <a class="nav-link" href="">Certificati sulla
+                                            blockchain</a>
+                                    </li>
+                                </ul>
+                                <ul class="navbar-nav">
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle ms-2" href="#" role="button"
+                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                            Lingua
+                                        </a>
+                                        <ul class="dropdown-menu dropdown-menu-end">
+                                            <li>
+                                                <a class="dropdown-item d-flex align-items-center gap-2" href="#">
+                                                    <img src="img/bandiera-italia.png" height="20" alt="IT"> Italiano
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <hr class="dropdown-divider">
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item d-flex align-items-center gap-2" href="#">
+                                                    <img src="img/bandiera-inghilterra.png" height="20" alt="EN">
+                                                    English
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <hr class="dropdown-divider">
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item d-flex align-items-center gap-2" href="#">
+                                                    <img src="img/bandiera-spagna.png" height="20" alt="ES"> Español
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                </nav>
-
-                <div class="row-cols-lg-2 ps-6">
-                    <div class="col">
-                        <div class="card vh-50 rounded-5">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk
-                                    of
-                                    the card’s content.</p>
-                                <a href="#" class="card-link btn btn-grkedos">Vai al configuratore >></a>
-                                <a href="#" class="card-link">Another link</a>
+                    </nav>
+                    <div class="row-cols-md-2 ">
+                        <div class="col px-2 mx-2 ms-md-6 ms-lg-13">
+                            <div class="card vh-50 rounded-5 w-card">
+                                <div class="card-body">
+                                    <div class=" d-flex flex-column-reverse">
+                                        <h1 class="card-title pt-2">Configuratore KeCert</h1>
+                                        <h2 class="card-subtitle mb-2 pt-3 ">Scopri il Nuovo</h2>
+                                    </div>
+                                    <p class="card-text pt-4">Personalizza il tuo software per l’emissione di
+                                        certificati
+                                        blockchain.</p>
+                                    <p class="card-text">Scegli le funzionalità che ti servono, confronta le opzioni e
+                                        crea
+                                        la soluzione perfetta per il tuo business.</p>
+                                    <div class="d-flex justify-content-center zoom-img">
+                                        <button type="button" class="btn btn-verdekd p-2 d-flex align-items-center mt-5">Calcola Preventivo</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
 
                 </div>
             </div>
-        </div>
-    </header>
+        </header>
 
-    <section>
-        <div class="container">
-            <div class="row">
-                <div class="blockchain-info d-flex flex-row">
-                    <div class="d-flex flex-column">
-                        <h2>Blockchain Info</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad deleniti facere accusantium vel
-                            tenetur cumque ducimus vero nemo veniam vitae dignissimos aspernatur odio nulla iusto
-                            dolorem iste, velit beatae veritatis doloremque? Fugiat deserunt nobis quo accusantium!
-                            Asperiores ut saepe a.</p>
-                        <button type="button" class="btn btn-primary">Scopri di più</button>
+
+        <section class="py-6">
+            <div class="container">
+                <div class="row">
+                    <div class="blockchain-info flex-row">
+                        <div class="d-flex flex-column p-5 align-items-center">
+                            <h2><span style="color: #407667 ;">La</span> Blockchain</h2>
+
+                            <hr class="short-divider desktop">
+
+                            <p class="desktop py-3"> La <b>blockchain</b> è un <b>registro pubblico</b>,
+                                <b>condiviso e immutabile</b> in cui ogni
+                                transazione corrisponde alla scrittura di
+                                un nuovo blocco nella catena. <br><br>
+                                Ogni blocco contiene sia le informazioni che si vogliono registrare, sia data e ora
+                                della
+                                transazione. <br><br>
+                                Un nuovo blocco si accoda come ultimo alla catena, senza possibilità di alterare blocchi
+                                esistenti o di inserirsi tra due blocchi consecutivi.
+                            </p>
+
+                            <p class="mobile py-3">La <b>blockchain</b> è un <b>registro pubblico</b>,
+                                <b>condiviso e immutabile</b> in cui ogni
+                                transazione corrisponde alla scrittura di
+                                un nuovo blocco nella catena
+                            </p>
+                            <button type="button" class="btn ms-auto btn-bl  ">Scopri di più ></button>
+                        </div>
                     </div>
+                </div>
+        </section>
 
-                    <figure>
-                        <picture>
-                            <source srcset="immagine.webp" type="image/webp">
-                            <source srcset="immagine.jpg" type="image/jpeg">
-                            <img src="immagine.jpg" alt="Descrizione dell'immagine">
-                        </picture>
-                        <figcaption>Questa è la didascalia dell'immagine.</figcaption>
-                    </figure>
+        <section class="py-6">
+            <div class="container">
+                <div class="row">
+                    <div class="mobile">
+                        <div class="d-flex flex-column align-items-center">
+                            <h2><span style="color: #407667; ">informazioni</span> Iscrizioni</h2>
+                        </div>
+                        <div class=" row row-cols-1 justify-content-center">
+                            <div class="col py-5">
+                                <div class="card d-flex">
+                                    <div class="card-body">
+                                        <figure>
+                                            <blockquote class="blockquote text-center">
+                                                <p>Setup iniziale <b>obbligatorio</b></p>
+                                            </blockquote>
+                                        </figure>
+                                    </div>
+                                    <div class="card-footer justify-content-center d-flex">
+                                        € 1.000
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <figure>
+                                            <blockquote class="blockquote text-center">
+                                                <p>Accesso tramite
+                                                    <b>API</b>, acquistabile anche
+                                                    successivamente
+                                                </p>
+                                            </blockquote>
+                                        </figure>
+                                    </div>
+                                    <div class="card-footer justify-content-center d-flex">
+                                        € 5.000
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-    </section>
-
-    <section>
-        <div class="container">
-            <div class="row">
-                <h2>Info Pacchetti</h2>
-
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit maxime a esse illo nesciunt
-                    voluptatum vero architecto, perferendis minus. Maiores unde harum officia quas dignissimos?</p>
-                <p>Explicabo voluptatem ab enim voluptates numquam sequi voluptatibus aliquid iure adipisci et sapiente
-                    quam possimus non nesciunt, necessitatibus quos blanditiis, harum inventore debitis veniam!
-                    Exercitationem?</p>
-                <p>Architecto distinctio saepe officiis quia vel unde facere omnis nihil veritatis aperiam voluptatum
-                    soluta doloribus tempora iusto rerum sequi, pariatur fugiat dicta eum deserunt? A!</p>
+            <div class="container">
+                <div class="row">
+                    <div class="desktop">
+                        <div class="d-flex flex-column align-items-center">
+                            <h2><span style="color: #407667; ">informazioni</span> Iscrizioni</h2>
+                        </div>
+                        <div class=" row d-flex justify-content-end py-5 ">
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <figure>
+                                            <blockquote class="blockquote text-center">
+                                                <p>Setup iniziale <b>obbligatorio</b></p>
+                                            </blockquote>
+                                        </figure>
+                                    </div>
+                                    <div class="card-footer justify-content-center d-flex">
+                                        € 1.000
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <figure>
+                                            <blockquote class="blockquote text-center">
+                                                <p>Accesso tramite
+                                                    <b>API</b>, acquistabile anche
+                                                    successivamente
+                                                </p>
+                                            </blockquote>
+                                        </figure>
+                                    </div>
+                                    <div class="card-footer justify-content-center d-flex">
+                                        € 5.000
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
-
+        </section>
+    </div>
     <!-- Codice Federico -->
 
+
+
     <section>
         <div class="container">
             <div class="row">
-                <div class="d-flex flex-row justify-content-center align-items-center">
+                <div class="d-flex flex-column align-items-center mb-3">
                     <h2>Hai in mente un altra offerta? </h2>
-                    <button type="button" class="btn btn-primary">Contattaci!</button>
+                    <button type="button" class="btn btn-verdekd contattaci">Contattaci!</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <section>
+    <!-- CONFIGURATORE (nascosto inizialmente) -->
+    <div id="configurator" style="display: none;">
+        <a href="index.html">Torna alla home</a>
         <div class="container my-4">
+            <!-- Step 1 -->
 
-            <!-- Cards Row -->
-            <div class="row row-cols-1 row-cols-lg-3 g-4">
-                <!-- 1 Corso -->
-                <div class="col">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">1 Corso</h5>
-                            <button class="btn btn-primary btn-toggle" data-target="single">Scopri di più</button>
+            <div class="step active" id="step-1">
+                <h3 class="h2 text-center">Seleziona il numero di corsi</h3>
+                <div class="d-flex align-items-center justify-content-between position-relative" id="carouselContainer">
+                    <button class="arrow arrow-left" id="prevBtn">&#8592;</button>
+
+                    <div class="carousel-wrapper flex-grow-1 mx-3">
+                        <div class="carousel-track d-flex align-items-center" id="carouselTrack">
+                            <!-- Card 1 -->
+                            <div class="col custom-card" data-courses="1">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h5 class="card-title">1 Corso</h5>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card 2 -->
+                            <div class="col custom-card" data-courses="10">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h5 class="card-title">10 Corsi</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card 3 -->
+                            <div class="col custom-card" data-courses="50">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h5 class="card-title">50 Corsi</h5>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
+
+                    <button class="arrow arrow-right" id="nextBtn">&#8594;</button>
                 </div>
 
-                <!-- 10 Corsi -->
-                <div class="col">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">10 Corsi</h5>
-                            <button class="btn btn-primary btn-toggle" data-target="ten">Scopri di più</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 50 Corsi -->
-                <div class="col">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">50 Corsi</h5>
-                            <button class="btn btn-primary btn-toggle" data-target="fifty">Scopri di più</button>
-                        </div>
-                    </div>
+                <div class="d-flex justify-content-center mt-3">
+                    <button class="btn btn-verdekd">Seleziona</button>
                 </div>
             </div>
 
-            <!-- Form dinamico con struttura già definita -->
-            <div id="collapsibleConfig" class="mt-4 d-none">
-                <div class="card border p-3 bg-light">
-                    <h5 id="configTitle">Titolo Configurazione</h5>
-                    <form id="configForm">
-                        <div class="form-group mb-2 d-none" id="tipoWrapper">
-                            <label for="tipo">Tipo Corso</label>
-                            <select class="form-control" id="tipo" required></select>
+            <!-- Step 2 -->
+            <div class="step" id="step-2">
+
+                <button class="btn btn-rossokd">Indietro</button>
+                <h3 class="h2 text-center">Configuratore del pacchetto scelto</h3>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6" id="summaryContainer">
+                            <h3>Riepilogo Corsi</h3>
+                            <p>Totale corsi: <span id="total-selected">0</span></p>
+                            <p>Quantità certificati: <span id="summary-cert-qty">-</span></p>
+                            <p>Durata certificato: <span id="summary-cert-duration">-</span></p>
+                            <p>Servizio API: <span id="summary-api">Non attivo</span></p>
+                            <div class="d-flex justify-content-center mt-3">
+                                <button class="btn btn-verdekd" id="toStep3">Calcola preventivo</button>
+                            </div>
+                            <a href="#">contattaci per personalizzare il tuo pacchetto</a>
                         </div>
-                        <div class="form-group mb-2">
-                            <label for="durata">Durata</label>
-                            <select class="form-control" id="durata" required></select>
+                        <div class="col-6 gap-3 ">
+                            <!-- Card 1: Quantità Certificati -->
+                            <div class="card my-3">
+                                <div class="card-body">
+                                    <h5 class="card-title">Quantità Certificati</h5>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="certQty" id="singleCert"
+                                            value="single">
+                                        <label class="form-check-label" for="singleCert">Certificati per singola
+                                            persona</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="certQty" id="multiCert"
+                                            value="multi">
+                                        <label class="form-check-label" for="multiCert">Certificati per 30
+                                            persone</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card 2: Durata Certificato -->
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <h5 class="card-title">Durata Certificato</h5>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="certDuration" id="dur10"
+                                            value="10">
+                                        <label class="form-check-label" for="dur10">Durata di 10 anni dal
+                                            rilascio</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="certDuration" id="illimitata"
+                                            value="illimitata">
+                                        <label class="form-check-label" for="illimitata">Durata illimitata</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card 3: Servizio API -->
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Integrazione tramite API</h5>
+                                    <p class="card-text">
+                                        Integra <strong>KeCert</strong> direttamente nei tuoi sistemi aziendali grazie
+                                        all’accesso tramite API.<br><br>
+                                        Questa opzione ti consente di automatizzare l’emissione dei certificati
+                                        blockchain,
+                                        migliorando efficienza e scalabilità nei tuoi flussi operativi.<br><br>
+                                        L’attivazione ha un costo una tantum di <strong>5.000€</strong> per cliente ed è
+                                        acquistabile anche in un secondo momento, senza vincoli di canone annuale.
+                                    </p>
+                                    <div class="form-check mt-2">
+                                        <input class="form-check-input" type="checkbox" id="apiAccess">
+                                        <label class="form-check-label" for="apiAccess">Attiva servizio API</label>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <button type="submit" class="btn btn-success mt-2">Calcola Preventivo</button>
-                    </form>
+
+                    </div>
+                </div>
+
+            </div>
+            <!-- Step 3 -->
+            <div class="step" id="step-3">
+                <div class="alert alert-info mt-3">
+                    <div class="d-flex justify-content-between mt-3">
+                        <button class="btn btn-rossokd">Indietro</button>
+                    </div>
+                    <h2>Preventivo stimato:</h5>
+                        <p>Il totale delle opzioni selezionate ammonta a circa</p>
+                        <p id="finalPrice">€XXX</p>
+                        <h5>Interessato alla proposta?</h5>
+                        <p>Lascia i tuoi recapiti e il nostro team ti contatterà al più presto per fornirti tutti i
+                            dettagli.</p>
+                        <form id="contactForm">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="mb-3">
+                                        <input type="email" class="form-control" id="email" name="email" required
+                                            placeholder="Inserisci la tua email">
+                                    </div>
+                                    <div class="mb-3">
+                                        <input type="tel" class="form-control" id="phone" name="phone" required
+                                            placeholder="Inserisci il tuo telefono">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-verdekd">Invia</button>
+                        </form>
                 </div>
             </div>
-
-            <!-- Output finale -->
-            <div id="outputPreventivo" class="alert alert-info mt-3 d-none"></div>
         </div>
-    </section>
-
-<section>
-   
-
-
-
-  <title>Riepilogo Acquisto</title>
-
-  <div class="card">
-    <h1>Conferma Acquisto</h1>
-
-    <p class="summary">Servizio API KeCert: €5.000</p>
-    <p class="total">Totale: €5.000</p>
-
-    <form action="#" method="post">
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" placeholder="esempio@email.com" required>
-
-      <label for="telefono">Numero di telefono</label>
-      <input type="tel" id="telefono" name="telefono" placeholder="+39 123 4567890" required>
-
-      <button type="submit">Invia richiesta</button>
-    </form>
-  </div>
-
-</body>
-</html>
-
-
-</section>
-
-
-
+    </div>
 
     <footer class="site-footer bg-dark text-light py-5">
         <div class="container">
@@ -333,7 +492,7 @@
             </div>
 
             <!-- Copyright -->
-            <div class="text-center mt-4 small text-secondary">
+            <div class="text-center mt-4 small text-rossokd">
                 &copy; 2025 NomeSito. Tutti i diritti riservati.
             </div>
         </div>
@@ -346,7 +505,36 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.min.js"
         integrity="sha384-RuyvpeZCxMJCqVUGFI0Do1mQrods/hhxYlcVfGPOfQtPJh0JCw12tUAZ/Mv10S7D"
         crossorigin="anonymous"></script>
-    <script defer src="./scripts/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function updateSummarySelections() {
+            const certQtyInput = document.querySelector('input[name="certQty"]:checked');
+            const certDurationInput = document.querySelector('input[name="certDuration"]:checked');
+            const apiCheckbox = document.getElementById('apiAccess');
+
+            function getLabelText(input) {
+                if (!input) return '-';
+                const label = document.querySelector(`label[for="${input.id}"]`);
+                return label ? label.textContent.trim() : '-';
+            }
+
+            document.getElementById('summary-cert-qty').textContent = getLabelText(certQtyInput);
+            document.getElementById('summary-cert-duration').textContent = getLabelText(certDurationInput);
+            document.getElementById('summary-api').textContent = apiCheckbox.checked ? 'Attivo' : 'Non attivo';
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const certQtyRadios = document.querySelectorAll('input[name="certQty"]');
+            const certDurationRadios = document.querySelectorAll('input[name="certDuration"]');
+            const apiCheckbox = document.getElementById('apiAccess');
+
+            certQtyRadios.forEach(radio => radio.addEventListener('change', updateSummarySelections));
+            certDurationRadios.forEach(radio => radio.addEventListener('change', updateSummarySelections));
+            apiCheckbox.addEventListener('change', updateSummarySelections);
+
+            updateSummarySelections();
+        });
+    </script>
 </body>
 
 </html>
