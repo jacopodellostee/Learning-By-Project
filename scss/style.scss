@@ -5,6 +5,8 @@
 @import "vendor/functions";
 
 // 2. Include any default variable overrides here
+$spacer: 1rem;
+
 $blue: #0d6efd;
 $indigo: #6610f2;
 $purple: #6f42c1;
@@ -15,13 +17,15 @@ $yellow: #ffc107;
 $green: #198754;
 $teal: #20c997;
 $cyan: #0dcaf0;
-$grkedos: #50C3A3;
+$verdekd: #407667;
+$rossokd: #C72939;
 
 // 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
+
 @import "vendor/variables";
 @import "vendor/variables-dark";
-
 // 4. Include any default map overrides here
+
 $spacers: (
   0: 0,
   1: $spacer * .25,
@@ -30,7 +34,10 @@ $spacers: (
   4: $spacer * 1.5,
   5: $spacer * 3,
   6: $spacer * 4,
+  8: $spacer * 6,
+  13: $spacer * 11,
 );
+
 
 $theme-colors: (
   "primary": $primary,
@@ -41,7 +48,11 @@ $theme-colors: (
   "danger": $danger,
   "light": $light,
   "dark": $dark,
+  "verdekd": $verdekd,
+  "rossokd": $rossokd,
 );
+
+
 
 // 5. Include remainder of required parts
 @import "vendor/maps";
@@ -69,9 +80,23 @@ $theme-colors: (
 
 // 8. Add additional custom code here
 
+// Stile Sito (Tutti)
 
+.background {
+  min-height: 80vh;
+}
+
+html,
 body {
+  height: 100%;
   font-family: "Lato", sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+body>main,
+#configurator {
+  flex: 1;
 }
 
 .active {
@@ -83,9 +108,73 @@ a {
   text-decoration: none;
 }
 
+
+// Carosello (Jacopo - Pagletta)
+
+
+#carouselContainer {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+
+.carousel-wrapper {
+  overflow: hidden;
+  position: relative;
+  padding: 0 10%;
+}
+
+.carousel-track {
+  transition: transform 0.5s ease-in-out;
+  display: flex;
+  width: 100%;
+  /* 3 card */
+}
+
+.custom-card {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0.5;
+  transform: scale(0.9);
+
+  width: 100%;
+  flex: 0 0 100%;
+  /* Ogni card prende tutta la larghezza visibile */
+  padding: 1rem;
+  box-sizing: border-box;
+}
+.custom-card.active {
+  opacity: 1;
+  transform: scale(1.05);
+  z-index: 2;
+}
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.445);
+  color: white;
+  border: none;
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.arrow-left {
+  left: 0;
+}
+
+.arrow-right {
+  right: 0;
+}
+
+//Header (Federico)
+
 header {
   background-image: linear-gradient(to bottom, rgba(196, 193, 193, 0.5), rgba(0, 0, 0, 0)),
-    url('https://www.kedos-srl.it/wp-content/uploads/2021/10/bg_home-1.jpg');
+    url("https://www.kedos-srl.it/wp-content/uploads/2021/10/bg_home-1.jpg");
   background-size: cover;
   position: relative;
   background-position: 50%;
@@ -100,8 +189,42 @@ header {
   --bs-card-bg: #ffffffbd;
 }
 
+// Sezioni Info (Cosmin)
+
+.btn-size {
+  height: 50px;
+  width: 190px; 
+}
+
+.w-card{
+  
+  @include media-breakpoint-up(sm) {
+    max-width: 500px;
+  }
+  @include media-breakpoint-up(md) {
+    min-width: 550px;
+  }
+  @include media-breakpoint-up(lg) {
+    max-width: 600px;
+  }
+}
+
+.card-title {
+  margin-bottom: var(--bs-card-title-spacer-y);
+  color: $rossokd;
+  font-weight: 900; 
+}
+
+.zoom-img {
+  transition: transform 0.3s ease;
+}
+
+.zoom-img:hover {
+  transform: scale(1.1);
+}
+
 h2{
-  color: #C72939;
+  color:#F82B2B;
 }
 
 .desktop{
@@ -121,6 +244,24 @@ h2{
   }
 }
 
+.step {
+  display: none;
+}
+
+.step.active {
+  display: block;
+}
+
+
+.hidden {
+  display: none !important;
+}
+
+.gap-3>.card {
+  flex: 1;
+  min-height: 100px;
+}
+
 .short-divider {
   width: 200px;
   margin: 15px auto;
@@ -132,4 +273,23 @@ h2{
   text-decoration: underline;
   color: #407667;
   border: none;
+}
+
+
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+#step-2 .card-title {
+  margin-bottom: 1rem;
+}
+
+.custom-card.active .card {
+  border: 2px solid #007bff;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+
 }
