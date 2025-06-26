@@ -207,9 +207,14 @@ function updateSummarySelections() {
 
   const apiCheckbox = document.getElementById('apiAccess');
 
-  // se si seleziona '1 Corso' seleziono solo la durata
+  debugger;
 
-  prezzo += prezziCertificati[corsoSelezionato][quantità][durata];
+  if(corsoSelezionato === "1") {
+      let qtyToUse = quantità || 'multi';
+      prezzo += prezziCertificati["1"][qtyToUse][durata];
+  }
+  else
+    prezzo += prezziCertificati[corsoSelezionato][quantità][durata];
 
   apiCheckbox.checked ? prezzo += 5000 : prezzo;
 
