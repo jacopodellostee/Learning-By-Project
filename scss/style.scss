@@ -32,7 +32,7 @@ $spacers: (
   0: 0,
   1: $spacer * .25,
   2: $spacer * .5,
-  3: $spacer,
+  3: $spacer * 1,
   4: $spacer * 1.5,
   5: $spacer * 3,
   6: $spacer * 4,
@@ -111,7 +111,7 @@ body>main,
   text-decoration: none;
 }
 
-.txt-footer{
+.txt-footer {
   text-decoration: none;
   color: white;
 }
@@ -184,7 +184,7 @@ body>main,
 
 header {
   background-image: linear-gradient(to bottom, rgba(196, 193, 193, 0.5), rgba(0, 0, 0, 0)),
-    url("https://www.kedos-srl.it/wp-content/uploads/2021/10/bg_home-1.jpg");
+    url("../img/bg-hero.webp");
   background-size: cover;
   position: relative;
   background-position: 50%;
@@ -350,6 +350,7 @@ h2 {
 
 .w-nav {
   margin: 0 auto;
+
   @include media-breakpoint-up(sm) {
     max-width: 300px;
   }
