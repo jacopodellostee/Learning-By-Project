@@ -303,3 +303,9 @@ h2{
     height: 167px;
   }
 }
+
+.spostamento{
+  @include media-breakpoint(lg) {
+    margin-left: 20px;
+  }
+}
