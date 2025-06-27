@@ -20,6 +20,7 @@ $teal: #20c997;
 $cyan: #0dcaf0;
 $verdekd: #407667;
 $rossokd: #C72939;
+$blukd: #3A426E;
 
 // 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
 
@@ -31,7 +32,7 @@ $spacers: (
   0: 0,
   1: $spacer * .25,
   2: $spacer * .5,
-  3: $spacer,
+  3: $spacer * 1,
   4: $spacer * 1.5,
   5: $spacer * 3,
   6: $spacer * 4,
@@ -51,6 +52,7 @@ $theme-colors: (
   "dark": $dark,
   "verdekd": $verdekd,
   "rossokd": $rossokd,
+  "blukd": $blukd,
 );
 
 
@@ -104,9 +106,14 @@ body>main,
   color: #F82B2B;
 }
 
-a {
+.nav-item a {
   color: black;
   text-decoration: none;
+}
+
+.txt-footer {
+  text-decoration: none;
+  color: white;
 }
 
 
@@ -144,11 +151,13 @@ a {
   padding: 1rem;
   box-sizing: border-box;
 }
+
 .custom-card.active {
   opacity: 1;
   transform: scale(1.05);
   z-index: 2;
 }
+
 .arrow {
   position: absolute;
   top: 50%;
@@ -175,7 +184,7 @@ a {
 
 header {
   background-image: linear-gradient(to bottom, rgba(196, 193, 193, 0.5), rgba(0, 0, 0, 0)),
-    url("https://www.kedos-srl.it/wp-content/uploads/2021/10/bg_home-1.jpg");
+    url("../img/bg-hero.webp");
   background-size: cover;
   position: relative;
   background-position: 50%;
@@ -215,7 +224,7 @@ header {
 .card-title {
   margin-bottom: var(--bs-card-title-spacer-y);
   color: $rossokd;
-  font-weight: 900; 
+  font-weight: 900;
 }
 
 
@@ -227,15 +236,15 @@ header {
   transform: scale(1.1);
 }
 
-h2{
-  color:#F82B2B;
+h2 {
+  color: #F82B2B;
 }
 
-.desktop{
+.desktop {
   display: block;
 }
 
-.mobile{
+.mobile {
   display: none;
 }
 
@@ -243,6 +252,7 @@ h2{
   .desktop {
     display: none;
   }
+
   .mobile {
     display: block;
   }
@@ -273,7 +283,7 @@ h2{
   border-top: 2px solid #407667;
 }
 
-.btn-bl{
+.btn-bl {
   text-decoration: underline;
   color: #407667;
   border: none;
@@ -298,14 +308,61 @@ h2{
 
 }
 
-.h-md-167{
- @include media-breakpoint(sm) {
-    height: 167px;
+.nav-item a {
+  position: relative;
+  overflow: hidden;
+  height: 24px;
+  /* altezza del testo */
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.roll {
+  display: block;
+  transform: translateY(0);
+  transition: transform 0.3s ease;
+}
+
+/* Al passaggio del mouse: fa salire il testo attuale */
+.nav-item a:hover .roll {
+  animation: slide-up-reveal 0.5s forwards;
+}
+
+/* Animazione: sale e rientra da sotto */
+@keyframes slide-up-reveal {
+  0% {
+    transform: translateY(0);
+  }
+
+  49% {
+    transform: translateY(-100%);
+  }
+
+  50% {
+    transform: translateY(100%);
+  }
+
+  100% {
+    transform: translateY(0);
   }
 }
 
-.spostamento{
-  @include media-breakpoint(lg) {
-    margin-left: 20px;
+.w-nav {
+  margin: 0 auto;
+  max-width: 270px;
+
+  @include media-breakpoint-up(md) {
+    min-width: 500px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    max-width: 900px;
+  }
+}
+
+.lingua-nav {
+  @include media-breakpoint-between(sm,md) {
+    margin-top: -4rem;
   }
 }
