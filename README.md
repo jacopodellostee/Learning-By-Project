@@ -135,7 +135,6 @@ Learning-By-Project/
 ├── prepros.config               
 ├── README.md                    
 ├── Learning-By-Project.lnk      # Collegamento rapido al progetto (facoltativo)
-
 ```
 
 ##  Dettaglio Cartelle
