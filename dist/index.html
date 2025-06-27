@@ -60,9 +60,19 @@
         <header>
             <div class="container-fluid">
                 <div class="row">
-                    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm p-3 mb-5 bg-body-tertiary w-100">
+                    <nav
+                        class="navbar navbar-expand-lg bg-body-tertiary shadow-sm p-3 mb-5 bg-body-tertiary rounded-4 w-nav">
                         <div class="container-fluid">
-                            <img src="img/logo.webp" height="50" alt="Logo">
+                            <figure>
+                                <picture>
+                                    <source srcset="img/logo.avif" type="image/avif">
+                                    <source srcset="img/logo.webp" type="image/webp">
+                                    <source srcset="img/logo.jpeg" type="image/jpeg">
+                                    <source srcset="img/logo.png" type="image/png">
+                                    <img src="img/logo.png" alt="">
+                                </picture>
+                            </figure>
+                            <img src="img/logo.webp" class="me-auto" height="50" alt="Logo">
 
                             <!-- bottone hamburger mobile -->
                             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -72,30 +82,31 @@
                             </button>
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
-                                    <li class="nav-item px-3">
-                                        <a class="active" aria-current="page" href="#">Home</a>
+                                    <li class="nav-item mt-xs-4">
+                                        <a class="nav-link" aria-current="page" href="#"><span
+                                                class="roll active">Home</span></a>
                                     </li>
-                                    <li class="nav-item px-3">
-                                        <a class="nav-link" href="#">Contatti</a>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#contatti"><span class="roll">Contatti</span></a>
                                     </li>
-                                    <li class="nav-item px-3">
-                                        <a class="nav-link" href="">Configuratore</a>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#configurator"><span
+                                                class="roll">Configuratore</span></a>
                                     </li>
-                                    <li class="nav-item px-3">
-                                        <a class="nav-link" href="">Certificati sulla
-                                            blockchain</a>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#infoblockchain"><span class="roll">Certificati sulla
+                                                blockchain</span></a>
                                     </li>
-                                </ul>
-                                <ul class="navbar-nav">
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle ms-2" href="#" role="button"
+                                        <a class="nav-link dropdown-toggle" href="#" role="button"
                                             data-bs-toggle="dropdown" aria-expanded="false">
                                             Lingua
                                         </a>
                                         <ul class="dropdown-menu dropdown-menu-end">
                                             <li>
                                                 <a class="dropdown-item d-flex align-items-center gap-2" href="#">
-                                                    <img src="img/bandiera-italia.png" height="20" alt="IT"> Italiano
+                                                    <img src="img/bandiera-italia.png" height="20" alt="IT">
+                                                    Italiano
                                                 </a>
                                             </li>
                                             <li>
@@ -121,6 +132,7 @@
                             </div>
                         </div>
                     </nav>
+
                     <div class="row-cols-md-2 ">
                         <div class="col px-2 mx-2 ms-md-6 ms-lg-13">
                             <div class="card vh-50 rounded-5 w-card">
@@ -155,87 +167,89 @@
                 <div class="row">
                     <div class="blockchain-info flex-row">
                         <div class="d-flex flex-column p-5 align-items-center">
-                            <h2><span style="color: #407667 ;">La</span> Blockchain</h2>
+                            <h2 id="infoblockchain"><span class="text-verdekd"">La</span> Blockchain</h2>
 
-                            <hr class="short-divider desktop">
+                            <hr class=" short-divider desktop">
 
-                            <p class="desktop py-3"> La <b>blockchain</b> è un <b>registro pubblico</b>,
-                                <b>condiviso e immutabile</b> in cui ogni
-                                transazione corrisponde alla scrittura di
-                                un nuovo blocco nella catena. <br><br>
-                                Ogni blocco contiene sia le informazioni che si vogliono registrare, sia data e ora
-                                della
-                                transazione. <br><br>
-                                Un nuovo blocco si accoda come ultimo alla catena, senza possibilità di alterare blocchi
-                                esistenti o di inserirsi tra due blocchi consecutivi.
-                            </p>
+                                    <p class="desktop py-3"> La <b>blockchain</b> è un <b>registro pubblico</b>,
+                                        <b>condiviso e immutabile</b> in cui ogni
+                                        transazione corrisponde alla scrittura di
+                                        un nuovo blocco nella catena. <br><br>
+                                        Ogni blocco contiene sia le informazioni che si vogliono registrare, sia data e
+                                        ora
+                                        della
+                                        transazione. <br><br>
+                                        Un nuovo blocco si accoda come ultimo alla catena, senza possibilità di alterare
+                                        blocchi
+                                        esistenti o di inserirsi tra due blocchi consecutivi.
+                                    </p>
 
-                            <p class="mobile py-3">La <b>blockchain</b> è un <b>registro pubblico</b>,
-                                <b>condiviso e immutabile</b> in cui ogni
-                                transazione corrisponde alla scrittura di
-                                un nuovo blocco nella catena
-                            </p>
-                            <button type="button" class="btn ms-auto btn-bl  ">Scopri di più ></button>
+                                    <p class="mobile py-3">La <b>blockchain</b> è un <b>registro pubblico</b>,
+                                        <b>condiviso e immutabile</b> in cui ogni
+                                        transazione corrisponde alla scrittura di
+                                        un nuovo blocco nella catena
+                                    </p>
+                                    <button type="button" class="btn ms-auto btn-bl  ">Scopri di più ></button>
                         </div>
                     </div>
                 </div>
         </section>
-        
+        <section>
             <div class="container">
-                <div class="row">
-                        <div class="d-flex flex-column align-items-center">
-                            <h2><span style="color: #407667; ">informazioni</span> Iscrizioni</h2>
-                        </div>
-                        <div class="row row-cols-1 row-cols-md-2 g-4">
-                                <div class="col">
-                                    <div class="card h-md-167">
-                                        <div class="card-body">
-                                            <figure>
-                                                <blockquote class="blockquote text-center">
-                                                    <p>Setup iniziale <b>obbligatorio</b></p>
-                                                </blockquote>
-                                            </figure>
-                                        </div>
-                                        <div class="card-footer justify-content-center d-flex">
-                                            € 1.000
-                                        </div>
-                                    </div>
+                <div class="row p-4">
+                    <div class="d-flex flex-column align-items-center">
+                        <h2><span class="text-verdekd">informazioni</span> Iscrizioni</h2>
+                    </div>
+
+                    <hr class="short-divider desktop">
+
+                    <div class="row row-cols-1 row-cols-md-2 my-3">
+                        <div class="col">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <figure>
+                                        <blockquote class="blockquote text-center">
+                                            <p>Setup iniziale <b>obbligatorio</b></p>
+                                        </blockquote>
+                                    </figure>
                                 </div>
-                                <div class="col">
-                                    <div class="card h-md-167">
-                                        <div class="card-body">
-                                            <figure>
-                                                <blockquote class="blockquote text-center">
-                                                    <p>Accesso tramite
-                                                        <b>API</b>, acquistabile anche
-                                                        successivamente
-                                                    </p>
-                                                </blockquote>
-                                            </figure>
-                                        </div>
-                                        <div class="card-footer justify-content-center d-flex">
-                                            € 5.000
-                                        </div>
-                                    </div>
+                                <div class="card-footer justify-content-center d-flex">
+                                    € 1.000
                                 </div>
                             </div>
                         </div>
+                        <div class="col">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <figure>
+                                        <blockquote class="blockquote text-center">
+                                            <p>Accesso tramite
+                                                <b>API</b>, acquistabile anche
+                                                successivamente
+                                            </p>
+                                        </blockquote>
+                                    </figure>
+                                </div>
+                                <div class="card-footer justify-content-center d-flex">
+                                    € 5.000
+                                </div>
+                            </div>
                         </div>
+                    </div>
                 </div>
             </div>
+        </section>
     </div>
-    </section>
-    </div>
-
-
-
 
     <section>
         <div class="container">
-            <div class="row">
+            <div class="row p-4">
                 <div class="d-flex flex-column align-items-center mb-3">
-                    <h2>Hai in mente un altra offerta? </h2>
-                    <button type="button" class="btn btn-verdekd contattaci">Contattaci!</button>
+                    <h2 id="contatti"><span class="text-verdekd">Hai in mente un altra</span> offerta? </h2>
+
+                    <hr class="short-divider desktop">
+
+                    <button type="button" class="btn btn-verdekd contattaci my-3">Contattaci!</button>
                 </div>
             </div>
         </div>
@@ -267,7 +281,6 @@
                             <div class="col custom-card" data-courses="10">
                                 <div class="card ">
                                     <div class="card-body">
-                                        <img src="img/img-uomo-pacchetto.p" >
                                         <h5 class="card-title">10 Corsi</h5>
                                     </div>
                                 </div>
@@ -276,7 +289,6 @@
                             <div class="col custom-card" data-courses="50">
                                 <div class="card ">
                                     <div class="card-body">
-                                        <img src="img/img-donna-pacchetto-2" >
                                         <h5 class="card-title">50 Corsi</h5>
                                     </div>
                                 </div>
@@ -313,8 +325,8 @@
                         </div>
                         <div class="col-6 gap-3 ">
                             <!-- Card 1: Quantità Certificati -->
-                            <div class="card my-3" id="cardQty">
-                                <div class="card-body" >
+                            <div class="card my-3">
+                                <div class="card-body">
                                     <h5 class="card-title">Quantità Certificati</h5>
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" name="certQty" id="singleCert"
@@ -333,7 +345,7 @@
                             <!-- Card 2: Durata Certificato -->
                             <div class="card mb-3">
                                 <div class="card-body">
-                                    <h5 class="card-title">Durata Certificato</h5>
+                                    <h3 class="card-title">Durata Certificato</h3>
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" name="certDuration" id="dur10"
                                             value="10">
@@ -350,7 +362,7 @@
                             <!-- Card 3: Servizio API -->
                             <div class="card">
                                 <div class="card-body">
-                                    <h5 class="card-title">Integrazione tramite API</h5>
+                                    <h3 class="card-title">Integrazione tramite API</h3>
                                     <p class="card-text">
                                         Integra <strong>KeCert</strong> direttamente nei tuoi sistemi aziendali grazie
                                         all’accesso tramite API.<br><br>
@@ -380,7 +392,7 @@
                     </div>
                     <h2>Preventivo stimato:</h5>
                         <p>Il totale delle opzioni selezionate ammonta a circa</p>
-                        <p id="finalPrice"></p>
+                        <p id="finalPrice">€XXX</p>
                         <h5>Interessato alla proposta?</h5>
                         <p>Lascia i tuoi recapiti e il nostro team ti contatterà al più presto per fornirti tutti i
                             dettagli.</p>
@@ -398,57 +410,61 @@
                                 </div>
                             </div>
 
-                            <button type="submit" class="btn btn-verdekd">Invia</button>
-                        </form>
+                        <button type="submit" class="btn btn-verdekd">Invia</button>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
 
-    <footer class="site-footer bg-dark text-light py-5">
+    <footer class="site-footer bg-blukd text-light py-5">
         <div class="container">
             <div class="row gy-4">
 
                 <!-- Logo / Descrizione -->
-                <div class="col-md-4">
-                    <h4 class="site-logo">NomeSito</h4>
-                    <p class="text-muted">Soluzioni digitali per il tuo futuro.</p>
+                <div class="col-md-4 text-white">
+                    <h3 class="site-logo fw-bold">NomeSito</h3>
+                    <p>Soluzioni digitali per il tuo futuro.</p>
                 </div>
 
                 <!-- Link di navigazione -->
                 <div class="col-md-2">
-                    <h5>Link utili</h5>
+                    <h3 class="fw-bold">Link utili</h3>
                     <ul class="list-unstyled">
-                        <li><a href="/chi-siamo" class="footer-link">Chi siamo</a></li>
-                        <li><a href="/servizi" class="footer-link">Servizi</a></li>
-                        <li><a href="/contatti" class="footer-link">Contatti</a></li>
-                        <li><a href="/privacy" class="footer-link">Privacy</a></li>
+                        <li><a href="/chi-siamo" class="footer-link txt-footer">Chi siamo</a></li>
+                        <li><a href="/servizi" class="footer-link txt-footer">Servizi</a></li>
+                        <li><a href="/contatti" class="footer-link txt-footer">Contatti</a></li>
+                        <li><a href="/privacy" class="footer-link txt-footer">Privacy</a></li>
                     </ul>
                 </div>
 
                 <!-- Social -->
                 <div class="col-md-3">
-                    <h5>Seguici</h5>
-                    <div class="d-flex gap-3">
-                        <a href="#" class="footer-link">Facebook</a>
-                        <a href="#" class="footer-link">Instagram</a>
-                        <a href="#" class="footer-link">LinkedIn</a>
-                    </div>
+                    <h3 class="fw-bold">Link utili</h3>Seguici</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="footer-link txt-footer">Facebook</a></li>
+                        <li><a href="#" class="footer-link txt-footer">Instagram</a></li>
+                        <li><a href="#" class="footer-link txt-footer">LinkedIn</a></li>
+                    </ul>
                 </div>
 
                 <!-- Contatti -->
                 <div class="col-md-3">
-                    <h5>Contatti</h5>
-                    <p class="mb-1">Email: <a href="mailto:info@nomesito.com" class="footer-link">info@nomesito.com</a>
+                    <h3 class="fw-bold">Link utili</h3>Contatti</h3>
+                    <p class="mb-1">Email: <a href="mailto:info@nomesito.com"
+                            class="footer-link txt-footer">info@nomesito.com</a>
                     </p>
-                    <p class="mb-0">Tel: <a href="tel:+390123456789" class="footer-link">+39 012 3456789</a></p>
+                    <p class="mb-0">Tel: <a href="tel:+390123456789" class="footer-link txt-footer">+39 012 3456789</a>
+                    </p>
                 </div>
 
-            </div>
 
-            <!-- Copyright -->
-            <div class="text-center mt-4 small text-rossokd">
-                &copy; 2025 NomeSito. Tutti i diritti riservati.
+                <!-- Copyright -->
+                <div class="text-center mt-4 small text-footer fw-light">
+                    &copy; 2025 NomeSito. Tutti i diritti riservati.
+                </div>
+
+
             </div>
         </div>
     </footer>
