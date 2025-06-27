@@ -114,6 +114,9 @@ body>main,
 .txt-footer {
   text-decoration: none;
   color: white;
+  h3{
+    font-weight: bold;
+  }
 }
 
 
@@ -294,6 +297,7 @@ h2 {
 .card-body {
   display: flex;
   flex-direction: column;
+  padding: 16px 28px 0;
 }
 
 #step-2 .card-title {
@@ -312,7 +316,7 @@ h2 {
   position: relative;
   overflow: hidden;
   height: 24px;
-  /* altezza del testo */
+  /* altezza del testo */ 
   text-decoration: none;
   font-weight: 500;
   display: inline-block;
