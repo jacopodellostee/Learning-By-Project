@@ -350,10 +350,7 @@ h2 {
 
 .w-nav {
   margin: 0 auto;
-
-  @include media-breakpoint-up(sm) {
-    max-width: 300px;
-  }
+  max-width: 270px;
 
   @include media-breakpoint-up(md) {
     min-width: 500px;
@@ -361,6 +358,11 @@ h2 {
 
   @include media-breakpoint-up(lg) {
     max-width: 900px;
-    margin: 0 auto;
+  }
+}
+
+.lingua-nav {
+  @include media-breakpoint-between(sm,md) {
+    margin-top: -4rem;
   }
 }
