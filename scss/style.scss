@@ -56,7 +56,6 @@ $theme-colors: (
 );
 
 
-
 // 5. Include remainder of required parts
 @import "vendor/maps";
 @import "vendor/mixins";
@@ -117,8 +116,7 @@ body>main,
 }
 
 
-// Carosello (Jacopo - Pagletta)
-
+// Carosello (Jacopo - Paglietta)
 
 #carouselContainer {
   display: flex;
@@ -208,6 +206,26 @@ header {
     background-color: #F4F4F4;
   }
 }
+
+.contattaci {
+
+  .colForm {
+    form {
+      width: 100%;
+
+        button[type="submit"] {
+          background: linear-gradient(90deg, #40c9a2, #0f7b61);
+          border: none;
+      }
+    }
+  }
+
+  .colInfo {
+    background-color: #7A9E9F;
+  }
+}
+
+// Fine Jacopo
 
 .btn-size {
   height: 50px;
