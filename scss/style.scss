@@ -214,9 +214,9 @@ header {
     form {
       width: 100%;
 
-        button[type="submit"] {
-          background: linear-gradient(90deg, #40c9a2, #0f7b61);
-          border: none;
+      button[type="submit"] {
+        background: linear-gradient(90deg, #40c9a2, #0f7b61);
+        border: none;
       }
     }
   }
@@ -285,12 +285,12 @@ h2 {
   }
 }
 
-@include media-breakpoint-up(lg){
+@include media-breakpoint-up(lg) {
   .imgConf {
-      width: 500px;
-      height: auto;
-    }
-} 
+    width: 500px;
+    height: auto;
+  }
+}
 
 .step {
   display: none;
@@ -398,4 +398,12 @@ h2 {
   @include media-breakpoint-up(lg) {
     margin-top: 0;
   }
+}
+
+.fixed-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
 }
