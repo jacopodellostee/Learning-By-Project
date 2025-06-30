@@ -233,6 +233,10 @@ header {
   width: 190px;
 }
 
+.btn-verdekd{
+  background: linear-gradient(90deg, #40c9a2, #0f7b61);
+}
+
 .w-card {
 
   @include media-breakpoint-up(sm) {
