@@ -5,8 +5,6 @@
 @import "vendor/functions";
 
 // 2. Include any default variable overrides here
-$spacer: 1rem;
-
 $blue: #0d6efd;
 $indigo: #6610f2;
 $purple: #6f42c1;
@@ -25,7 +23,6 @@ $rossokd: #C72939;
 @import "vendor/variables";
 @import "vendor/variables-dark";
 // 4. Include any default map overrides here
-
 $spacers: (
   0: 0,
   1: $spacer * .25,
@@ -34,8 +31,6 @@ $spacers: (
   4: $spacer * 1.5,
   5: $spacer * 3,
   6: $spacer * 4,
-  8: $spacer * 6,
-  13: $spacer * 11,
 );
 
 
@@ -110,26 +105,24 @@ a {
 
 
 // Carosello (Jacopo - Pagletta)
-
-
 #carouselContainer {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
 }
 
-
 .carousel-wrapper {
   overflow: hidden;
   position: relative;
-  padding: 0 10%;
+  padding-left: 75px;
 }
 
 .carousel-track {
   transition: transform 0.5s ease-in-out;
   display: flex;
-  width: 100%;
+  width: 80%;
   /* 3 card */
+
 }
 
 .custom-card {
@@ -141,13 +134,14 @@ a {
   flex: 0 0 100%;
   /* Ogni card prende tutta la larghezza visibile */
   padding: 1rem;
-  box-sizing: border-box;
 }
+
 .custom-card.active {
   opacity: 1;
   transform: scale(1.05);
   z-index: 2;
 }
+
 .arrow {
   position: absolute;
   top: 50%;
@@ -187,51 +181,52 @@ header {
 
 .card {
   --bs-card-bg: #ffffffbd;
+  border: none;
 }
 
 // Sezioni Info (Cosmin)
 
 .btn-size {
   height: 50px;
-  width: 190px; 
+  width: 190px;
 }
 
-.w-card{
-  
+.w-card {
+
   @include media-breakpoint-up(sm) {
     max-width: 500px;
   }
+
   @include media-breakpoint-up(md) {
     min-width: 550px;
   }
+
   @include media-breakpoint-up(lg) {
     max-width: 600px;
   }
 }
 
-.card-title {
-  margin-bottom: var(--bs-card-title-spacer-y);
-  color: $rossokd;
-  font-weight: 900; 
+h1 {
+  font-weight: bold;
+  color: $rossokd !important;
 }
 
-.zoom-img {
-  transition: transform 0.3s ease;
+.ms-lg-8 {
+  @include media-breakpoint-up(lg) {
+    margin-left: 11rem !important;
+  }
+
 }
 
-.zoom-img:hover {
-  transform: scale(1.1);
+h2 {
+  color: #C72939;
 }
 
-h2{
-  color:#F82B2B;
-}
-
-.desktop{
+.desktop {
   display: block;
 }
 
-.mobile{
+.mobile {
   display: none;
 }
 
@@ -243,6 +238,14 @@ h2{
     display: block;
   }
 }
+
+@include media-breakpoint-up(lg){
+  .imgConf {
+      width: 500px;
+      height: auto;
+    }
+} 
+
 
 .step {
   display: none;
@@ -259,7 +262,7 @@ h2{
 
 .gap-3>.card {
   flex: 1;
-  min-height: 100px;
+  min-height: 50px;
 }
 
 .short-divider {
@@ -269,17 +272,16 @@ h2{
   border-top: 2px solid #407667;
 }
 
-.btn-bl{
+.btn-bl {
   text-decoration: underline;
   color: #407667;
   border: none;
 }
 
-
-
 .card-body {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 
 #step-2 .card-title {
@@ -287,10 +289,6 @@ h2{
 }
 
 .custom-card.active .card {
-  border: 2px solid #007bff;
-  box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
   transform: scale(1.05);
   transition: all 0.3s ease;
-
 }
-
