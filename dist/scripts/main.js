@@ -80,6 +80,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // Aggiorna riepilogo step 2
   function updateSummary() {
     selectedCourseCount = getSelectedCourses();
+
+    sessionStorage.setItem('corsoSelezionato', selectedCourseCount);
+
     totalSelectedSpan.textContent = selectedCourseCount;
 
     const certQty = document.querySelector('input[name="certQty"]:checked')?.nextElementSibling?.textContent.trim() || "Quantità non selezionata";
@@ -95,6 +98,38 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   }
+
+  let prizes = {
+    "1": {
+      "multi": {
+        "10": 100,
+        "illimitata": 250
+      }
+    },
+    "10": {
+      "single": {
+        "10": 300,
+        "illimitata": 750
+      },
+      "multi": {
+        "10": 500,
+        "illimitata": 1250
+      }
+    },
+    "50": {
+      "single": {
+        "10": 800,
+        "illimitata": 2000
+      },
+      "multi": {
+        "10": 1000,
+        "illimitata": 2500
+      }
+    }
+  };
+
+  sessionStorage.setItem('prezzi', JSON.stringify(prizes));
+
   // Avvio configuratore (dal bottone della intro)
   const btnStart = introSection.querySelector('button.btn-verdekd');
   btnStart.addEventListener('click', () => {
@@ -142,8 +177,9 @@ document.addEventListener('DOMContentLoaded', () => {
     showStep(3);
 
 
+    let prezzoFinale = sessionStorage.getItem('prezzoCalcolato');
     // Qui puoi aggiungere il calcolo finale prezzo e dettagli
-    document.getElementById('finalPrice').textContent = '€XXX'; // Calcolo prezzo da fare
+    document.getElementById('finalPrice').textContent = prezzoFinale; // Calcolo prezzo da fare
   });
 
   // Pulsante Indietro step 3 -> step 2
@@ -154,9 +190,33 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function updateSummarySelections() {
+
+  let prezziCertificati = JSON.parse(sessionStorage.getItem('prezzi'));
+
+  let corsoSelezionato = String(sessionStorage.getItem('corsoSelezionato'));
+
+  let prezzo = 1000; // i 1000 sono di caparra per l'attivazione del servizio
+
   const certQtyInput = document.querySelector('input[name="certQty"]:checked');
+
+  let quantità = certQtyInput.value;
+
   const certDurationInput = document.querySelector('input[name="certDuration"]:checked');
+
+  let durata = certDurationInput.value;
+
   const apiCheckbox = document.getElementById('apiAccess');
+
+  debugger;
+
+  if(corsoSelezionato === "1") {
+      let qtyToUse = quantità || 'multi';
+      prezzo += prezziCertificati["1"][qtyToUse][durata];
+  }
+  else
+    prezzo += prezziCertificati[corsoSelezionato][quantità][durata];
+
+  apiCheckbox.checked ? prezzo += 5000 : prezzo;
 
   function getLabelText(input) {
     if (!input) return '-';
@@ -165,8 +225,12 @@ function updateSummarySelections() {
   }
 
   document.getElementById('summary-cert-qty').textContent = getLabelText(certQtyInput);
+
   document.getElementById('summary-cert-duration').textContent = getLabelText(certDurationInput);
+
   document.getElementById('summary-api').textContent = apiCheckbox.checked ? 'Attivo' : 'Non attivo';
+
+  sessionStorage.setItem('prezzoCalcolato', prezzo);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
