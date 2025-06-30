@@ -99,6 +99,36 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  function resetStep2() {
+  // Deseleziona radio certQty solo se NON è corso 1
+  const corsoSelezionato = sessionStorage.getItem('corsoSelezionato');
+  if (corsoSelezionato !== "1") {
+    console.log("funziona");
+    document.querySelectorAll('input[name="certQty"]').forEach(radio => radio.checked = false);
+  }
+
+  // Deseleziona durata e api
+  document.querySelectorAll('input[name="certDuration"]').forEach(radio => radio.checked = false);
+  const apiCheckbox = document.getElementById('apiAccess');
+  if (apiCheckbox) apiCheckbox.checked = false;
+
+  // Reset summary
+  const summaryQty = document.getElementById('summary-cert-qty');
+  const summaryDurata = document.getElementById('summary-cert-duration');
+  const summaryApi = document.getElementById('summary-api');
+
+  if (corsoSelezionato === "1") {
+    
+    summaryQty.textContent = 'Quantità illimitata';
+    
+  } else {
+    summaryQty.textContent = '-';
+  }
+
+  summaryDurata.textContent = '-';
+  summaryApi.textContent = 'Non attivo';
+}
+
   let prizes = {
     "1": {
       "multi": {
@@ -144,12 +174,24 @@ document.addEventListener('DOMContentLoaded', () => {
       alert('Seleziona un pacchetto corsi prima di continuare');
       return;
     }
+    sessionStorage.setItem('corsoSelezionato', selectedCourseCount);
     updateSummary();
     showStep(2);
+
+    const certQtyRadios = document.querySelectorAll('input[name="certQty"]');
+    const certDurationRadios = document.querySelectorAll('input[name="certDuration"]');
+    const apiCheckbox = document.getElementById('apiAccess');
+
+    certQtyRadios.forEach(radio => radio.addEventListener('change', updateSummarySelections));
+    certDurationRadios.forEach(radio => radio.addEventListener('change', updateSummarySelections));
+    apiCheckbox.addEventListener('change', updateSummarySelections);
+
+    updateSummarySelections();
   });
 
   // Pulsante Indietro step 2 -> step 1
   btnStep2Prev.addEventListener('click', () => {
+    resetStep2();  // Azzera tutto
     showStep(1);
   });
 
@@ -161,15 +203,15 @@ document.addEventListener('DOMContentLoaded', () => {
     if (selectedCourseCount > 1) {
       if (!certQtySelected || !certDurationSelected) {
         alert('Seleziona la quantità e la durata del certificato prima di proseguire.');
-        return; // NON andare avanti se mancano le selezioni
+        return;
       }
     }
     else {
       const SummaryCertQty = document.getElementById('summary-cert-qty');
-      SummaryCertQty.style.display = 'none';
+      
       if (!certDurationSelected) {
         alert('Seleziona la durata del certificato prima di proseguire.');
-        return; // NON andare avanti se mancano le selezioni
+        return;
       }
     }
 
@@ -184,63 +226,56 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Pulsante Indietro step 3 -> step 2
   btnStep3Prev.addEventListener('click', () => {
+    resetStep2();
     showStep(2);
+    updateSummarySelections();
   });
 
 });
 
 function updateSummarySelections() {
-
-  let prezziCertificati = JSON.parse(sessionStorage.getItem('prezzi'));
-
-  let corsoSelezionato = String(sessionStorage.getItem('corsoSelezionato'));
-
-  let prezzo = 1000; // i 1000 sono di caparra per l'attivazione del servizio
+  const prezziCertificati = JSON.parse(sessionStorage.getItem('prezzi')) || {};
+  const corsoSelezionato = String(sessionStorage.getItem('corsoSelezionato')) || '0';
+  let prezzo = 1000; // caparra iniziale
 
   const certQtyInput = document.querySelector('input[name="certQty"]:checked');
-
-  let quantità = certQtyInput.value;
-
   const certDurationInput = document.querySelector('input[name="certDuration"]:checked');
-
-  let durata = certDurationInput.value;
-
   const apiCheckbox = document.getElementById('apiAccess');
 
-  debugger;
+  const quantità = certQtyInput ? certQtyInput.value : null;
+  const durata = certDurationInput ? certDurationInput.value : null;
 
-  if(corsoSelezionato === "1") {
-      let qtyToUse = quantità || 'multi';
-      prezzo += prezziCertificati["1"][qtyToUse][durata];
+  // Calcolo prezzo solo se quantità e durata sono selezionate
+  if (durata && (quantità || corsoSelezionato === "1")) {
+    if (corsoSelezionato === "1") {
+      const qtyToUse = quantità || 'multi';
+      if (prezziCertificati["1"]?.[qtyToUse]?.[durata]) {
+        prezzo += prezziCertificati["1"][qtyToUse][durata];
+      }
+    } else if (prezziCertificati[corsoSelezionato]?.[quantità]?.[durata]) {
+      prezzo += prezziCertificati[corsoSelezionato][quantità][durata];
+    }
   }
-  else
-    prezzo += prezziCertificati[corsoSelezionato][quantità][durata];
 
-  apiCheckbox.checked ? prezzo += 5000 : prezzo;
+  if (apiCheckbox?.checked) prezzo += 5000;
 
   function getLabelText(input) {
     if (!input) return '-';
-    const label = document.querySelector(`label[for="${input.id}"]`);
+    const label = input.nextElementSibling;
     return label ? label.textContent.trim() : '-';
   }
 
-  document.getElementById('summary-cert-qty').textContent = getLabelText(certQtyInput);
+  const summaryQtyElement = document.getElementById('summary-cert-qty');
 
+  if (corsoSelezionato === "1") {
+    summaryQtyElement.textContent = 'Quantità illimitata';
+  } else if (certQtyInput) {
+    summaryQtyElement.textContent = getLabelText(certQtyInput);
+  } else {
+    summaryQtyElement.textContent = '-';
+  }
   document.getElementById('summary-cert-duration').textContent = getLabelText(certDurationInput);
-
-  document.getElementById('summary-api').textContent = apiCheckbox.checked ? 'Attivo' : 'Non attivo';
+  document.getElementById('summary-api').textContent = apiCheckbox?.checked ? 'Attivo' : 'Non attivo';
 
   sessionStorage.setItem('prezzoCalcolato', prezzo);
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-  const certQtyRadios = document.querySelectorAll('input[name="certQty"]');
-  const certDurationRadios = document.querySelectorAll('input[name="certDuration"]');
-  const apiCheckbox = document.getElementById('apiAccess');
-
-  certQtyRadios.forEach(radio => radio.addEventListener('change', updateSummarySelections));
-  certDurationRadios.forEach(radio => radio.addEventListener('change', updateSummarySelections));
-  apiCheckbox.addEventListener('change', updateSummarySelections);
-
-  updateSummarySelections();
-});
