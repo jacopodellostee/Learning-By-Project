@@ -221,7 +221,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let prezzoFinale = sessionStorage.getItem('prezzoCalcolato');
     // Qui puoi aggiungere il calcolo finale prezzo e dettagli
-    document.getElementById('finalPrice').textContent = prezzoFinale; // Calcolo prezzo da fare
+    document.getElementById('finalPrice').textContent = prezzoFinale + "€"; // Calcolo prezzo da fare
   });
 
   // Pulsante Indietro step 3 -> step 2

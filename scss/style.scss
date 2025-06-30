@@ -218,6 +218,17 @@ header {
   }
 }
 
+#contactForm button[type="submit"] {
+  width: 10%;
+  background: linear-gradient(90deg, #40c9a2, #0f7b61);
+  border: none;
+  color: #fff; /* aggiungi se vuoi testo bianco */
+}
+
+.custom-gap {
+  gap: 5rem;
+}
+
 // Fine Jacopo
 
 .btn-size {
