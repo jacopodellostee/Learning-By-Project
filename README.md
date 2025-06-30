@@ -213,11 +213,11 @@ Se desideri **modificare il progetto** o **lavorare sul codice SCSS**, segui que
 
 3. **Inserire la cartella `vendor/`** all’interno di `scss/`.
 
-    **⚠️ ATTENZIONE ⚠️**
+   > [!WARNING]  
 
-   `vendor/` non è presente nel repository
+   > `vendor/` non è presente nel repository
    
-   La cartella `vendor/` deve contenere i file `.scss` di **Bootstrap 5.3** richiesti tramite `@import` in `style.scss` (es. `_buttons.scss`, `_navbar.scss`, `_utilities/api.scss` ecc.)
+   >  La cartella `vendor/` deve contenere i file `.scss` di **Bootstrap 5.3** richiesti tramite `@import` in `style.scss` (es. `_buttons.scss`, `_navbar.scss`, `_utilities/api.scss` ecc.)
 
 4. In Prepros, abilita:
 
