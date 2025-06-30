@@ -103,7 +103,7 @@ body>main,
 }
 
 .active {
-  color: #F82B2B;
+  color: $rossokd;
 }
 
 .nav-item a {
@@ -130,13 +130,13 @@ body>main,
 .carousel-wrapper {
   overflow: hidden;
   position: relative;
-  padding: 0 10%;
+  padding-left: 75px;
 }
 
 .carousel-track {
   transition: transform 0.5s ease-in-out;
   display: flex;
-  width: 100%;
+  width: 80%;
   /* 3 card */
 }
 
@@ -149,7 +149,6 @@ body>main,
   flex: 0 0 100%;
   /* Ogni card prende tutta la larghezza visibile */
   padding: 1rem;
-  box-sizing: border-box;
 }
 
 .custom-card.active {
@@ -201,6 +200,34 @@ header {
 
 // Sezioni Info (Cosmin)
 
+// Jacopo
+.infoGeneriche {
+
+  .card {
+    background-color: #F4F4F4;
+  }
+}
+
+.contattaci {
+
+  .colForm {
+    form {
+      width: 100%;
+
+        button[type="submit"] {
+          background: linear-gradient(90deg, #40c9a2, #0f7b61);
+          border: none;
+      }
+    }
+  }
+
+  .colInfo {
+    background-color: #7A9E9F;
+  }
+}
+
+// Fine Jacopo
+
 .btn-size {
   height: 50px;
   width: 190px;
@@ -237,7 +264,7 @@ header {
 }
 
 h2 {
-  color: #F82B2B;
+  color: $rossokd;
 }
 
 .desktop {
@@ -257,6 +284,13 @@ h2 {
     display: block;
   }
 }
+
+@include media-breakpoint-up(lg){
+  .imgConf {
+      width: 500px;
+      height: auto;
+    }
+} 
 
 .step {
   display: none;
@@ -289,8 +323,6 @@ h2 {
   border: none;
 }
 
-
-
 .card-body {
   display: flex;
   flex-direction: column;
@@ -302,8 +334,6 @@ h2 {
 }
 
 .custom-card.active .card {
-  border: 2px solid #007bff;
-  box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
   transform: scale(1.05);
   transition: all 0.3s ease;
 

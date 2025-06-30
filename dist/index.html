@@ -16,10 +16,6 @@
         href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
         rel="stylesheet">
 
-
-
-    <script defer src="./scripts/main.js"></script>
-
     <!-- JSON ld -->
     <script type="application/ld+json">
 
@@ -65,7 +61,8 @@
         <header>
             <div class="container-fluid">
                 <div class="row">
-                    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm p-3 mb-5 bg-body-tertiary rounded-4 w-nav fixed-top">
+                    <nav
+                        class="navbar navbar-expand-lg bg-body-tertiary shadow-sm p-3 mb-5 bg-body-tertiary rounded-4 w-nav fixed-top">
                         <div class="container-fluid">
                             <figure>
                                 <picture>
@@ -171,93 +168,133 @@
                 <div class="row">
                     <div class="blockchain-info flex-row">
                         <div class="d-flex flex-column p-5 align-items-center">
-                            <h2 id="infoblockchain"><span class="text-verdekd"">La</span> Blockchain</h2>
+                            <h2 id="infoblockchain"><span class="text-verdekd">La</span> Blockchain</h2>
 
-                            <hr class=" short-divider desktop">
+                            <hr class="short-divider desktop">
 
-                                    <p class="desktop py-3"> La <b>blockchain</b> è un <b>registro pubblico</b>,
-                                        <b>condiviso e immutabile</b> in cui ogni
-                                        transazione corrisponde alla scrittura di
-                                        un nuovo blocco nella catena. <br><br>
-                                        Ogni blocco contiene sia le informazioni che si vogliono registrare, sia data e
-                                        ora
-                                        della
-                                        transazione. <br><br>
-                                        Un nuovo blocco si accoda come ultimo alla catena, senza possibilità di alterare
-                                        blocchi
-                                        esistenti o di inserirsi tra due blocchi consecutivi.
-                                    </p>
+                            <p class="desktop py-3"> La <b>blockchain</b> è un <b>registro pubblico</b>,
+                                <b>condiviso e immutabile</b> in cui ogni
+                                transazione corrisponde alla scrittura di
+                                un nuovo blocco nella catena. <br><br>
+                                Ogni blocco contiene sia le informazioni che si vogliono registrare, sia data e
+                                ora
+                                della
+                                transazione. <br><br>
+                                Un nuovo blocco si accoda come ultimo alla catena, senza possibilità di alterare
+                                blocchi
+                                esistenti o di inserirsi tra due blocchi consecutivi.
+                            </p>
 
-                                    <p class="mobile py-3">La <b>blockchain</b> è un <b>registro pubblico</b>,
-                                        <b>condiviso e immutabile</b> in cui ogni
-                                        transazione corrisponde alla scrittura di
-                                        un nuovo blocco nella catena
-                                    </p>
-                                    <button type="button" class="btn ms-auto btn-bl  ">Scopri di più ></button>
+                            <p class="mobile py-3">La <b>blockchain</b> è un <b>registro pubblico</b>,
+                                <b>condiviso e immutabile</b> in cui ogni
+                                transazione corrisponde alla scrittura di
+                                un nuovo blocco nella catena
+                            </p>
+                            <button type="button" class="btn ms-auto btn-bl">Scopri di più ></button>
                         </div>
                     </div>
                 </div>
         </section>
-        <section>
+
+        <!-- Info Generiche -->
+        <section class="infoGeneriche"> 
             <div class="container">
-                <div class="row p-4">
-                    <div class="d-flex flex-column align-items-center">
-                        <h2><span class="text-verdekd">informazioni</span> Iscrizioni</h2>
+                <div class="row p-4 align-items-center">
+                    
+                    <div class="col">
+                        <img src="img/img-sezione-info-generiche.png" alt="" class="img-fluid">
                     </div>
 
-                    <hr class="short-divider desktop">
+                    <div class="col text-center">
 
-                    <div class="row row-cols-1 row-cols-md-2 my-3">
-                        <div class="col">
-                            <div class="card h-100">
-                                <div class="card-body">
-                                    <figure>
-                                        <blockquote class="blockquote text-center">
-                                            <p>Setup iniziale <b>obbligatorio</b></p>
-                                        </blockquote>
-                                    </figure>
+                        <h2 class="mb-4">
+                            <span class="text-verdekd">Informazioni generiche per</span><br>
+                            <span class="text-rossokd"><strong>piani ed iscrizioni</strong></span>
+                        </h2>
+
+                        <div class="cardContainer d-flex justify-content-center gap-4 mb-4">
+                            <div class="card border-0 shadow-sm h-100 flex-fill">
+                                <div class="card-body d-flex flex-column justify-content-center text-center">
+                                    <h5>Setup iniziale <strong>obbligatorio</strong></h5>
+                                    <p class="fs-2"><strong>€ 1.000</strong></p>
                                 </div>
-                                <div class="card-footer justify-content-center d-flex">
-                                    € 1.000
+                            </div>
+
+                            <div class="card border-0 shadow-sm h-100 flex-fill">
+                                <div class="card-body d-flex flex-column justify-content-center text-center">
+                                    <h5>Accesso tramite <strong>API</strong>, acquistabile anche successivamente</h5>
+                                    <p class="fs-2"><strong>€ 5.000</strong></p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col">
-                            <div class="card h-100">
-                                <div class="card-body">
-                                    <figure>
-                                        <blockquote class="blockquote text-center">
-                                            <p>Accesso tramite
-                                                <b>API</b>, acquistabile anche
-                                                successivamente
-                                            </p>
-                                        </blockquote>
-                                    </figure>
-                                </div>
-                                <div class="card-footer justify-content-center d-flex">
-                                    € 5.000
-                                </div>
-                            </div>
-                        </div>
+
+                        <p class="text-muted">
+                            I costi sono da intendersi annuali su 12 mesi dall'attivazione del servizio
+                        </p>
+
                     </div>
                 </div>
             </div>
         </section>
-    </div>
-
-    <section>
+    
+        <section class="contattaci py-2">
         <div class="container">
-            <div class="row p-4">
-                <div class="d-flex flex-column align-items-center mb-3">
-                    <h2 id="contatti"><span class="text-verdekd">Hai in mente un altra</span> offerta? </h2>
+            <div class="row min-vh-100 align-items-center">
+    
+                <!-- Colonna Form -->
+                <div class="colForm col d-flex justify-content-center">
+    
+                    <div class="" style="max-width: 400px;">
+                        <h5 class="h2 text-danger fw-bold mb-3 text-center">Contattaci</h5>
+                        <p>Hai in mente una differente offerta?</p>
+                        <p>Sentiti libero di contattarci tramite form, entreremo in contatto con lei il più presto possibile</p>
+    
+                        <form>
+                            <div class="mb-3">
+                                <input type="text" class="form-control w-100 border-0 border-bottom rounded-0" placeholder="nome">
+                            </div>
 
-                    <hr class="short-divider desktop">
+                            <div class="mb-3">
+                                <input type="email" class="form-control w-100 border-0 border-bottom rounded-0" placeholder="email">
+                            </div>
 
-                    <button type="button" class="btn btn-verdekd contattaci my-3">Contattaci!</button>
+                            <div class="mb-4">
+                                <input type="text" class="form-control w-100 border-0 border-bottom rounded-1" placeholder="azienda di cui si fa le veci">
+                            </div>
+
+                            <button type="submit" class="btn w-100 text-white">Invia</button>
+                        </form>
+                    </div>
                 </div>
+    
+    
+                <!-- Colonna Info -->
+                <div class="colInfo col rounded-start-4">
+                    <div class="p-4 text-white rounded-start-4 h-100">
+                        <h5 class="h4 fw-bold mb-4">INFO</h5>
+                        <p class="mb-2">
+                            <i class="bi bi-geo-alt-fill me-2"></i>
+                            Corso Inghilterra, 49 - 10138 TORINO
+                        </p>
+                        <p class="mb-2">
+                            <i class="bi bi-envelope-fill me-2"></i>
+                            Email: kecert@kedos-srl.it
+                        </p>
+                        <p class="mb-2">
+                            <i class="bi bi-telephone-fill me-2"></i>
+                            Tel: 011/19466570
+                        </p>
+                        <p>
+                            <i class="bi bi-telephone-fill me-2"></i>
+                            Fax: 011/19466571
+                        </p>
+                    </div>
+                </div>
+    
             </div>
         </div>
     </section>
+    </div>
 
     <!-- CONFIGURATORE (nascosto inizialmente) -->
     <div id="configurator" style="display: none;">
@@ -273,27 +310,29 @@
                     <div class="carousel-wrapper flex-grow-1 mx-3">
                         <div class="carousel-track d-flex align-items-center" id="carouselTrack">
                             <!-- Card 1 -->
-                            <div class="col custom-card" data-courses="1">
-                                <div class="card h-100">
+                            <div class="col custom-card " data-courses="1">
+                                <div class="card imgConf">
                                     <div class="card-body">
-                                        <h3 class="card-title">1 Corso</h3>
-
+                                        <img src="img/img-donna-pacchetto.png" >
+                                        <h5 class="card-title">1 Corso</h5>
                                     </div>
                                 </div>
                             </div>
                             <!-- Card 2 -->
-                            <div class="col custom-card" data-courses="10">
-                                <div class="card h-100">
+                            <div class="col custom-card " data-courses="10">
+                                <div class="card imgConf">
                                     <div class="card-body">
-                                        <h3 class="card-title">10 Corsi</h3>
+                                        <img src="img/img-uomo-pacchetto.png" >
+                                        <h5 class="card-title">10 Corsi</h5>
                                     </div>
                                 </div>
                             </div>
                             <!-- Card 3 -->
-                            <div class="col custom-card" data-courses="50">
-                                <div class="card h-100">
+                            <div class="col custom-card " data-courses="50">
+                                <div class="card imgConf">
                                     <div class="card-body">
-                                        <h3 class="card-title">50 Corsi</h3>
+                                        <img src="img/img-donna-pacchetto-2.png" >
+                                        <h5 class="card-title">50 Corsi</h5>
                                     </div>
                                 </div>
                             </div>
@@ -329,9 +368,9 @@
                         </div>
                         <div class="col-6 gap-3 ">
                             <!-- Card 1: Quantità Certificati -->
-                            <div class="card my-3">
+                            <div class="card my-3" id="cardQty">
                                 <div class="card-body">
-                                    <h3 class="card-title">Quantità Certificati</h3>
+                                    <h5 class="card-title">Quantità Certificati</h5>
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" name="certQty" id="singleCert"
                                             value="single">
@@ -394,25 +433,25 @@
                     <div class="d-flex justify-content-between mt-3">
                         <button class="btn btn-rossokd">Indietro</button>
                     </div>
-                    <h2>Preventivo stimato:</h2>
-                    <p>Il totale delle opzioni selezionate ammonta a circa</p>
-                    <p id="finalPrice">€XXX</p>
-                    <h3>Interessato alla proposta?</h3>
-                    <p>Lascia i tuoi recapiti e il nostro team ti contatterà al più presto per fornirti tutti i
-                        dettagli.</p>
-                    <form id="contactForm">
-                        <div class="container">
-                            <div class="row">
-                                <div class="mb-3">
-                                    <input type="email" class="form-control" id="email" name="email" required
-                                        placeholder="Inserisci la tua email">
-                                </div>
-                                <div class="mb-3">
-                                    <input type="tel" class="form-control" id="phone" name="phone" required
-                                        placeholder="Inserisci il tuo telefono">
+                    <h2>Preventivo stimato:</h5>
+                        <p>Il totale delle opzioni selezionate ammonta a circa</p>
+                        <p id="finalPrice">€XXX</p>
+                        <h5>Interessato alla proposta?</h5>
+                        <p>Lascia i tuoi recapiti e il nostro team ti contatterà al più presto per fornirti tutti i
+                            dettagli.</p>
+                        <form id="contactForm">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="mb-3">
+                                        <input type="email" class="form-control" id="email" name="email" required
+                                            placeholder="Inserisci la tua email">
+                                    </div>
+                                    <div class="mb-3">
+                                        <input type="tel" class="form-control" id="phone" name="phone" required
+                                            placeholder="Inserisci il tuo telefono">
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
                         <button type="submit" class="btn btn-verdekd">Invia</button>
                     </form>
@@ -476,41 +515,12 @@
         </div>
     </footer>
 
-
+    <script defer src="./scripts/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
         crossorigin="anonymous"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        function updateSummarySelections() {
-            const certQtyInput = document.querySelector('input[name="certQty"]:checked');
-            const certDurationInput = document.querySelector('input[name="certDuration"]:checked');
-            const apiCheckbox = document.getElementById('apiAccess');
-
-            function getLabelText(input) {
-                if (!input) return '-';
-                const label = document.querySelector(`label[for="${input.id}"]`);
-                return label ? label.textContent.trim() : '-';
-            }
-
-            document.getElementById('summary-cert-qty').textContent = getLabelText(certQtyInput);
-            document.getElementById('summary-cert-duration').textContent = getLabelText(certDurationInput);
-            document.getElementById('summary-api').textContent = apiCheckbox.checked ? 'Attivo' : 'Non attivo';
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const certQtyRadios = document.querySelectorAll('input[name="certQty"]');
-            const certDurationRadios = document.querySelectorAll('input[name="certDuration"]');
-            const apiCheckbox = document.getElementById('apiAccess');
-
-            certQtyRadios.forEach(radio => radio.addEventListener('change', updateSummarySelections));
-            certDurationRadios.forEach(radio => radio.addEventListener('change', updateSummarySelections));
-            apiCheckbox.addEventListener('change', updateSummarySelections);
-
-            updateSummarySelections();
-        });
-    </script>
 </body>
 
 </html>
