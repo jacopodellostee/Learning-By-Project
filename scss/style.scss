@@ -198,11 +198,27 @@ header {
   .card {
     background-color: #F4F4F4;
   }
+
+  @include media-breakpoint-down(md) {
+      .colImg {
+        display: none;
+      }
+
+      .cardContainer {
+        flex-direction: column;
+      }
+  }
 }
 
 .contattaci {
 
+  .row {
+    gap: 0 2rem;
+  }
+
   .colForm {
+    max-width: 700px;
+
     form {
       width: 100%;
 
@@ -215,7 +231,12 @@ header {
 
   .colInfo {
     background-color: #7A9E9F;
+
+    @include media-breakpoint-down(md) {
+      border-radius: 0 !important;
+    }
   }
+
 }
 
 #contactForm button[type="submit"] {
