@@ -239,11 +239,11 @@ header {
 
 }
 
-#contactForm button[type="submit"] {
+#contactForm button[type="submit"], .step1Button {
   width: 10%;
   background: linear-gradient(90deg, #40c9a2, #0f7b61);
   border: none;
-  color: #fff; /* aggiungi se vuoi testo bianco */
+  color: #fff; 
 }
 
 .custom-gap {
