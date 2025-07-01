@@ -279,3 +279,19 @@ function updateSummarySelections() {
 
   sessionStorage.setItem('prezzoCalcolato', prezzo);
 }
+
+// Animazioni CSS
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('animate');
+      observer.unobserve(entry.target); // osserva solo una volta
+    }
+  });
+});
+
+// Seleziona TUTTI gli elementi da animare
+document.querySelectorAll('.fade-in-down, .pop-in, .slide-in-left, .slide-in-right, .fade-in-up').forEach(elem => {
+  observer.observe(elem);
+  });
