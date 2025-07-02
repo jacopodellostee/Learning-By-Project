@@ -263,6 +263,23 @@ header {
 
 }
 
+#blockchainInfo, #vantaggiKecert {
+  p {
+    font-size: 1.15rem;   
+    line-height: 1.6;     
+  }
+}
+
+.scopri-link {
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.scopri-link:hover {
+  text-decoration: underline;
+}
+
 // Fine Jacopo
 
 .btn-size {
