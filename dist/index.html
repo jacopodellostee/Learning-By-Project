@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -56,7 +55,6 @@
     <link rel="alternate" hreflang="x-default" href="">
 
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="css/personale.css">
 
 </head>
 
@@ -67,9 +65,18 @@
             <div class="container-fluid">
                 <div class="row">
                     <nav
-                        class="navbar navbar-expand-lg bg-body-tertiary shadow-sm p-3 mb-5 bg-body-tertiary rounded w-100">
+                        class="navbar navbar-expand-lg bg-body-tertiary shadow-sm p-3 mb-5 bg-body-tertiary rounded-4 w-nav fixed-top">
                         <div class="container-fluid">
-                            <img src="img/logo.webp" height="50" alt="Logo">
+                            <figure>
+                                <picture>
+                                    <source srcset="img/logo.avif" type="image/avif">
+                                    <source srcset="img/logo.webp" type="image/webp">
+                                    <source srcset="img/logo.jpeg" type="image/jpeg">
+                                    <source srcset="img/logo.png" type="image/png">
+                                    <img src="img/logo.png" alt="">
+                                </picture>
+                            </figure>
+                            <img src="img/logo.webp" class="me-auto" height="50" alt="Logo">
 
                             <!-- bottone hamburger mobile -->
                             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -79,30 +86,31 @@
                             </button>
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
-                                    <li class="nav-item px-3">
-                                        <a class="active" aria-current="page" href="#">Home</a>
+                                    <li class="nav-item mt-xs-4">
+                                        <a class="nav-link" aria-current="page" href="#"><span
+                                                class="roll active">Home</span></a>
                                     </li>
-                                    <li class="nav-item px-3">
-                                        <a class="nav-link" href="#">Contatti</a>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#contatti"><span class="roll">Contatti</span></a>
                                     </li>
-                                    <li class="nav-item px-3">
-                                        <a class="nav-link" href="">Configuratore</a>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#configurator"><span
+                                                class="roll">Configuratore</span></a>
                                     </li>
-                                    <li class="nav-item px-3">
-                                        <a class="nav-link" href="">Certificati sulla
-                                            blockchain</a>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#infoblockchain"><span class="roll">Certificati sulla
+                                                blockchain</span></a>
                                     </li>
-                                </ul>
-                                <ul class="navbar-nav">
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle ms-2" href="#" role="button"
+                                        <a class="nav-link dropdown-toggle" href="#" role="button"
                                             data-bs-toggle="dropdown" aria-expanded="false">
                                             Lingua
                                         </a>
                                         <ul class="dropdown-menu dropdown-menu-end">
                                             <li>
                                                 <a class="dropdown-item d-flex align-items-center gap-2" href="#">
-                                                    <img src="img/bandiera-italia.png" height="20" alt="IT"> Italiano
+                                                    <img src="img/bandiera-italia.png" height="20" alt="IT">
+                                                    Italiano
                                                 </a>
                                             </li>
                                             <li>
@@ -128,7 +136,8 @@
                             </div>
                         </div>
                     </nav>
-                    <div class="row-cols-md-2 ">
+
+                    <div class="row-cols-md-2 mt-13">
                         <div class="col px-2 mx-2 ms-md-6 ms-lg-13">
                             <div class="card vh-50 rounded-5 w-card">
                                 <div class="card-body">
@@ -143,7 +152,9 @@
                                         crea
                                         la soluzione perfetta per il tuo business.</p>
                                     <div class="d-flex justify-content-center zoom-img">
-                                        <button type="button" class="btn btn-verdekd p-2 d-flex align-items-center mt-5">Calcola Preventivo</button>
+                                        <button type="button"
+                                            class="btn btn-verdekd p-2 d-flex align-items-center mt-5">Calcola
+                                            Preventivo</button>
                                     </div>
                                 </div>
                             </div>
@@ -160,7 +171,7 @@
                 <div class="row">
                     <div class="blockchain-info flex-row">
                         <div class="d-flex flex-column p-5 align-items-center">
-                            <h2><span style="color: #407667 ;">La</span> Blockchain</h2>
+                            <h2 id="infoblockchain"><span class="text-verdekd">La</span> Blockchain</h2>
 
                             <hr class="short-divider desktop">
 
@@ -168,10 +179,12 @@
                                 <b>condiviso e immutabile</b> in cui ogni
                                 transazione corrisponde alla scrittura di
                                 un nuovo blocco nella catena. <br><br>
-                                Ogni blocco contiene sia le informazioni che si vogliono registrare, sia data e ora
+                                Ogni blocco contiene sia le informazioni che si vogliono registrare, sia data e
+                                ora
                                 della
                                 transazione. <br><br>
-                                Un nuovo blocco si accoda come ultimo alla catena, senza possibilità di alterare blocchi
+                                Un nuovo blocco si accoda come ultimo alla catena, senza possibilità di alterare
+                                blocchi
                                 esistenti o di inserirsi tra due blocchi consecutivi.
                             </p>
 
@@ -180,113 +193,112 @@
                                 transazione corrisponde alla scrittura di
                                 un nuovo blocco nella catena
                             </p>
-                            <button type="button" class="btn ms-auto btn-bl  ">Scopri di più ></button>
+                            <button type="button" class="btn ms-auto btn-bl">Scopri di più ></button>
                         </div>
                     </div>
                 </div>
         </section>
-
-        <section class="py-6">
+        <!-- Info Generiche -->
+        <section class="infoGeneriche"> 
             <div class="container">
-                <div class="row">
-                    <div class="mobile">
-                        <div class="d-flex flex-column align-items-center">
-                            <h2><span style="color: #407667; ">informazioni</span> Iscrizioni</h2>
-                        </div>
-                        <div class=" row row-cols-1 justify-content-center">
-                            <div class="col py-5">
-                                <div class="card d-flex">
-                                    <div class="card-body">
-                                        <figure>
-                                            <blockquote class="blockquote text-center">
-                                                <p>Setup iniziale <b>obbligatorio</b></p>
-                                            </blockquote>
-                                        </figure>
-                                    </div>
-                                    <div class="card-footer justify-content-center d-flex">
-                                        € 1.000
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <figure>
-                                            <blockquote class="blockquote text-center">
-                                                <p>Accesso tramite
-                                                    <b>API</b>, acquistabile anche
-                                                    successivamente
-                                                </p>
-                                            </blockquote>
-                                        </figure>
-                                    </div>
-                                    <div class="card-footer justify-content-center d-flex">
-                                        € 5.000
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                <div class="row p-4 align-items-center">
+                    
+                    <div class="col">
+                        <img src="img/img-sezione-info-generiche.png" alt="" class="img-fluid">
                     </div>
                 </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="desktop">
-                        <div class="d-flex flex-column align-items-center">
-                            <h2><span style="color: #407667; ">informazioni</span> Iscrizioni</h2>
-                        </div>
-                        <div class=" row d-flex justify-content-end py-5 ">
-                            <div class="col-md-4">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <figure>
-                                            <blockquote class="blockquote text-center">
-                                                <p>Setup iniziale <b>obbligatorio</b></p>
-                                            </blockquote>
-                                        </figure>
-                                    </div>
-                                    <div class="card-footer justify-content-center d-flex">
-                                        € 1.000
-                                    </div>
+        </section>
+
+                    <div class="col text-center">
+
+                        <h2 class="mb-4">
+                            <span class="text-verdekd">Informazioni generiche per</span><br>
+                            <span class="text-rossokd"><strong>piani ed iscrizioni</strong></span>
+                        </h2>
+
+                        <div class="cardContainer d-flex justify-content-center gap-4 mb-4">
+                            <div class="card border-0 shadow-sm h-100 flex-fill">
+                                <div class="card-body d-flex flex-column justify-content-center text-center">
+                                    <h5>Setup iniziale <strong>obbligatorio</strong></h5>
+                                    <p class="fs-2"><strong>€ 1.000</strong></p>
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <figure>
-                                            <blockquote class="blockquote text-center">
-                                                <p>Accesso tramite
-                                                    <b>API</b>, acquistabile anche
-                                                    successivamente
-                                                </p>
-                                            </blockquote>
-                                        </figure>
-                                    </div>
-                                    <div class="card-footer justify-content-center d-flex">
-                                        € 5.000
-                                    </div>
+
+                            <div class="card border-0 shadow-sm h-100 flex-fill">
+                                <div class="card-body d-flex flex-column justify-content-center text-center">
+                                    <h5>Accesso tramite <strong>API</strong>, acquistabile anche successivamente</h5>
+                                    <p class="fs-2"><strong>€ 5.000</strong></p>
                                 </div>
                             </div>
                         </div>
+
+                        <p class="text-muted">
+                            I costi sono da intendersi annuali su 12 mesi dall'attivazione del servizio
+                        </p>
+
                     </div>
                 </div>
             </div>
         </section>
-    </div>
-    <!-- Codice Federico -->
-
-
-
-    <section>
+    
+        <section class="contattaci py-2">
         <div class="container">
-            <div class="row">
-                <div class="d-flex flex-column align-items-center mb-3">
-                    <h2>Hai in mente un altra offerta? </h2>
-                    <button type="button" class="btn btn-verdekd contattaci">Contattaci!</button>
+            <div class="row min-vh-100 align-items-center">
+    
+                <!-- Colonna Form -->
+                <div class="colForm col d-flex justify-content-center">
+    
+                    <div class="" style="max-width: 400px;">
+                        <h5 class="h2 text-danger fw-bold mb-3 text-center">Contattaci</h5>
+                        <p>Hai in mente una differente offerta?</p>
+                        <p>Sentiti libero di contattarci tramite form, entreremo in contatto con lei il più presto possibile</p>
+    
+                        <form>
+                            <div class="mb-3">
+                                <input type="text" class="form-control w-100 border-0 border-bottom rounded-0" placeholder="nome">
+                            </div>
+
+                            <div class="mb-3">
+                                <input type="email" class="form-control w-100 border-0 border-bottom rounded-0" placeholder="email">
+                            </div>
+
+                            <div class="mb-4">
+                                <input type="text" class="form-control w-100 border-0 border-bottom rounded-1" placeholder="azienda di cui si fa le veci">
+                            </div>
+
+                            <button type="submit" class="btn w-100 text-white">Invia</button>
+                        </form>
+                    </div>
                 </div>
+    
+    
+                <!-- Colonna Info -->
+                <div class="colInfo col rounded-start-4">
+                    <div class="p-4 text-white rounded-start-4 h-100">
+                        <h5 class="h4 fw-bold mb-4">INFO</h5>
+                        <p class="mb-2">
+                            <i class="bi bi-geo-alt-fill me-2"></i>
+                            Corso Inghilterra, 49 - 10138 TORINO
+                        </p>
+                        <p class="mb-2">
+                            <i class="bi bi-envelope-fill me-2"></i>
+                            Email: kecert@kedos-srl.it
+                        </p>
+                        <p class="mb-2">
+                            <i class="bi bi-telephone-fill me-2"></i>
+                            Tel: 011/19466570
+                        </p>
+                        <p>
+                            <i class="bi bi-telephone-fill me-2"></i>
+                            Fax: 011/19466571
+                        </p>
+                    </div>
+                </div>
+    
             </div>
         </div>
     </section>
+    </div>
 
     <!-- CONFIGURATORE (nascosto inizialmente) -->
     <div id="configurator" style="display: none;">
@@ -302,26 +314,28 @@
                     <div class="carousel-wrapper flex-grow-1 mx-3">
                         <div class="carousel-track d-flex align-items-center" id="carouselTrack">
                             <!-- Card 1 -->
-                            <div class="col custom-card" data-courses="1">
-                                <div class="card h-100">
+                            <div class="col custom-card " data-courses="1">
+                                <div class="card imgConf">
                                     <div class="card-body">
+                                        <img src="img/img-donna-pacchetto.png" >
                                         <h5 class="card-title">1 Corso</h5>
-
                                     </div>
                                 </div>
                             </div>
                             <!-- Card 2 -->
-                            <div class="col custom-card" data-courses="10">
-                                <div class="card h-100">
+                            <div class="col custom-card " data-courses="10">
+                                <div class="card imgConf">
                                     <div class="card-body">
+                                        <img src="img/img-uomo-pacchetto.png" >
                                         <h5 class="card-title">10 Corsi</h5>
                                     </div>
                                 </div>
                             </div>
                             <!-- Card 3 -->
-                            <div class="col custom-card" data-courses="50">
-                                <div class="card h-100">
+                            <div class="col custom-card " data-courses="50">
+                                <div class="card imgConf">
                                     <div class="card-body">
+                                        <img src="img/img-donna-pacchetto-2.png" >
                                         <h5 class="card-title">50 Corsi</h5>
                                     </div>
                                 </div>
@@ -358,7 +372,7 @@
                         </div>
                         <div class="col-6 gap-3 ">
                             <!-- Card 1: Quantità Certificati -->
-                            <div class="card my-3">
+                            <div class="card my-3" id="cardQty">
                                 <div class="card-body">
                                     <h5 class="card-title">Quantità Certificati</h5>
                                     <div class="form-check">
@@ -378,7 +392,7 @@
                             <!-- Card 2: Durata Certificato -->
                             <div class="card mb-3">
                                 <div class="card-body">
-                                    <h5 class="card-title">Durata Certificato</h5>
+                                    <h3 class="card-title">Durata Certificato</h3>
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" name="certDuration" id="dur10"
                                             value="10">
@@ -395,7 +409,7 @@
                             <!-- Card 3: Servizio API -->
                             <div class="card">
                                 <div class="card-body">
-                                    <h5 class="card-title">Integrazione tramite API</h5>
+                                    <h3 class="card-title">Integrazione tramite API</h3>
                                     <p class="card-text">
                                         Integra <strong>KeCert</strong> direttamente nei tuoi sistemi aziendali grazie
                                         all’accesso tramite API.<br><br>
@@ -443,98 +457,74 @@
                                 </div>
                             </div>
 
-                            <button type="submit" class="btn btn-verdekd">Invia</button>
-                        </form>
+                        <button type="submit" class="btn btn-verdekd">Invia</button>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
 
-    <footer class="site-footer bg-dark text-light py-5">
+    <footer class="site-footer bg-blukd text-light py-5">
         <div class="container">
             <div class="row gy-4">
 
                 <!-- Logo / Descrizione -->
-                <div class="col-md-4">
-                    <h4 class="site-logo">NomeSito</h4>
-                    <p class="text-muted">Soluzioni digitali per il tuo futuro.</p>
+                <div class="col-md-4 text-white">
+                    <h3 class="site-logo fw-bold">NomeSito</h3>
+                    <p>Soluzioni digitali per il tuo futuro.</p>
+                    <p>La soluzione per garantire
+                        la sicurezza e l'autenticità
+                        di certificati formativi.</p>
                 </div>
 
                 <!-- Link di navigazione -->
                 <div class="col-md-2">
-                    <h5>Link utili</h5>
+                    <h3 class="fw-bold">Link utili</h3>
                     <ul class="list-unstyled">
-                        <li><a href="/chi-siamo" class="footer-link">Chi siamo</a></li>
-                        <li><a href="/servizi" class="footer-link">Servizi</a></li>
-                        <li><a href="/contatti" class="footer-link">Contatti</a></li>
-                        <li><a href="/privacy" class="footer-link">Privacy</a></li>
+                        <li><a href="/chi-siamo" class="footer-link txt-footer">Chi siamo</a></li>
+                        <li><a href="/servizi" class="footer-link txt-footer">Servizi</a></li>
+                        <li><a href="/contatti" class="footer-link txt-footer">Contatti</a></li>
+                        <li><a href="/privacy" class="footer-link txt-footer">Privacy</a></li>
                     </ul>
                 </div>
 
                 <!-- Social -->
                 <div class="col-md-3">
-                    <h5>Seguici</h5>
-                    <div class="d-flex gap-3">
-                        <a href="#" class="footer-link">Facebook</a>
-                        <a href="#" class="footer-link">Instagram</a>
-                        <a href="#" class="footer-link">LinkedIn</a>
-                    </div>
+                    <h3 class="fw-bold">Link utili</h3>Seguici</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="footer-link txt-footer">Facebook</a></li>
+                        <li><a href="#" class="footer-link txt-footer">Instagram</a></li>
+                        <li><a href="#" class="footer-link txt-footer">LinkedIn</a></li>
+                    </ul>
                 </div>
 
                 <!-- Contatti -->
                 <div class="col-md-3">
-                    <h5>Contatti</h5>
-                    <p class="mb-1">Email: <a href="mailto:info@nomesito.com" class="footer-link">info@nomesito.com</a>
+                    <h3 class="fw-bold">Link utili</h3>Contatti</h3>
+                    <p class="mb-1">Email: <a href="mailto:info@nomesito.com"
+                            class="footer-link txt-footer">info@nomesito.com</a>
                     </p>
-                    <p class="mb-0">Tel: <a href="tel:+390123456789" class="footer-link">+39 012 3456789</a></p>
+                    <p class="mb-0">Tel: <a href="tel:+390123456789" class="footer-link txt-footer">+39 012 3456789</a>
+                    </p>
                 </div>
 
-            </div>
 
-            <!-- Copyright -->
-            <div class="text-center mt-4 small text-rossokd">
-                &copy; 2025 NomeSito. Tutti i diritti riservati.
+                <!-- Copyright -->
+                <div class="text-center mt-4 small text-footer fw-light">
+                    &copy; 2025 NomeSito. Tutti i diritti riservati.
+                </div>
+
+
             </div>
         </div>
     </footer>
 
-
+    <script defer src="./scripts/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
         crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.min.js"
-        integrity="sha384-RuyvpeZCxMJCqVUGFI0Do1mQrods/hhxYlcVfGPOfQtPJh0JCw12tUAZ/Mv10S7D"
-        crossorigin="anonymous"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        function updateSummarySelections() {
-            const certQtyInput = document.querySelector('input[name="certQty"]:checked');
-            const certDurationInput = document.querySelector('input[name="certDuration"]:checked');
-            const apiCheckbox = document.getElementById('apiAccess');
-
-            function getLabelText(input) {
-                if (!input) return '-';
-                const label = document.querySelector(`label[for="${input.id}"]`);
-                return label ? label.textContent.trim() : '-';
-            }
-
-            document.getElementById('summary-cert-qty').textContent = getLabelText(certQtyInput);
-            document.getElementById('summary-cert-duration').textContent = getLabelText(certDurationInput);
-            document.getElementById('summary-api').textContent = apiCheckbox.checked ? 'Attivo' : 'Non attivo';
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const certQtyRadios = document.querySelectorAll('input[name="certQty"]');
-            const certDurationRadios = document.querySelectorAll('input[name="certDuration"]');
-            const apiCheckbox = document.getElementById('apiAccess');
-
-            certQtyRadios.forEach(radio => radio.addEventListener('change', updateSummarySelections));
-            certDurationRadios.forEach(radio => radio.addEventListener('change', updateSummarySelections));
-            apiCheckbox.addEventListener('change', updateSummarySelections);
-
-            updateSummarySelections();
-        });
-    </script>
 </body>
 
 </html>
