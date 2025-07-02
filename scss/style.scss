@@ -35,6 +35,7 @@ $spacers: (
   6: $spacer * 4,
   7: $spacer * 5,
   8: $spacer * 6,
+  11: $spacer * 9,
   13: $spacer * 11,
 );
 
@@ -203,13 +204,13 @@ header {
   }
 
   @include media-breakpoint-down(md) {
-      .colImg {
-        display: none;
-      }
+    .colImg {
+      display: none;
+    }
 
-      .cardContainer {
-        flex-direction: column;
-      }
+    .cardContainer {
+      flex-direction: column;
+    }
   }
 }
 
@@ -242,11 +243,12 @@ header {
 
 }
 
-#contactForm button[type="submit"], .step1Button {
+#contactForm button[type="submit"],
+.step1Button {
   width: 10%;
   background: linear-gradient(90deg, #40c9a2, #0f7b61);
   border: none;
-  color: #fff; 
+  color: #fff;
 }
 
 .custom-gap {
@@ -261,7 +263,7 @@ header {
   width: 190px;
 }
 
-.btn-verdekd{
+.btn-verdekd {
   background: linear-gradient(90deg, #40c9a2, #0f7b61);
 }
 
@@ -401,11 +403,13 @@ h2 {
     transform: translateY(0);
   }
 }
+
 @keyframes fadeInDown {
   from {
     opacity: 0;
     transform: translateY(-20px);
   }
+
   to {
     opacity: 1;
   }
@@ -424,6 +428,7 @@ h2 {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -443,6 +448,7 @@ h2 {
     opacity: 0;
     transform: scale(0.8);
   }
+
   to {
     opacity: 1;
     transform: scale(1);
@@ -462,6 +468,7 @@ h2 {
     opacity: 0;
     transform: translateX(-250px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -469,7 +476,7 @@ h2 {
 }
 
 .slide-in-left {
-  opacity: 0; 
+  opacity: 0;
 }
 
 .slide-in-left.animate {
@@ -481,6 +488,7 @@ h2 {
     opacity: 0;
     transform: translateX(250px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -516,3 +524,10 @@ h2 {
   }
 }
 
+.fixed-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
