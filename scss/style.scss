@@ -33,6 +33,9 @@ $spacers: (
   4: $spacer * 1.5,
   5: $spacer * 3,
   6: $spacer * 4,
+  7: $spacer * 5,
+  8: $spacer * 6,
+  13: $spacer * 11,
 );
 
 
@@ -181,8 +184,8 @@ header {
   height: 80vh;
 }
 
-.vh-50 {
-  height: 50vh;
+.vh-60 {
+  height: 60vh;
 }
 
 .card {
@@ -279,14 +282,7 @@ header {
 
 h1 {
   font-weight: bold;
-  color: $rossokd !important;
-}
-
-.ms-lg-8 {
-  @include media-breakpoint-up(lg) {
-    margin-left: 11rem !important;
-  }
-
+  color: $rossokd;
 }
 
 h2 {
@@ -518,12 +514,4 @@ h2 {
   @include media-breakpoint-up(lg) {
     margin-top: 0;
   }
-}
-
-.fixed-top {
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: 1030;
 }
