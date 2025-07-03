@@ -12,8 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // Step navigation buttons
   const btnSelect = document.querySelector('#step-1 button.btn-verdekd'); // Seleziona button
   const btnStep2Next = document.querySelector('#step-2 button.btn-verdekd'); // Avanti step 2
-  const btnStep2Prev = document.querySelector('#step-2 button.btn-rossokd'); // Indietro step 2
-  const btnStep3Prev = document.querySelector('#step-3 button.btn-rossokd'); // Indietro step 3
+  const btnStep2Prev = document.querySelector('#step-2 a.link-rossokd'); // Indietro step 2
+  const btnStep3Prev = document.querySelector('#step-3 a.link-rossokd'); // Indietro step 3
 
   // Step div
   const step1 = document.getElementById('step-1');
@@ -35,6 +35,13 @@ document.addEventListener('DOMContentLoaded', () => {
     step1.style.display = stepNumber === 1 ? 'block' : 'none';
     step2.style.display = stepNumber === 2 ? 'block' : 'none';
     step3.style.display = stepNumber === 3 ? 'block' : 'none';
+
+    if (stepNumber === 3) {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
   }
 
   // Inizializza visibilità
@@ -100,34 +107,34 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function resetStep2() {
-  // Deseleziona radio certQty solo se NON è corso 1
-  const corsoSelezionato = sessionStorage.getItem('corsoSelezionato');
-  if (corsoSelezionato !== "1") {
-    console.log("funziona");
-    document.querySelectorAll('input[name="certQty"]').forEach(radio => radio.checked = false);
+    // Deseleziona radio certQty solo se NON è corso 1
+    const corsoSelezionato = sessionStorage.getItem('corsoSelezionato');
+    if (corsoSelezionato !== "1") {
+      console.log("funziona");
+      document.querySelectorAll('input[name="certQty"]').forEach(radio => radio.checked = false);
+    }
+
+    // Deseleziona durata e api
+    document.querySelectorAll('input[name="certDuration"]').forEach(radio => radio.checked = false);
+    const apiCheckbox = document.getElementById('apiAccess');
+    if (apiCheckbox) apiCheckbox.checked = false;
+
+    // Reset summary
+    const summaryQty = document.getElementById('summary-cert-qty');
+    const summaryDurata = document.getElementById('summary-cert-duration');
+    const summaryApi = document.getElementById('summary-api');
+
+    if (corsoSelezionato === "1") {
+
+      summaryQty.textContent = 'Quantità illimitata';
+
+    } else {
+      summaryQty.textContent = '-';
+    }
+
+    summaryDurata.textContent = '-';
+    summaryApi.textContent = 'Non attivo';
   }
-
-  // Deseleziona durata e api
-  document.querySelectorAll('input[name="certDuration"]').forEach(radio => radio.checked = false);
-  const apiCheckbox = document.getElementById('apiAccess');
-  if (apiCheckbox) apiCheckbox.checked = false;
-
-  // Reset summary
-  const summaryQty = document.getElementById('summary-cert-qty');
-  const summaryDurata = document.getElementById('summary-cert-duration');
-  const summaryApi = document.getElementById('summary-api');
-
-  if (corsoSelezionato === "1") {
-    
-    summaryQty.textContent = 'Quantità illimitata';
-    
-  } else {
-    summaryQty.textContent = '-';
-  }
-
-  summaryDurata.textContent = '-';
-  summaryApi.textContent = 'Non attivo';
-}
 
   let prizes = {
     "1": {
@@ -190,11 +197,16 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Pulsante Indietro step 2 -> step 1
-  btnStep2Prev.addEventListener('click', () => {
-    resetStep2();  // Azzera tutto
+  btnStep2Prev.addEventListener('click', (e) => {
+    e.preventDefault();
+    resetStep2();
     showStep(1);
   });
-
+  btnStep3Prev.addEventListener('click', (e) => {
+    e.preventDefault();
+    resetStep2();
+    showStep(2);
+  });
   // Pulsante Avanti step 2 -> step 3
   btnStep2Next.addEventListener('click', () => {
     const certQtySelected = document.querySelector('input[name="certQty"]:checked');
@@ -208,7 +220,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     else {
       const SummaryCertQty = document.getElementById('summary-cert-qty');
-      
+
       if (!certDurationSelected) {
         alert('Seleziona la durata del certificato prima di proseguire.');
         return;
@@ -224,12 +236,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('finalPrice').textContent = prezzoFinale + "€"; // Calcolo prezzo da fare
   });
 
-  // Pulsante Indietro step 3 -> step 2
-  btnStep3Prev.addEventListener('click', () => {
-    resetStep2();
-    showStep(2);
-    updateSummarySelections();
-  });
 
 });
 
@@ -294,4 +300,49 @@ const observer = new IntersectionObserver((entries) => {
 // Seleziona TUTTI gli elementi da animare
 document.querySelectorAll('.fade-in-down, .pop-in, .slide-in-left, .slide-in-right, .fade-in-up').forEach(elem => {
   observer.observe(elem);
-  });
+});
+
+//STEP 2 MOBILE
+document.addEventListener("DOMContentLoaded", function () {
+  const summary = document.getElementById("summaryContainer");
+  const footer = document.querySelector("footer");
+  const wrapper = document.getElementById("summaryWrapper");
+
+  if (!summary || !footer || !wrapper) return;
+
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        summary.classList.add("stop-fixed");
+      } else {
+        summary.classList.remove("stop-fixed");
+      }
+    },
+    {
+      root: null,
+      threshold: 0,
+    }
+  );
+
+  observer.observe(footer);
+});
+
+//Vai al configuratore dalla nav
+document.addEventListener('DOMContentLoaded', () => {
+  const navConfiguratorLink = document.getElementById('navConfiguratorLink');
+  const introSection = document.getElementById('introSection');
+  const configurator = document.getElementById('configurator');
+
+  if (navConfiguratorLink && introSection && configurator) {
+    navConfiguratorLink.addEventListener('click', (e) => {
+      e.preventDefault(); // Evita il comportamento del link
+
+      // Nasconde la intro e mostra il configuratore
+      introSection.style.display = 'none';
+      configurator.style.display = 'block';
+
+      // Scrolla alla sezione (opzionale)
+      configurator.scrollIntoView({ behavior: 'smooth' });
+    });
+  }
+});
