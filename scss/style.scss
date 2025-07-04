@@ -182,11 +182,6 @@ header {
   background-size: cover;
   position: relative;
   background-position: 50%;
-  height: 80vh;
-}
-
-.vh-60 {
-  height: 60vh;
 }
 
 .card {
@@ -267,20 +262,6 @@ header {
   background: linear-gradient(90deg, #40c9a2, #0f7b61);
 }
 
-.w-card {
-
-  @include media-breakpoint-up(sm) {
-    max-width: 500px;
-  }
-
-  @include media-breakpoint-up(md) {
-    min-width: 550px;
-  }
-
-  @include media-breakpoint-up(lg) {
-    max-width: 600px;
-  }
-}
 
 h1 {
   font-weight: 900;
@@ -299,11 +280,8 @@ h2 {
   display: none;
 }
 
-@include media-breakpoint-down(md){
-  .menotesto {
-  display: none;
-}
-}
+
+
 
 @media (max-width: 768px) {
   .desktop {
@@ -538,6 +516,6 @@ h2 {
   z-index: 1030;
 }
 
-.card-body{
+.card-body {
   justify-content: normal;
 }
