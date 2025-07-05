@@ -33,6 +33,10 @@ $spacers: (
   4: $spacer * 1.5,
   5: $spacer * 3,
   6: $spacer * 4,
+  7: $spacer * 5,
+  8: $spacer * 6,
+  11: $spacer * 9,
+  13: $spacer * 11,
 );
 
 
@@ -178,11 +182,6 @@ header {
   background-size: cover;
   position: relative;
   background-position: 50%;
-  height: 80vh;
-}
-
-.vh-50 {
-  height: 50vh;
 }
 
 .card {
@@ -288,35 +287,14 @@ header {
   width: 190px;
 }
 
-.btn-verdekd{
+.btn-verdekd {
   background: linear-gradient(90deg, #40c9a2, #0f7b61);
 }
 
-.w-card {
-
-  @include media-breakpoint-up(sm) {
-    max-width: 500px;
-  }
-
-  @include media-breakpoint-up(md) {
-    min-width: 550px;
-  }
-
-  @include media-breakpoint-up(lg) {
-    max-width: 600px;
-  }
-}
 
 h1 {
-  font-weight: bold;
-  color: $rossokd !important;
-}
-
-.ms-lg-8 {
-  @include media-breakpoint-up(lg) {
-    margin-left: 11rem !important;
-  }
-
+  font-weight: 900;
+  color: $rossokd;
 }
 
 h2 {
@@ -330,6 +308,9 @@ h2 {
 .mobile {
   display: none;
 }
+
+
+
 
 @media (max-width: 768px) {
   .desktop {
@@ -435,6 +416,7 @@ h2 {
     transform: translateY(0);
   }
 }
+
 @keyframes fadeInDown {
   from {
     opacity: 0;
@@ -651,4 +633,7 @@ h2 {
 }
 .summary-text{
   flex:1;
+}
+.card-body {
+  justify-content: normal;
 }

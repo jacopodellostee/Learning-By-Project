@@ -107,20 +107,6 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm p-3 bg-body-tertiary rounded-4 w-nav">
-        <div class="container-fluid">
-            <figure>
-                <picture>
-                    <source srcset="img/logo.avif" type="image/avif">
-                    <source srcset="img/logo.webp" type="image/webp">
-                    <source srcset="img/logo.jpeg" type="image/jpeg">
-                    <source srcset="img/logo.png" type="image/png">
-                    <img src="img/logo.png" alt="">
-                </picture>
-            </figure>
-            <img src="img/logo.webp" class="me-auto" height="50" alt="Logo">
-
-            <!-- bottone hamburger mobile -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -178,37 +164,131 @@
                 </ul>
             </div>
         </div>
-    </nav>
+    </nav> -->
     <div id="introSection">
-        <header class="fade-in-down">
+        <header>
             <div class="container-fluid">
                 <div class="row">
 
-                    <div class="row-cols-md-2 mt-13">
-                        <div class="col px-2 mx-2 ms-md-6 ms-lg-13">
-                            <div class="card vh-50 rounded-5 w-card">
-                                <div class="card-body">
-                                    <div class=" d-flex flex-column-reverse">
-                                        <h1 class="card-title pt-2">Configuratore KeCert</h1>
-                                        <h2 class="card-subtitle mb-2 pt-3 ">Scopri il Nuovo</h2>
-                                    </div>
-                                    <p class="card-text pt-4">Personalizza il tuo software per l’emissione di
-                                        certificati
-                                        blockchain.</p>
-                                    <p class="card-text">Scegli le funzionalità che ti servono, confronta le opzioni e
-                                        crea
-                                        la soluzione perfetta per il tuo business.</p>
-                                    <div class="d-flex justify-content-center zoom-img">
-                                        <button type="button"
-                                            class="btn btn-verdekd p-2 d-flex align-items-center mt-5">Calcola
-                                            Preventivo</button>
-                                    </div>
+                    <nav
+                        class="navbar navbar-expand-lg bg-body-tertiary shadow-sm p-3 bg-body-tertiary rounded-4 w-nav fixed-top">
+
+                        <figure class="mb-0">
+                            <picture>
+                                <source srcset="" type="image/avif">
+                                <source srcset="img/KeCert.webp" type="image/webp">
+                                <source srcset="img/KeCert.jpeg" type="image/jpeg">
+                                <source srcset="img/KeCert.png" type="image/png">
+                                <img src="img/KeCert.png" height="50" alt="KeCert">
+                            </picture>
+                        </figure>
+
+
+
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
+                                <li class="nav-item mt-xs-4">
+                                    <a class="nav-link" aria-current="page" href="#"><span
+                                            class="roll active">Home</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#contatti"><span class="roll">Contatti</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#configurator"><span class="roll">Configuratore</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#infoblockchain"><span class="roll">Certificati sulla blockchain</span></a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        Lingua
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-end">
+                                        <li>
+                                            <a class="dropdown-item d-flex align-items-center gap-2" href="#">
+                                                <img src="img/bandiera-italia.png" height="20" alt="IT">
+                                                Italiano
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item d-flex align-items-center gap-2" href="#">
+                                                <img src="img/bandiera-inghilterra.png" height="20" alt="EN">
+                                                English
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item d-flex align-items-center gap-2" href="#">
+                                                <img src="img/bandiera-spagna.png" height="20" alt="ES"> Español
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </nav>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 col-md-9 col-lg-7 mx-auto mt-8 mt-lg-11">
+                        <div class="card rounded-5 w-100 px-3 px-md-4 px-lg-5 py-4 shadow mb-4">
+
+                            <div class="card-body d-flex flex-column gap-3">
+
+                                <div class="d-flex flex-column-reverse align-items-center text-center">
+                                    <h1 class="mb-2 mb-md-4">Configuratore KeCert</h1>
+                                    <h2 class="card-subtitle mb-3">Scopri il Nuovo</h2>
                                 </div>
+
+                                <p class="card-text text-center mb-0">
+                                    Nel mondo in continua evoluzione della formazione digitale, i certificati
+                                    blockchain rappresentano una svolta epocale.
+                                </p>
+
+                                <p class="card-text text-center d-none d-md-block">
+                                    Grazie a soluzioni innovative come KeCert®, erogata da Kedos S.r.l., è finalmente
+                                    possibile certificare diplomi
+                                    e attestati in modo sicuro, trasparente e verificabile, senza dover ricorrere a
+                                    intermediari.
+                                </p>
+
+                                <p class="card-text text-center">
+                                    La blockchain è un registro digitale condiviso e immutabile, ideale per
+                                    salvaguardare dati di valore come titolo di studio, credenziali e certificazioni.
+                                    Ogni certificato diventa un token digitale unico, marcato da timestamp e
+                                    crittografia, garantendo autenticità e prevenendo frodi.
+                                </p>
+
+                                <p class="card-text text-center d-none d-md-block">
+                                    Personalizza il tuo software per l’emissione di certificati blockchain.
+                                    Scegli le funzionalità che ti servono, confronta le opzioni e crea la soluzione
+                                    perfetta per il tuo business.
+                                </p>
+
+                                <div class="d-flex justify-content-center mt-4">
+                                    <button type="button" class="btn btn-verdekd px-3 py-2 py-md-3">
+                                        Calcola Preventivo
+                                    </button>
+                                </div>
+
                             </div>
                         </div>
                     </div>
-
                 </div>
+
             </div>
         </header>
 
@@ -379,7 +459,6 @@
             </div>
         </section>
 
-
         <section class="contattaci my-2 slide-in-right">
             <div class="container">
                 <div class="row align-items-center g-4">
@@ -452,9 +531,7 @@
             <!-- Step 1 -->
 
             <div class="step active" id="step-1">
-                <h3 class="h2 text-center"><span class="text-verdekd">Seleziona il numero di</span>
-                    <strong>classi</strong>
-                </h3>
+                <h3 class="h2 text-center"><span class="text-verdekd">Seleziona il numero di</span><strong>corsi</strong></h3>
                 <div class="d-flex align-items-center justify-content-between position-relative" id="carouselContainer">
                     <button class="arrow arrow-left" id="prevBtn">&#8592;</button>
 
@@ -640,42 +717,51 @@
             <div class="row gy-4">
 
                 <!-- Logo / Descrizione -->
-                <div class="col-md-4 text-white">
-                    <h3 class="site-logo fw-bold">NomeSito</h3>
-                    <p>Soluzioni digitali per il tuo futuro.</p>
+                <div class="col-md-3 text-white">
+                    <a href="https://www.kecert.it/" title="KeCert" target="_blank">
+                        <figure class="mb-0">
+                            <picture>
+                                <source srcset="" type="image/avif">
+                                <source srcset="img/KeCert.webp" type="image/webp">
+                                <source srcset="img/KeCert.jpeg" type="image/jpeg">
+                                <source srcset="img/KeCert.png" type="image/png">
+                                <img src="img/KeCert.png" height="50" alt="KeCert">
+                            </picture>
+                        </figure>
+                    </a>
                     <p>La soluzione per garantire
                         la sicurezza e l'autenticità
                         di certificati formativi.</p>
                 </div>
 
                 <!-- Link di navigazione -->
-                <div class="col-md-2">
-                    <h3 class="fw-bold">Link utili</h3>
-                    <ul class="list-unstyled">
-ò                        <li><a href="/chi-siamo" class="footer-link txt-footer">Chi siamo</a></li>
-                        <li><a href="/servizi" class="footer-link txt-footer">Servizi</a></li>
-                        <li><a href="/contatti" class="footer-link txt-footer">Contatti</a></li>
-                        <li><a href="/privacy" class="footer-link txt-footer">Privacy</a></li>
-                    </ul>
+                <div class="col-md-3">
+                    <h3 class="fw-bold">Blockchain</h3>
+                    <h3 class="fw-bold">KeCert®</h3>
                 </div>
 
                 <!-- Social -->
                 <div class="col-md-3">
-                    <h3 class="fw-bold">Link utili</h3>Seguici</h3>
-                    <ul class="list-unstyled">
-                        <li><a href="#" class="footer-link txt-footer">Facebook</a></li>
-                        <li><a href="#" class="footer-link txt-footer">Instagram</a></li>
-                        <li><a href="#" class="footer-link txt-footer">LinkedIn</a></li>
-                    </ul>
+                    <h3 class="fw-bold">Contatti</h3>
+                    <h3 class="fw-bold">Configuratore</h3>
                 </div>
 
                 <!-- Contatti -->
-                <div class="col-md-3">
-                    <h3 class="fw-bold">Link utili</h3>Contatti</h3>
-                    <p class="mb-1">Email: <a href="mailto:info@nomesito.com"
-                            class="footer-link txt-footer">info@nomesito.com</a>
-                    </p>
-                    <p class="mb-0">Tel: <a href="tel:+390123456789" class="footer-link txt-footer">+39 012 3456789</a>
+                <div class="col-md-3 text-white">
+                    <a href="https://www.kedos-srl.it/" title="Kedos" target="_blank">
+                        <figure class="mb-0">
+                            <picture>
+                                <source srcset="" type="image/avif">
+                                <source srcset="" type="image/webp">
+                                <source srcset="" type="image/jpeg">
+                                <source srcset="" type="image/png">
+                                <img src="img/kedos.png" height="50" alt="Kedos">
+                            </picture>
+                        </figure>
+                    </a>
+                    <p>È contributor diretto nello sviluppo
+                        di Blockcerts, progetto Open source
+                        proposto dall'MIT.
                     </p>
                 </div>
 
