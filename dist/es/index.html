@@ -1,9 +1,108 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>KeCert - Configurador de presupuesto para servicio de digitalización de certificados basado en blockchain
+    </title>
+    <meta name="description"
+        content="KeCert es un servicio para digitalizar certificados utilizando tecnología blockchain. Solicita un presupuesto personalizado en línea.">
+    <meta name="robots" content="index, follow">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- JSON ld -->
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "KeCert",
+    "url": "https://www.kecert.it/",
+    "description": "KeCert es un servicio para digitalizar certificados utilizando tecnología blockchain. Solicita un presupuesto personalizado en línea.",
+    "mainEntity": [
+        {
+        "@type": "ItemList",
+        "name": "Configurador de Presupuesto",
+        "itemListElement": {
+            "@type": "WebPage",
+            "url": "https://www.kecert.it/",
+            "description": "Configura en línea tu presupuesto para digitalizar tus certificados de forma segura y transparente con tecnología blockchain."
+        }
+        },
+        {
+        "@type": "ItemList",
+        "name": "Servicios KeCert",
+        "itemListElement": {
+            "@type": "WebPage",
+            "url": "https://www.kecert.it/",
+            "description": "KeCert ofrece servicios de digitalización de certificados con blockchain, soporte personalizado y asesoría para instituciones y empresas."
+        }
+        }
+    ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "KeCert",
+    "url": "https://www.kecert.it/",
+    "logo": "https://www.kecert.it/img/logo.webp",
+    "description": "KeCert es el servicio innovador para digitalizar certificados con tecnología blockchain, ofreciendo transparencia y seguridad para tus documentos digitales.",
+    "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Corso Inghilterra, 49",
+        "addressLocality": "Turín",
+        "addressRegion": "Piamonte",
+        "postalCode": "10138",
+        "addressCountry": "IT"
+    },
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+39 011 19466570",
+        "contactType": "Customer Service",
+        "availableLanguage": "Italian",
+        "email": "kecert@kedos-srl.it"
+    },
+    "sameAs": [
+        "https://www.facebook.com/KeCert", 
+        "https://www.linkedin.com/company/KeCert" 
+    ]
+    }
+    </script>
+
+    <!-- OpenGraph -->
+    <meta property="og:title"
+        content="KeCert - Configurador de presupuesto para servicio de digitalización de certificados basado en blockchain" />
+    <meta property="og:description"
+        content="Solicita un presupuesto para digitalizar tus certificados con tecnología blockchain de forma segura y rápida." />
+    <meta property="og:url" content="https://www.kecert.it/" />
+    <meta property="og:image" content="./img/logo.webp" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="" />
+    <meta property="og:address" content="Corso Inghilterra, 49 10138 Turín (TO)" />
+    <meta property="og:email" content="kecert@kedos-srl.it" />
+    <meta property="og:phone_number" content="+39 011 19466570" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title"
+        content="KeCert - Configurador de presupuesto para servicio de digitalización de certificados basado en blockchain" />
+    <meta name="twitter:description"
+        content="Solicita un presupuesto para digitalizar tus certificados con tecnología blockchain de forma segura y rápida." />
+    <meta name="twitter:url" content="https://www.kecert.it/" />
+    <meta name="twitter:image" content="./img/logo.webp" />
+    <meta name="twitter:address" content="Corso Inghilterra, 49 10138 Turín (TO)" />
+    <meta name="twitter:email" content="kecert@kedos-srl.it" />
+    <meta name="twitter:phone_number" content="+39 011 19466570" />
 
     <!-- hreflang -->
     <link rel="canonical" href="index.html">
@@ -15,71 +114,649 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm p-3 bg-body-tertiary rounded-4 w-nav fixed-top">
+    <figure class="mb-0">
+        <picture>
+            <source srcset="" type="image/avif">
+            <source srcset="../img/KeCert.webp" type="image/webp">
+            <source srcset="../img/KeCert.jpeg" type="image/jpeg">
+            <source srcset="../img/KeCert.png" type="image/png">
+            <img src="../img/KeCert.png" height="50" alt="KeCert">
+        </picture>
+    </figure>
 
-  <figure class="mb-0">
-    <picture>
-      <source srcset="" type="image/avif">
-      <source srcset="../img/KeCert.webp" type="image/webp">
-      <source srcset="../img/KeCert.jpeg" type="image/jpeg">
-      <source srcset="../img/KeCert.png" type="image/png">
-      <img src="../img/KeCert.png" height="50" alt="KeCert">
-    </picture>
-  </figure>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
-      <li class="nav-item mt-xs-4">
-        <a class="nav-link active" href="index.html"><span class="roll">Inicio</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#contattaKeCert"><span class="roll">Contacto</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" id="navConfiguratorLink"><span class="roll">Configurador</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#blockchainInfo"><span class="roll">Información de Blockchain</span></a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Idioma</a>
-        <ul class="dropdown-menu dropdown-menu-end">
-          <li>
-            <a class="dropdown-item d-flex align-items-center gap-2" href="../index.html">
-              <img src="../img/bandiera-italia.png" height="20" alt="IT">
-              Italiano
-            </a>
-          </li>
-          <li><hr class="dropdown-divider"></li>
-          <li>
-            <a class="dropdown-item d-flex align-items-center gap-2" href="../en/index.html">
-              <img src="../img/bandiera-inghilterra.png" height="20" alt="EN">
-              English
-            </a>
-          </li>
-          <li><hr class="dropdown-divider"></li>
-          <li>
-            <a class="dropdown-item d-flex align-items-center gap-2 active" href="index.html">
-              <img src="../img/bandiera-spagna.png" height="20" alt="ES">
-              Español
-            </a>
-          </li>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
+            <li class="nav-item mt-xs-4">
+                <a class="nav-link active" href="index.html"><span class="roll active">Inicio</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#contattaKeCert"><span class="roll">Contacto</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="navConfiguratorLink"><span class="roll">Configurador</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#blockchainInfo"><span class="roll">Información de Blockchain</span></a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Idioma</a>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li>
+                        <a class="dropdown-item d-flex align-items-center gap-2" href="../index.html">
+                            <img src="../img/bandiera-italia.png" height="20" alt="IT">
+                            Italiano
+                        </a>
+                    </li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li>
+                        <a class="dropdown-item d-flex align-items-center gap-2" href="../en/index.html">
+                            <img src="../img/bandiera-inghilterra.png" height="20" alt="EN">
+                            English
+                        </a>
+                    </li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li>
+                        <a class="dropdown-item d-flex align-items-center gap-2 active" href="index.html">
+                            <img src="../img/bandiera-spagna.png" height="20" alt="ES">
+                            Español
+                        </a>
+                    </li>
+                </ul>
+            </li>
         </ul>
-      </li>
-    </ul>
-  </div>
+    </div>
 </nav>
 <body>
-    
-    <script defer src="./scripts/main.js"></script>
+    <div id="introSection">
+        <header>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 col-md-9 col-lg-7 mx-auto mt-8 mt-lg-11">
+                        <div class="card rounded-5 w-100 px-3 px-md-4 px-lg-5 py-4 shadow mb-4">
+
+                            <div class="card-body d-flex flex-column gap-3">
+
+                                <div class="d-flex flex-column-reverse align-items-center text-center">
+                                    <h1 class="mb-2 mb-md-4">KeCert Configurador</h1>
+                                    <h2 class="card-subtitle mb-3">Descubre lo Nuevo</h2>
+                                </div>
+
+                                <p class="card-text text-center mb-0">
+                                    En el mundo en constante evolución de la formación digital, los certificados
+                                    blockchain representan un avance histórico.
+                                </p>
+
+                                <p class="card-text text-center d-none d-md-block">
+                                    Gracias a soluciones innovadoras como KeCert®, proporcionadas por Kedos S.r.l., es
+                                    finalmente posible certificar diplomas y títulos de forma segura, transparente y
+                                    verificable, sin necesidad de intermediarios.
+                                </p>
+
+                                <p class="card-text text-center">
+                                    La blockchain es un libro de registro digital compartido e inmutable, ideal para
+                                    proteger datos valiosos como títulos académicos, credenciales y certificaciones.
+                                    Cada certificado se convierte en un token digital único, marcado con una fecha y
+                                    hora y cifrado, lo que garantiza la autenticidad y previene fraudes.
+                                </p>
+
+                                <p class="card-text text-center d-none d-md-block">
+                                    Personaliza tu software para emitir certificados blockchain. Elige las funciones que
+                                    necesitas, compara opciones y crea la solución perfecta para tu negocio.
+                                </p>
+
+                                <div class="d-flex justify-content-center mt-4">
+                                    <button type="button" class="btn btn-verdekd px-3 py-2 py-md-3">
+                                        Calcular Cotización
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </header>
+
+        <section id="blockchainInfo" class="py-6 pop-in">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="p-4 text-center">
+                            <h2 id="infoblockchain">
+                                <strong><span class="text-verdekd">¿Qué es</span> una Blockchain?</strong>
+                            </h2>
+                            <hr class="short-divider">
+
+                            <p>
+                                La <b>blockchain</b> es un <b>libro de registro</b> <b>público</b>, <b>compartido</b> e
+                                <b>inmutable</b> en el que cada transacción corresponde a la escritura de un nuevo
+                                bloque en la
+                                cadena.
+                            </p>
+                            <p>
+                                Cada bloque contiene tanto la información a registrar como la fecha y hora de la
+                                transacción. Un
+                                nuevo bloque se añade como el último de la cadena, sin posibilidad de alterar los
+                                bloques
+                                existentes o insertar uno entre dos consecutivos.
+                            </p>
+                            <p>
+                                Originalmente fue creada para la transferencia de Bitcoin, la primera criptomoneda. La
+                                información se agrupa en bloques. Cada bloque está vinculado al anterior y al siguiente,
+                                como
+                                una cadena. ¡De ahí viene el nombre Blockchain!
+                            </p>
+                            <p>
+                                Cada bloque debe ser validado. Para ello, existen sistemas dedicados (llamados mineros)
+                                que
+                                resuelven complejos problemas matemáticos. Una vez validado un bloque, el minero pasa
+                                inmediatamente a validar el siguiente.
+                            </p>
+
+                            <div class="mt-4">
+                                <a href="#!" class="text-verdekd scopri-link">
+                                    <p>Descubre más &gt;</p>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="vantaggiKecert" class="fade-in-down">
+            <div class="container">
+                <div class="d-flex justify-content-center fade-in-down">
+                    <h2 class="text-verdekd"><strong>Las Ventajas de <span class="text-rossokd">KeCert®</span></strong>
+                    </h2>
+                </div>
+                <hr class="short-divider desktop">
+
+                <div class="row row-cols-1 row-cols-md-3 g-4 d-flex justify-content-center">
+
+                    <!-- Card 1 -->
+                    <div class="col slide-in-left">
+                        <div class="card h-100 text-center p-3">
+                            <svg width="60" height="60" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" style="margin: 0 auto; display: block;">
+                                <path
+                                    d="M12 14.5V16.5M7 10.0288C7.47142 10 8.05259 10 8.8 10H15.2C15.9474 10 16.5286 10 17 10.0288M7 10.0288C6.41168 10.0647 5.99429 10.1455 5.63803 10.327C5.07354 10.6146 4.6146 11.0735 4.32698 11.638C4 12.2798 4 13.1198 4 14.8V16.2C4 17.8802 4 18.7202 4.32698 19.362C4.6146 19.9265 5.07354 20.3854 5.63803 20.673C6.27976 21 7.11984 21 8.8 21H15.2C16.8802 21 17.7202 21 18.362 20.673C18.9265 20.3854 19.3854 19.9265 19.673 19.362C20 18.7202 20 17.8802 20 16.2V14.8C20 13.1198 20 12.2798 19.673 11.638C19.3854 11.0735 18.9265 10.6146 18.362 10.327C18.0057 10.1455 17.5883 10.0647 17 10.0288M7 10.0288V8C7 5.23858 9.23858 3 12 3C14.7614 3 17 5.23858 17 8V10.0288"
+                                    stroke="#2E7D32" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <div class="card-body">
+                                <h5 class="card-title text-verdekd"><strong>Seguridad <span
+                                            class="text-rossokd">avanzada</span></strong></h5>
+                                <p class="card-text">
+                                    Cada certificado se rastrea en Ethereum, basado en el estándar Blockcerts
+                                    desarrollado por
+                                    el MIT, al que Kedos contribuye activamente.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="col fade-in-down">
+                        <div class="card h-100 text-center p-3">
+                            <svg width="60" height="60" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" style="margin: 0 auto; display: block;">
+                                <path
+                                    d="M13.5 3H12H8C6.34315 3 5 4.34315 5 6V18C5 19.6569 6.34315 21 8 21H10M13.5 3L19 8.625M13.5 3V7.625C13.5 8.17728 13.9477 8.625 14.5 8.625H19M19 8.625V12.8125"
+                                    stroke="#2E7D32" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M13 19L15 21L20 16" stroke="#2E7D32" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            <div class="card-body">
+                                <h5 class="card-title text-verdekd"><strong>Verificación <span
+                                            class="text-rossokd">inmediata</span></strong></h5>
+                                <p class="card-text">
+                                    Estudiantes, instituciones y reclutadores pueden autenticar diplomas con un solo
+                                    clic, sin
+                                    intermediarios.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="col slide-in-right">
+                        <div class="card h-100 text-center p-3">
+                            <svg width="60" height="60" fill="#2E7D32" viewBox="0 0 36 36" version="1.1"
+                                preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" style="margin: 0 auto; display: block;">
+                                <title>directory-line</title>
+                                <path
+                                    d="M30,9H16.42L14.11,5.82A2,2,0,0,0,12.49,5H6A2,2,0,0,0,4,7V29a2,2,0,0,0,2,2H30a2,2,0,0,0,2-2V11A2,2,0,0,0,30,9Zm0,20H6V13h7.31a2,2,0,0,0,2-2H6V7h6.49l2.61,3.59a1,1,0,0,0,.81.41H30Z">
+                                </path>
+                                <rect x="0" y="0" width="36" height="36" fill-opacity="0" />
+                            </svg>
+                            <div class="card-body">
+                                <h5 class="card-title text-verdekd"><strong>Control <span
+                                            class="text-rossokd">total</span></strong></h5>
+                                <p class="card-text">
+                                    La institución educativa mantiene la propiedad de la información durante todo el
+                                    ciclo de
+                                    vida del certificado.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="col slide-in-left">
+                        <div class="card h-100 text-center p-3">
+                            <svg width="60" height="60" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" style="margin: 0 auto; display: block;">
+                                <path
+                                    d="M13 2L4.09344 12.6879C3.74463 13.1064 3.57023 13.3157 3.56756 13.4925C3.56524 13.6461 3.63372 13.7923 3.75324 13.8889C3.89073 14 4.16316 14 4.70802 14H12L11 22L19.9065 11.3121C20.2553 10.8936 20.4297 10.6843 20.4324 10.5075C20.4347 10.3539 20.3663 10.2077 20.2467 10.1111C20.1092 10 19.8368 10 19.292 10H12L13 2Z"
+                                    stroke="#2E7D32" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <div class="card-body">
+                                <h5 class="card-title text-verdekd"><strong>Eficiencia y <span
+                                            class="text-rossokd">ahorro</span></strong></h5>
+                                <p class="card-text">
+                                    El proceso es rápido, ágil, con costes reducidos y conservación digital a largo
+                                    plazo.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div class="col slide-in-right">
+                        <div class="card h-100 text-center p-3">
+                            <svg width="60" height="60" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" style="margin: 0 auto; display: block;">
+                                <path
+                                    d="M19.5 6L18.0333 7.1C17.6871 7.35964 17.2661 7.5 16.8333 7.5H13.475C12.8775 7.5 12.3312 7.83761 12.064 8.37206V8.37206C11.7342 9.03161 11.9053 9.83161 12.476 10.2986L14.476 11.9349C16.0499 13.2227 16.8644 15.22 16.6399 17.2412L16.5936 17.6577C16.5314 18.2177 16.4102 18.7695 16.232 19.304L16 20"
+                                    stroke="#2E7D32" stroke-width="2" />
+                                <path
+                                    d="M2.5 10.5L5.7381 9.96032C7.09174 9.73471 8.26529 10.9083 8.03968 12.2619L7.90517 13.069C7.66434 14.514 8.3941 15.9471 9.70437 16.6022V16.6022C10.7535 17.1268 11.2976 18.3097 11.0131 19.4476L10.5 21.5"
+                                    stroke="#2E7D32" stroke-width="2" />
+                                <circle cx="12" cy="12" r="9" stroke="#2E7D32" stroke-width="2" />
+                            </svg>
+                            <div class="card-body">
+                                <h5 class="card-title text-verdekd"><strong>Flexibilidad <span
+                                            class="text-rossokd">total</span></strong></h5>
+                                <p class="card-text">
+                                    Uso en todas partes: desde el CV hasta LinkedIn, plataformas de reclutamiento y
+                                    universidades internacionales.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="infoGeneriche slide-in-left" id="contacts">
+            <div class="container">
+                <div class="row p-4 align-items-center">
+
+                    <div class="col colImg">
+                        <img src="../img/img-sezione-info-generiche.png" alt="" class="img-fluid">
+                    </div>
+
+                    <div class="col text-center">
+
+                        <h2 class="mb-4">
+                            <span class="text-verdekd">Información general sobre</span><br>
+                            <span class="text-rossokd"><strong>planes y suscripciones</strong></span>
+                        </h2>
+
+                        <div class="cardContainer d-flex justify-content-center gap-4 mb-4">
+                            <div class="card border-0 shadow-sm h-100 flex-fill">
+                                <div class="card-body d-flex flex-column justify-content-center text-center">
+                                    <h5>Configuración inicial <strong>obligatoria</strong></h5>
+                                    <p class="fs-2"><strong>€ 1.000</strong></p>
+                                </div>
+                            </div>
+
+                            <div class="card border-0 shadow-sm h-100 flex-fill">
+                                <div class="card-body d-flex flex-column justify-content-center text-center">
+                                    <h5>Acceso vía <strong>API</strong>, también adquirible posteriormente</h5>
+                                    <p class="fs-2"><strong>€ 5.000</strong></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p class="text-muted">
+                            Los costes son anuales y válidos por 12 meses desde la activación del servicio.
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contattaci my-2 slide-in-right">
+            <div class="container">
+                <div class="row align-items-center g-4">
+
+                    <!-- Form Column -->
+                    <div id="contactKeCert"
+                        class="colForm col-12 col-md-6 d-flex justify-content-center order-0 order-md-0">
+
+                        <div style="max-width: 400px;">
+                            <h5 class="h2 text-danger fw-bold mb-3 text-center">Contáctanos</h5>
+                            <p>¿Tienes otra oferta en mente?</p>
+                            <p>No dudes en escribirnos usando el formulario, te responderemos lo antes posible.</p>
+
+                            <form>
+                                <div class="mb-3">
+                                    <input type="text" class="form-control w-100 border-0 border-bottom rounded-0"
+                                        placeholder="nombre">
+                                </div>
+
+                                <div class="mb-3">
+                                    <input type="email" class="form-control w-100 border-0 border-bottom rounded-0"
+                                        placeholder="correo electrónico">
+                                </div>
+
+                                <div class="mb-4">
+                                    <input type="text" class="form-control w-100 border-0 border-bottom rounded-1"
+                                        placeholder="empresa que representas">
+                                </div>
+
+                                <button type="submit" class="btn w-100 text-white">Enviar</button>
+                            </form>
+                        </div>
+                    </div>
+
+
+                    <!-- Info Column -->
+                    <div class="colInfo col-12 col-md-5 rounded-start-4 order-1 order-md-1">
+
+                        <div class="p-4 text-white rounded-start-4 h-100">
+                            <h5 class="h4 fw-bold mb-4">INFO</h5>
+                            <p class="mb-2">
+                                <i class="bi bi-geo-alt-fill me-2"></i>
+                                Corso Inghilterra, 49 - 10138 TURÍN
+                            </p>
+                            <p class="mb-2">
+                                <i class="bi bi-envelope-fill me-2"></i>
+                                Correo: kecert@kedos-srl.it
+                            </p>
+                            <p class="mb-2">
+                                <i class="bi bi-telephone-fill me-2"></i>
+                                Tel: +39 011/19466570
+                            </p>
+                            <p>
+                                <i class="bi bi-telephone-fill me-2"></i>
+                                Fax: +39 011/19466571
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- CONFIGURATORE -->
+    <div class="pt-3" id="configurator" style="display: none;">
+        <div class="container">
+            <!-- Paso 1 -->
+
+            <div class="step active mt-8" id="step-1">
+                <h3 class="h2 text-center"><span class="text-verdekd">Selecciona el número de</span>
+                    <strong>cursos</strong>
+                </h3>
+                <div class="d-flex align-items-center justify-content-between position-relative" id="carouselContainer">
+                    <button class="arrow arrow-left" id="prevBtn">&#8592;</button>
+
+                    <div class="carousel-wrapper flex-grow-1 mx-3 my-4">
+                        <div class="carousel-track d-flex align-items-center" id="carouselTrack">
+                            <!-- Tarjeta 1 -->
+                            <div class="col custom-card d-flex justify-content-center align-items-center"
+                                data-courses="1">
+                                <div class="card imgConf">
+                                    <div class="card-body">
+                                        <img src="../img/img-donna-pacchetto.webp" alt="">
+                                        <!-- <h5 class="card-title">1 Curso</h5> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Tarjeta 2 -->
+                            <div class="col custom-card d-flex justify-content-center align-items-center"
+                                data-courses="10">
+                                <div class="card imgConf">
+                                    <div class="card-body">
+                                        <img src="../img/img-uomo-pacchetto.webp" alt="">
+                                        <!-- <h5 class="card-title">10 Cursos</h5> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Tarjeta 3 -->
+                            <div class="col custom-card d-flex justify-content-center align-items-center"
+                                data-courses="50">
+                                <div class="card imgConf">
+                                    <div class="card-body">
+                                        <img src="../img/img-donna-pacchetto-2.webp" alt="">
+                                        <!-- <h5 class="card-title">50 Cursos</h5> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="arrow arrow-right" id="nextBtn">&#8594;</button>
+                </div>
+
+                <div class="d-flex justify-content-center mt-3">
+                    <button class="btn btn-verdekd step1Button w-75 mb-5">Seleccionar</button>
+                </div>
+            </div>
+
+            <!-- Paso 2 -->
+            <div class="step mt-8" id="step-2">
+
+                <span>← </span><a href="#" class="link-rossokd" id="btnStep2Prev">Atrás</a>
+                <h3 class="h2 text-center">Configurador para el paquete seleccionado</h3>
+
+                <div class="container">
+                    <div class="row flex-md-row-reverse">
+
+                        <div class="col-12 col-md-6 mx-auto gap-3">
+                            <!-- Tarjeta 1: Cantidad de certificados -->
+                            <div class="card my-3" id="cardQty">
+                                <div class="card-body">
+                                    <h5 class="card-title">Cantidad de certificados</h5>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="certQty" id="singleCert"
+                                            value="single">
+                                        <label class="form-check-label" for="singleCert">Certificados para una sola
+                                            persona</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="certQty" id="multiCert"
+                                            value="multi">
+                                        <label class="form-check-label" for="multiCert">Certificados para 30
+                                            personas</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Tarjeta 2: Duración del certificado -->
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <h3 class="card-title">Duración del certificado</h3>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="certDuration" id="dur10"
+                                            value="10">
+                                        <label class="form-check-label" for="dur10">10 años desde la emisión</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="certDuration" id="illimitata"
+                                            value="unlimited">
+                                        <label class="form-check-label" for="illimitata">Duración ilimitada</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Tarjeta 3: Servicio API -->
+                            <div class="card main-content">
+                                <div class="card-body">
+                                    <h3 class="card-title">Integración API</h3>
+                                    <p class="card-text">
+                                        Integra <strong>KeCert</strong> directamente en tus sistemas empresariales
+                                        mediante acceso API.<br><br>
+                                        Esta opción te permite automatizar la emisión de certificados blockchain,
+                                        mejorando la eficiencia y escalabilidad en tus flujos operativos.<br><br>
+                                        La activación tiene un coste único de <strong>5.000€</strong> por cliente y
+                                        puede adquirirse
+                                        también posteriormente, sin tarifas anuales.
+                                    </p>
+                                    <div class="form-check mt-2">
+                                        <input class="form-check-input" type="checkbox" id="apiAccess">
+                                        <label class="form-check-label" for="apiAccess">Activar servicio API</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" col-12 col-md-6  d-flex flex-column my-3" id="summaryWrapper">
+                            <div class="summary-popup summary-text text-center summary-text d-flex flex-column align-items-center justify-content-center"
+                                id="summaryContainer">
+                                <h3 class="mb-3">Resumen del curso</h3>
+                                <p>Total cursos: <span id="total-selected">0</span></p>
+                                <p>Cantidad de certificados: <span id="summary-cert-qty">-</span></p>
+                                <p>Duración del certificado: <span id="summary-cert-duration">-</span></p>
+                                <p>Servicio API: <span id="summary-api">No activado</span></p>
+
+                                <div class="mt-auto">
+                                    <div class="d-flex justify-content-center mt-3">
+                                        <button class="btn btn-verdekd" id="toStep3">Calcular presupuesto</button>
+                                    </div>
+                                    <div class="text-center">
+                                        <a href="#">Contáctanos para personalizar tu paquete</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Paso 3 -->
+            <div class="step mt-8" id="step-3">
+                <a href="#" class="link-rossokd" id="btnStep3Prev">← Atrás</a>
+                <div class="container">
+                    <div class="row d-flex justify-content-center align-items-center text-center">
+                        <div class="mt-3">
+                            <div class="my-1">
+                                <h5 class="text-rossokd fs-2"><strong>Presupuesto estimado:</strong></h5>
+                                <p>El total de las opciones seleccionadas asciende aproximadamente a <strong
+                                        class="fs-4" id="finalPrice"></strong></p>
+                            </div>
+
+                            <div class="my-1">
+                                <h6 class="fs-2"><strong>¿Interesado en esta oferta?</strong></h6>
+                                <p>Deja tus datos de contacto y nuestro equipo te responderá lo antes posible con toda
+                                    la información.</p>
+                            </div>
+
+                            <form id="contactForm" class="my-1">
+                                <div class="d-flex flex-column flex-md-row justify-content-center custom-gap">
+                                    <input type="email" class="form-control w-100 border-0 border-bottom rounded-0"
+                                        id="email" name="email" required placeholder="Introduce tu correo electrónico">
+                                    <input type="tel" class="form-control w-100 border-0 border-bottom rounded-0"
+                                        id="phone" name="phone" required placeholder="Introduce tu número de teléfono">
+                                </div>
+                                <div class="d-flex justify-content-center mt-3">
+                                    <button class="btn btn-verdekd step1Button w-75 mb-5">Seleccionar</button>
+                                </div>
+                            </form>
+
+                            <!-- Ilustración abajo -->
+                            <div>
+                                <img src="../img/img-preventivo-stimato.png" alt="" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="site-footer bg-blukd text-light py-5 fade-in-up page-footer">
+        <div class="container">
+            <div class="row gy-4">
+
+                <!-- Logo / Descripción -->
+                <div class="col-md-3 text-white">
+                    <a href="https://www.kecert.it/" title="KeCert" target="_blank">
+                        <figure class="mb-0">
+                            <picture>
+                                <source srcset="" type="image/avif">
+                                <source srcset="../img/KeCert.webp" type="image/webp">
+                                <source srcset="../img/KeCert.jpeg" type="image/jpeg">
+                                <source srcset="../img/KeCert.png" type="image/png">
+                                <img src="../img/KeCert.png" height="50" alt="KeCert">
+                            </picture>
+                        </figure>
+                    </a>
+                    <p>La solución para garantizar
+                        la seguridad y autenticidad
+                        de los certificados de formación.</p>
+                </div>
+
+                <!-- Enlaces de Navegación -->
+                <div class="col-md-3">
+                    <h3 class="fw-bold">Blockchain</h3>
+                    <h3 class="fw-bold">KeCert®</h3>
+                </div>
+
+                <!-- Social -->
+                <div class="col-md-3">
+                    <h3 class="fw-bold">Contactos</h3>
+                    <h3 class="fw-bold">Configurador</h3>
+                </div>
+
+                <!-- Contactos -->
+                <div class="col-md-3 text-white">
+                    <a href="https://www.kedos-srl.it/" title="Kedos" target="_blank">
+                        <figure class="mb-0">
+                            <picture>
+                                <source srcset="" type="image/avif">
+                                <source srcset="" type="image/webp">
+                                <source srcset="" type="image/jpeg">
+                                <source srcset="" type="image/png">
+                                <img src="../img/kedos.png" height="50" alt="Kedos">
+                            </picture>
+                        </figure>
+                    </a>
+                    <p>Contribuidor directo en el desarrollo
+                        de Blockcerts, el proyecto de código abierto
+                        propuesto por el MIT.
+                    </p>
+                </div>
+
+                <!-- Derechos de autor -->
+                <div class="text-center mt-4 small text-footer fw-light">
+                    &copy; 2025 <strong>WebCrafters</strong> <span class="fst-italic">Los Artesanos de la web</span>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <script defer src="../scripts/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
         crossorigin="anonymous"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
