@@ -294,6 +294,7 @@ h2 {
 .card-body {
   display: flex;
   flex-direction: column;
+  padding: 16px 28px 0;
 }
 
 #step-2 .card-title {
@@ -350,10 +351,10 @@ h2 {
 
 .w-nav {
   margin: 0 auto;
-  max-width: 270px;
+  max-width: 300px;
 
   @include media-breakpoint-up(md) {
-    min-width: 500px;
+    min-width: 400px;
   }
 
   @include media-breakpoint-up(lg) {
@@ -361,8 +362,10 @@ h2 {
   }
 }
 
-.lingua-nav {
-  @include media-breakpoint-between(sm,md) {
-    margin-top: -4rem;
+.mt-xs-4 {
+  margin-top: 1.5rem;
+
+  @include media-breakpoint-up(lg) {
+    margin-top: 0;
   }
 }
