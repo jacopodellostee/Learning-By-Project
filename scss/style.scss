@@ -76,7 +76,7 @@ $theme-colors: (
 @import "vendor/carousel";
 @import "vendor/transitions";
 
-// 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
+// 7. Optionally include utilities API last to generate classes based on the Sass map in _utilities.scss
 @import "vendor/utilities/api";
 
 // 8. Add additional custom code here
@@ -206,6 +206,8 @@ header {
 }
 
 .contattaci {
+  background-color: #f5f5fa;
+;
 
   .row {
     gap: 0 2rem;
@@ -226,6 +228,7 @@ header {
 
   .colInfo {
     background-color: #7A9E9F;
+    border-radius: 24px;
 
     @include media-breakpoint-down(md) {
       border-radius: 0 !important;
@@ -240,7 +243,9 @@ header {
   background: linear-gradient(90deg, #40c9a2, #0f7b61);
   border: none;
   color: #fff;
+  
 }
+
 
 .custom-gap {
   gap: 5rem;
@@ -254,7 +259,8 @@ header {
 
   .card:hover {
     transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 20px  rgba(15, 123, 97, 0.4);
+    border-radius: 24px;
   }
 
 }
@@ -284,8 +290,51 @@ header {
 }
 
 .btn-verdekd {
-  background: linear-gradient(90deg, #40c9a2, #0f7b61);
+  height: 50px;
+  width: 190px;
+  border: none;
+  border-radius: 24px;
+  background: linear-gradient(120deg, #40c9a2, #0f7b61);
+  background-size: 200%;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: 0 8px 20px rgba(15, 123, 97, 0.3);
+  transition: all 0.4s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, rgba(255, 255, 255, 0.2), transparent);
+    transform: skewX(-20deg);
+    transition: left 0.5s ease;
+    z-index: 2;
+  }
+
+  &:hover {
+    background-position: right;
+    transform: scale(1.04);
+    box-shadow: 0 10px 25px rgba(15, 123, 97, 0.4);
+  }
+
+  &:hover::before {
+    left: 100%;
+  }
+
+  &:active {
+    transform: scale(0.98);
+    box-shadow: 0 5px 12px rgba(15, 123, 97, 0.2);
+  }
 }
+
 
 
 h1 {
@@ -544,19 +593,6 @@ h2 {
   flex:1;
 }
 
-.w-nav {
-  margin: 0 auto;
-  max-width: 300px;
-
-  @include media-breakpoint-up(md) {
-    min-width: 400px;
-  }
-
-  @include media-breakpoint-up(lg) {
-    max-width: 900px;
-  }
-}
-
 .mt-xs-4 {
   margin-top: 1.5rem;
 
@@ -606,12 +642,3 @@ h2 {
 .card-body {
   justify-content: normal;
 }
-
-.social-icon img {
-  transition: transform 0.3s ease;
-}
-
-.social-icon:hover img {
-  transform: scale(1.2);
-}
-
