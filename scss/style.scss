@@ -6,8 +6,6 @@
 
 
 // 2. Include any default variable overrides here
-$spacer: 1rem;
-
 $blue: #0d6efd;
 $indigo: #6610f2;
 $purple: #6f42c1;
@@ -27,7 +25,6 @@ $blukd: #3A426E;
 @import "vendor/variables";
 @import "vendor/variables-dark";
 // 4. Include any default map overrides here
-
 $spacers: (
   0: 0,
   1: $spacer * .25,
@@ -36,7 +33,9 @@ $spacers: (
   4: $spacer * 1.5,
   5: $spacer * 3,
   6: $spacer * 4,
+  7: $spacer * 5,
   8: $spacer * 6,
+  11: $spacer * 9,
   13: $spacer * 11,
 );
 
@@ -54,7 +53,6 @@ $theme-colors: (
   "rossokd": $rossokd,
   "blukd": $blukd,
 );
-
 
 
 // 5. Include remainder of required parts
@@ -103,7 +101,7 @@ body>main,
 }
 
 .active {
-  color: #F82B2B;
+  color: $rossokd;
 }
 
 .nav-item a {
@@ -116,28 +114,25 @@ body>main,
   color: white;
 }
 
-
 // Carosello (Jacopo - Pagletta)
-
-
 #carouselContainer {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
 }
 
-
 .carousel-wrapper {
   overflow: hidden;
   position: relative;
-  padding: 0 10%;
+  padding-left: 75px;
 }
 
 .carousel-track {
   transition: transform 0.5s ease-in-out;
   display: flex;
-  width: 100%;
+  width: 80%;
   /* 3 card */
+
 }
 
 .custom-card {
@@ -149,7 +144,6 @@ body>main,
   flex: 0 0 100%;
   /* Ogni card prende tutta la larghezza visibile */
   padding: 1rem;
-  box-sizing: border-box;
 }
 
 .custom-card.active {
@@ -188,61 +182,130 @@ header {
   background-size: cover;
   position: relative;
   background-position: 50%;
-  height: 80vh;
-}
-
-.vh-50 {
-  height: 50vh;
+  min-height: 80vh;
 }
 
 .card {
   --bs-card-bg: #ffffffbd;
+  border: none;
 }
 
 // Sezioni Info (Cosmin)
+
+// Jacopo
+.infoGeneriche {
+
+  .card {
+    background-color: #F4F4F4;
+  }
+
+  @include media-breakpoint-down(md) {
+    .colImg {
+      display: none;
+    }
+
+    .cardContainer {
+      flex-direction: column;
+    }
+  }
+}
+
+.contattaci {
+
+  .row {
+    gap: 0 2rem;
+  }
+
+  .colForm {
+    max-width: 700px;
+
+    form {
+      width: 100%;
+
+      button[type="submit"] {
+        background: linear-gradient(90deg, #40c9a2, #0f7b61);
+        border: none;
+      }
+    }
+  }
+
+  .colInfo {
+    background-color: #7A9E9F;
+
+    @include media-breakpoint-down(md) {
+      border-radius: 0 !important;
+    }
+  }
+
+}
+
+#contactForm button[type="submit"],
+.step1Button {
+  width: 10%;
+  background: linear-gradient(90deg, #40c9a2, #0f7b61);
+  border: none;
+  color: #fff;
+}
+
+.custom-gap {
+  gap: 5rem;
+
+}
+
+#vantaggiKecert {
+  .card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  }
+
+}
+
+#blockchainInfo, #vantaggiKecert {
+  p {
+    font-size: 1.15rem;   
+    line-height: 1.6;     
+  }
+}
+
+.scopri-link {
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.scopri-link:hover {
+  text-decoration: underline;
+}
+
+// Fine Jacopo
 
 .btn-size {
   height: 50px;
   width: 190px;
 }
 
-.w-card {
-
-  @include media-breakpoint-up(sm) {
-    max-width: 500px;
-  }
-
-  @include media-breakpoint-up(md) {
-    min-width: 550px;
-  }
-
-  @include media-breakpoint-up(lg) {
-    max-width: 600px;
-  }
+.btn-verdekd {
+  background: linear-gradient(90deg, #40c9a2, #0f7b61);
 }
 
-.card-title {
-  margin-bottom: var(--bs-card-title-spacer-y);
-  color: $rossokd;
+
+h1 {
   font-weight: 900;
-}
-
-
-.zoom-img {
-  transition: transform 0.3s ease;
-}
-
-.zoom-img:hover {
-  transform: scale(1.1);
+  color: $rossokd;
 }
 
 h2 {
-  color: #F82B2B;
+  color: $rossokd;
 }
 
 .desktop {
   display: block;
 }
+
 
 .mobile {
   display: none;
@@ -255,6 +318,13 @@ h2 {
 
   .mobile {
     display: block;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .imgConf {
+    width: 500px;
+    height: auto;
   }
 }
 
@@ -273,7 +343,7 @@ h2 {
 
 .gap-3>.card {
   flex: 1;
-  min-height: 100px;
+  min-height: 50px;
 }
 
 .short-divider {
@@ -289,12 +359,10 @@ h2 {
   border: none;
 }
 
-
-
 .card-body {
   display: flex;
   flex-direction: column;
-  padding: 16px 28px 0;
+  justify-content: space-between;
 }
 
 #step-2 .card-title {
@@ -302,12 +370,11 @@ h2 {
 }
 
 .custom-card.active .card {
-  border: 2px solid #007bff;
-  box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
   transform: scale(1.05);
   transition: all 0.3s ease;
-
 }
+
+// Animazioni CSS
 
 .nav-item a {
   position: relative;
@@ -349,6 +416,105 @@ h2 {
   }
 }
 
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in-down {
+  opacity: 0;
+}
+
+.fade-in-down.animate {
+  animation: fadeInDown 1s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  opacity: 0;
+}
+
+.fade-in-up.animate {
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.pop-in {
+  opacity: 0;
+}
+
+.pop-in.animate {
+  animation: popIn 1s ease-out forwards;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-250px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slide-in-left {
+  opacity: 0;
+}
+
+.slide-in-left.animate {
+  animation: slideInLeft 1s ease-out forwards;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(250px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slide-in-right {
+  opacity: 0;
+}
+
+.slide-in-right.animate {
+  animation: slideInRight 1s ease-out forwards;
+}
+
 .w-nav {
   margin: 0 auto;
   max-width: 300px;
@@ -368,4 +534,106 @@ h2 {
   @include media-breakpoint-up(lg) {
     margin-top: 0;
   }
+}
+
+.fixed-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
+
+@media (max-width: 767.98px) {
+  #summaryWrapper {
+    position: relative;
+    height: 0;
+  }
+
+  .summary-popup {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: #fff;
+    padding: 1rem;
+    border-top: 2px solid #ccc;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.15);
+    z-index: 1050;
+  }
+
+  .summary-popup.stop-fixed {
+    position: absolute;
+    bottom: 100%;
+  }
+
+  .main-content {
+    padding-bottom: 325px;
+  }
+}
+.summary-text{
+  flex:1;
+}
+
+.w-nav {
+  margin: 0 auto;
+  max-width: 300px;
+
+  @include media-breakpoint-up(md) {
+    min-width: 400px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    max-width: 900px;
+  }
+}
+
+.mt-xs-4 {
+  margin-top: 1.5rem;
+
+  @include media-breakpoint-up(lg) {
+    margin-top: 0;
+  }
+}
+
+.fixed-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
+@media (max-width: 767.98px) {
+  #summaryWrapper {
+    position: relative;
+    height: 0;
+  }
+
+  .summary-popup {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: #fff;
+    padding: 1rem;
+    border-top: 2px solid #ccc;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.15);
+    z-index: 1050;
+  }
+  
+
+  .summary-popup.stop-fixed {
+    position: absolute;
+    bottom: 100%;
+  }
+
+  .main-content {
+    padding-bottom: 325px;
+  }
+}
+.summary-text{
+  flex:1;
+}
+.card-body {
+  justify-content: normal;
 }
