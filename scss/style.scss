@@ -385,35 +385,6 @@ h2 {
   display: inline-block;
 }
 
-.roll {
-  display: block;
-  transform: translateY(0);
-  transition: transform 0.3s ease;
-}
-
-/* Al passaggio del mouse: fa salire il testo attuale */
-.nav-item a:hover .roll {
-  animation: slide-up-reveal 0.5s forwards;
-}
-
-/* Animazione: sale e rientra da sotto */
-@keyframes slide-up-reveal {
-  0% {
-    transform: translateY(0);
-  }
-
-  49% {
-    transform: translateY(-100%);
-  }
-
-  50% {
-    transform: translateY(100%);
-  }
-
-  100% {
-    transform: translateY(0);
-  }
-}
 
 @keyframes fadeInDown {
   from {
