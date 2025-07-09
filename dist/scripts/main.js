@@ -1,8 +1,121 @@
+//Oggetto di frasi viste a schermo per ogni lingua
+const translations = {
+  it: {
+    alert_select_course: 'Seleziona un pacchetto corsi prima di continuare',
+    alert_select_qty_duration: 'Seleziona la quantità e la durata del certificato prima di proseguire.',
+    alert_select_duration: 'Seleziona la durata del certificato prima di proseguire.',
+    quantity_unlimited: 'Quantità illimitata',
+    quantity_not_selected: 'Quantità non selezionata',
+    duration_not_selected: 'Durata non selezionata',
+    api_active: 'Servizio API attivato',
+    api_not_active: 'Servizio API non attivato',
+    active: 'Attivo',
+    not_active: 'Non attivo',
+    price_currency: '€',
+    summary_dash: '-',
+  },
+  en: {
+    alert_select_course: 'Please select a course package before continuing',
+    alert_select_qty_duration: 'Please select the certificate quantity and duration before proceeding.',
+    alert_select_duration: 'Please select the certificate duration before proceeding.',
+    quantity_unlimited: 'Unlimited quantity',
+    quantity_not_selected: 'Quantity not selected',
+    duration_not_selected: 'Duration not selected',
+    api_active: 'API service enabled',
+    api_not_active: 'API service not enabled',
+    active: 'Active',
+    not_active: 'Not active',
+    price_currency: '£',
+    summary_dash: '-',
+  },
+  es: {
+    alert_select_course: 'Por favor, seleccione un paquete de cursos antes de continuar',
+    alert_select_qty_duration: 'Por favor, seleccione la cantidad y duración del certificado antes de continuar.',
+    alert_select_duration: 'Por favor, seleccione la duración del certificado antes de continuar.',
+    quantity_unlimited: 'Cantidad ilimitada',
+    quantity_not_selected: 'Cantidad no seleccionada',
+    duration_not_selected: 'Duración no seleccionada',
+    api_active: 'Servicio API activado',
+    api_not_active: 'Servicio API no activado',
+    active: 'Activo',
+    not_active: 'No activo',
+    price_currency: '€',
+    summary_dash: '-',
+  }
+};
+
+// Rileva la lingua dalla cartella prima di index.html (dist/, dist/en/, dist/es/)
+function detectLanguage() {
+  const pathParts = window.location.pathname.split('/');
+  const distIndex = pathParts.indexOf('dist');
+  if (distIndex !== -1 && pathParts.length > distIndex + 1) {
+    const langCandidate = pathParts[distIndex + 1];
+    if (['en', 'es'].includes(langCandidate)) return langCandidate;
+  }
+  return 'it';
+}
+
+const lang = detectLanguage();
+
+function t(key) {
+  return translations[lang][key] || key;
+}
+
+function changeLanguage(newLang) {
+  const currentStep = sessionStorage.getItem('currentStep') || 'step1';
+  const newPath = newLang === 'it' ? '/dist/' : `/dist/${newLang}/`;
+  window.location.href = newPath + 'index.html?step=' + currentStep;
+}
+document.querySelectorAll('[data-lang]').forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    const lang = e.currentTarget.dataset.lang;
+    changeLanguage(lang);
+  });
+});
 document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('homeButton').addEventListener('click', (e) => {
+    e.preventDefault();
+    sessionStorage.removeItem('currentStep');
+
+    const introSection = document.getElementById('introSection');
+    const configurator = document.getElementById('configurator');
+
+    introSection.style.display = 'block';
+    configurator.style.display = 'none';
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+document.addEventListener('DOMContentLoaded', () => {
+  const contactLinkStep2 = document.getElementById('contactLinkStep2');
+  if (contactLinkStep2) {
+    contactLinkStep2.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      // Mostra introSection e nascondi configurator
+      const introSection = document.getElementById('introSection');
+      const configurator = document.getElementById('configurator');
+
+      introSection.style.display = 'block';
+      configurator.style.display = 'none';
+
+      // Scrolla alla sezione contatti (supponendo id="contattaKeCert")
+      const contatti = document.getElementById('contattaKeCert');
+      if (contatti) {
+        contatti.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        // Se manca l'id, scrolla in cima
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
+  }
+});
+document.addEventListener('DOMContentLoaded', () => {
+
   // Variabili DOM
   const introSection = document.getElementById('introSection');
   const configurator = document.getElementById('configurator');
-
   // Carousel
   const carouselTrack = document.getElementById('carouselTrack');
   const cards = carouselTrack.querySelectorAll('.custom-card');
@@ -32,6 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Funzione per mostrare uno step solo
   function showStep(stepNumber) {
+    sessionStorage.setItem('currentStep', `step${stepNumber}`);
     step1.style.display = stepNumber === 1 ? 'block' : 'none';
     step2.style.display = stepNumber === 2 ? 'block' : 'none';
     step3.style.display = stepNumber === 3 ? 'block' : 'none';
@@ -44,9 +158,67 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Inizializza visibilità
-  showStep(1);
+  btnSelect.addEventListener('click', () => {
+    selectedCourseCount = getSelectedCourses();
+    if (selectedCourseCount === 0) {
+      alert(t('alert_select_course'));
+      return;
+    }
+    sessionStorage.setItem('corsoSelezionato', selectedCourseCount);
+    updateSummary();
+    showStep(2);
 
+    const certQtyRadios = document.querySelectorAll('input[name="certQty"]');
+    const certDurationRadios = document.querySelectorAll('input[name="certDuration"]');
+    const apiCheckbox = document.getElementById('apiAccess');
+
+    certQtyRadios.forEach(radio => radio.addEventListener('change', updateSummarySelections));
+    certDurationRadios.forEach(radio => radio.addEventListener('change', updateSummarySelections));
+    apiCheckbox.addEventListener('change', updateSummarySelections);
+
+    updateSummarySelections();
+  });
+
+  function initStep2Events() {
+    const certQtyRadios = document.querySelectorAll('input[name="certQty"]');
+    const certDurationRadios = document.querySelectorAll('input[name="certDuration"]');
+    const apiCheckbox = document.getElementById('apiAccess');
+
+    if (certQtyRadios.length > 0) {
+      certQtyRadios.forEach(radio => radio.addEventListener('change', updateSummarySelections));
+    }
+
+    if (certDurationRadios.length > 0) {
+      certDurationRadios.forEach(radio => radio.addEventListener('change', updateSummarySelections));
+    }
+
+    if (apiCheckbox) {
+      apiCheckbox.addEventListener('change', updateSummarySelections);
+    }
+  }
+
+  // Inizializza visibilità
+  const savedStep = sessionStorage.getItem('currentStep');
+
+  if (savedStep === 'step1') {
+    introSection.style.display = 'none';
+    configurator.style.display = 'block';
+    showStep(1);
+  } else if (savedStep === 'step2') {
+    introSection.style.display = 'none';
+    configurator.style.display = 'block';
+    showStep(2);
+    initStep2Events();
+    updateSummarySelections();
+  } else if (savedStep === 'step3') {
+    introSection.style.display = 'none';
+    configurator.style.display = 'block';
+    showStep(3);
+    initStep2Events();
+    updateSummarySelections();
+  } else {
+    showStep(1); // fallback
+  }
   // Funzione aggiorna carousel e classe active
   function updateCarousel() {
     const translateX = -currentIndex * 100;
@@ -92,9 +264,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     totalSelectedSpan.textContent = selectedCourseCount;
 
-    const certQty = document.querySelector('input[name="certQty"]:checked')?.nextElementSibling?.textContent.trim() || "Quantità non selezionata";
-    const certDuration = document.querySelector('input[name="certDuration"]:checked')?.nextElementSibling?.textContent.trim() || "Durata non selezionata";
-    const apiActive = document.getElementById('apiAccess')?.checked ? "Servizio API attivato" : "Servizio API non attivato";
+    const certQty = document.querySelector('input[name="certQty"]:checked')?.nextElementSibling?.textContent.trim() || t('quantity_not_selected');
+    const certDuration = document.querySelector('input[name="certDuration"]:checked')?.nextElementSibling?.textContent.trim() || t('duration_not_selected');
+    const apiActive = document.getElementById('apiAccess')?.checked ? t('api_active') : t('api_not_active');
 
     const cardQty = document.getElementById('cardQty');
     if (cardQty) {
@@ -110,7 +282,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Deseleziona radio certQty solo se NON è corso 1
     const corsoSelezionato = sessionStorage.getItem('corsoSelezionato');
     if (corsoSelezionato !== "1") {
-      console.log("funziona");
       document.querySelectorAll('input[name="certQty"]').forEach(radio => radio.checked = false);
     }
 
@@ -125,15 +296,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const summaryApi = document.getElementById('summary-api');
 
     if (corsoSelezionato === "1") {
-
-      summaryQty.textContent = 'Quantità illimitata';
-
+      summaryQty.textContent = t('quantity_unlimited');
     } else {
-      summaryQty.textContent = '-';
+      summaryQty.textContent = t('summary_dash');
     }
-
-    summaryDurata.textContent = '-';
-    summaryApi.textContent = 'Non attivo';
+    summaryDurata.textContent = t('summary_dash');
+    summaryApi.textContent = t('not_active');
   }
 
   let prizes = {
@@ -178,7 +346,7 @@ document.addEventListener('DOMContentLoaded', () => {
   btnSelect.addEventListener('click', () => {
     selectedCourseCount = getSelectedCourses();
     if (selectedCourseCount === 0) {
-      alert('Seleziona un pacchetto corsi prima di continuare');
+      alert(t('alert_select_course'));
       return;
     }
     sessionStorage.setItem('corsoSelezionato', selectedCourseCount);
@@ -204,7 +372,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   btnStep3Prev.addEventListener('click', (e) => {
     e.preventDefault();
-    resetStep2();
+    resetStep2();;
     showStep(2);
   });
   // Pulsante Avanti step 2 -> step 3
@@ -214,15 +382,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (selectedCourseCount > 1) {
       if (!certQtySelected || !certDurationSelected) {
-        alert('Seleziona la quantità e la durata del certificato prima di proseguire.');
+        alert(t('alert_select_course'));
         return;
       }
     }
     else {
-      const SummaryCertQty = document.getElementById('summary-cert-qty');
-
       if (!certDurationSelected) {
-        alert('Seleziona la durata del certificato prima di proseguire.');
+        alert(t('alert_select_course'));
         return;
       }
     }
@@ -233,10 +399,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let prezzoFinale = sessionStorage.getItem('prezzoCalcolato');
     // Qui puoi aggiungere il calcolo finale prezzo e dettagli
-    document.getElementById('finalPrice').textContent = prezzoFinale + "€"; // Calcolo prezzo da fare
+    document.getElementById('finalPrice').textContent = prezzoFinale + t('price_currency');// Calcolo prezzo da fare
   });
-
-
 });
 
 function updateSummarySelections() {
@@ -272,16 +436,15 @@ function updateSummarySelections() {
   }
 
   const summaryQtyElement = document.getElementById('summary-cert-qty');
-
   if (corsoSelezionato === "1") {
-    summaryQtyElement.textContent = 'Quantità illimitata';
+    summaryQtyElement.textContent = t('quantity_unlimited');
   } else if (certQtyInput) {
     summaryQtyElement.textContent = getLabelText(certQtyInput);
   } else {
-    summaryQtyElement.textContent = '-';
+    summaryQtyElement.textContent = t('summary_dash');
   }
   document.getElementById('summary-cert-duration').textContent = getLabelText(certDurationInput);
-  document.getElementById('summary-api').textContent = apiCheckbox?.checked ? 'Attivo' : 'Non attivo';
+  document.getElementById('summary-api').textContent = apiCheckbox?.checked ? t('active') : t('not_active');
 
   sessionStorage.setItem('prezzoCalcolato', prezzo);
 }
@@ -346,3 +509,4 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+

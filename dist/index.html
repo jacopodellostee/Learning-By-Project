@@ -124,7 +124,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
             <li class="nav-item mt-xs-4">
-                <a class="nav-link active" href="index.html"><span class="roll active">Home</span></a>
+                <a id="homeButton" class="nav-link active" href="index.html" ><span class="roll active">Home</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#contattaKeCert"><span class="roll">Contatti</span></a>
@@ -139,7 +139,7 @@
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Lingua</a>
                 <ul class="dropdown-menu dropdown-menu-end">
                     <li>
-                        <a class="dropdown-item d-flex align-items-center gap-2 active" href="index.html">
+                        <a class="dropdown-item d-flex align-items-center gap-2 active" href="index.html" data-lang="it">
                             <img src="img/bandiera-italia.png" height="20" alt="IT">
                             Italiano
                         </a>
@@ -148,7 +148,7 @@
                         <hr class="dropdown-divider">
                     </li>
                     <li>
-                        <a class="dropdown-item d-flex align-items-center gap-2" href="en/index.html">
+                        <a class="dropdown-item d-flex align-items-center gap-2" href="en/index.html" data-lang="en">
                             <img src="img/bandiera-inghilterra.png" height="20" alt="EN">
                             English
                         </a>
@@ -157,7 +157,7 @@
                         <hr class="dropdown-divider">
                     </li>
                     <li>
-                        <a class="dropdown-item d-flex align-items-center gap-2" href="es/index.html">
+                        <a class="dropdown-item d-flex align-items-center gap-2" href="es/index.html" data-lang="es">
                             <img src="img/bandiera-spagna.png" height="20" alt="ES">
                             Español
                         </a>
@@ -586,7 +586,7 @@
                                         <button class="btn btn-verdekd" id="toStep3">Calcola preventivo</button>
                                     </div>
                                     <div class="text-center">
-                                        <a href="#">Contattaci per personalizzare il tuo pacchetto</a>
+                                        <a href="#contattaKeCert" id="contactLinkStep2">Contattaci per personalizzare il tuo pacchetto</a>
                                     </div>
                                 </div>
                             </div>
