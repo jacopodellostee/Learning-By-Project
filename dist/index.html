@@ -446,71 +446,71 @@
 
 
 
-    <section class="contattaci mb-6 slide-in-right">
-        <div class="container">
-            <div class="row align-items-center g-4">
+        <section class="contattaci py-5 align-items-center">
+            <div class="container slide-in-right">
+                <div class="row align-items-center g-4">
 
-                <!-- Colonna Form -->
-                <div id="contattaKeCert"
-                    class="colForm col-12 col-md-6 d-flex justify-content-center order-0 order-md-0">
+                    <!-- Colonna Form -->
+                    <div id="contattaKeCert"
+                        class="colForm col-12 col-md-6 d-flex justify-content-center order-0 order-md-0">
 
-                    <div class="" style="max-width: 400px;">
-                        <h5 class="h2 text-danger fw-bold mb-3 text-center">Contattaci</h5>
-                        <p>Hai in mente una differente offerta?</p>
-                        <p>Sentiti libero di contattarci tramite form, entreremo in contatto con lei il più presto
-                            possibile</p>
+                        <div class="" style="max-width: 400px;">
+                            <h5 class="h2 text-danger fw-bold mb-3 text-center">Contattaci</h5>
+                            <p>Hai in mente una differente offerta?</p>
+                            <p>Sentiti libero di contattarci tramite form, entreremo in contatto con lei il più presto
+                                possibile</p>
 
-                        <form>
-                            <div class="mb-3">
-                                <input type="text" class="form-control w-100 border-0 border-bottom rounded-0"
-                                    placeholder="nome">
-                            </div>
+                            <form>
+                                <div class="mb-3">
+                                    <input type="text" class="form-control w-100 border-0 border-bottom rounded-0"
+                                        placeholder="nome">
+                                </div>
 
-                            <div class="mb-3">
-                                <input type="email" class="form-control w-100 border-0 border-bottom rounded-0"
-                                    placeholder="email">
-                            </div>
+                                <div class="mb-3">
+                                    <input type="email" class="form-control w-100 border-0 border-bottom rounded-0"
+                                        placeholder="email">
+                                </div>
 
-                            <div class="mb-4">
-                                <input type="text" class="form-control w-100 border-0 border-bottom rounded-1"
-                                    placeholder="azienda di cui si fa le veci">
-                            </div>
+                                <div class="mb-4">
+                                    <input type="text" class="form-control w-100 border-0 border-bottom rounded-1"
+                                        placeholder="azienda di cui si fa le veci">
+                                </div>
 
-                            <button type="submit" class="btn w-100 text-white">Invia</button>
-                        </form>
+                                <button type="submit" class="btn btn-verdekd w-100 text-white">Invia</button>
+                            </form>
+                        </div>
                     </div>
-                </div>
 
 
-                <!-- Colonna Info -->
-                <div class="colInfo col-12 col-md-5 rounded-start-4 order-1 order-md-1">
+                    <!-- Colonna Info -->
+                    <div class="colInfo col-12 col-md-5 rounded-start-4 order-1 order-md-1">
 
-                    <div class="p-4 text-white rounded-start-4 h-100">
-                        <h5 class="h4 fw-bold mb-4">INFO</h5>
-                        <p class="mb-2">
-                            <i class="bi bi-geo-alt-fill me-2"></i>
-                            Corso Inghilterra, 49 - 10138 TORINO
-                        </p>
-                        <p class="mb-2">
-                            <i class="bi bi-envelope-fill me-2"></i>
-                            Email: kecert@kedos-srl.it
-                        </p>
-                        <p class="mb-2">
-                            <i class="bi bi-telephone-fill me-2"></i>
-                            Tel: 011/19466570
-                        </p>
-                        <p>
-                            <i class="bi bi-telephone-fill me-2"></i>
-                            Fax: 011/19466571
-                        </p>
+                        <div class="p-4 text-white rounded-start-4 h-100">
+                            <h5 class="h4 fw-bold mb-4">INFO</h5>
+                            <p class="mb-2">
+                                <i class="bi bi-geo-alt-fill me-2"></i>
+                                Corso Inghilterra, 49 - 10138 TORINO
+                            </p>
+                            <p class="mb-2">
+                                <i class="bi bi-envelope-fill me-2"></i>
+                                Email: kecert@kedos-srl.it
+                            </p>
+                            <p class="mb-2">
+                                <i class="bi bi-telephone-fill me-2"></i>
+                                Tel: 011/19466570
+                            </p>
+                            <p>
+                                <i class="bi bi-telephone-fill me-2"></i>
+                                Fax: 011/19466571
+                            </p>
+                        </div>
                     </div>
-                </div>
 
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-</div>
+    </div>
 
     <!-- CONFIGURATORE (nascosto inizialmente) -->
     <div class="pt-3" id="configurator" style="display: none;">
@@ -519,8 +519,8 @@
             <!-- Step 1 -->
 
             <div class="step active mt-8" id="step-1">
-                <h3 class="h2 text-center"><span class="text-verdekd">Seleziona il numero
-                        di</span><strong>corsi</strong></h3>
+                <h3 class="h2 text-center"><strong><span class="text-verdekd">Seleziona il numero
+                        di</span> corsi</strong></h3>
                 <div class="d-flex align-items-center justify-content-between position-relative" id="carouselContainer">
                     <button class="arrow arrow-left" id="prevBtn">&#8592;</button>
 
@@ -530,10 +530,23 @@
                             <div class="col custom-card d-flex justify-content-center align-items-center"
                                 data-courses="1">
                                 <div class="card imgConf">
-                                    <div class="card-body">
+
+                                    <div class="card-body text-center">
                                         <img src="img/img-donna-pacchetto.webp">
-                                        <!-- <h5 class="card-title">1 Corso</h5> -->
+                                    
+                                        <button type="button" class="btn d-inline-flex align-items-center justify-content-center gap-2 text-verdekd mt-3"
+                                            data-bs-toggle="modal" data-bs-target="#infoSingoloCorso">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-info-circle"
+                                                viewBox="0 0 16 16">
+                                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                                                <path
+                                                    d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0" />
+                                            </svg>
+                                            <p class="mb-0 fw-bold">Scopri di più</p>
+                                        </button>
+                                    
                                     </div>
+
                                 </div>
                             </div>
                             <!-- Card 2 -->
@@ -543,6 +556,16 @@
                                     <div class="card-body">
                                         <img src="img/img-uomo-pacchetto.webp">
                                         <!-- <h5 class="card-title">10 Corsi</h5> -->
+                                        <button type="button" class="btn d-inline-flex align-items-center justify-content-center gap-2 text-verdekd mt-3"
+                                            data-bs-toggle="modal" data-bs-target="#infoDieciCorsi">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-info-circle"
+                                                viewBox="0 0 16 16">
+                                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                                                <path
+                                                    d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0" />
+                                            </svg>
+                                            <p class="mb-0 fw-bold">Scopri di più</p>
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -553,6 +576,16 @@
                                     <div class="card-body">
                                         <img src="img/img-donna-pacchetto-2.webp">
                                         <!-- <h5 class="card-title">50 Corsi</h5> -->
+                                        <button type="button" class="btn d-inline-flex align-items-center justify-content-center gap-2 text-verdekd mt-3"
+                                            data-bs-toggle="modal" data-bs-target="#infoCinquantaCorsi">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-info-circle"
+                                                viewBox="0 0 16 16">
+                                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                                                <path
+                                                    d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0" />
+                                            </svg>
+                                            <p class="mb-0 fw-bold">Scopri di più</p>
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -706,7 +739,7 @@
             <div class="row gy-4">
 
                 <!-- Logo / Descrizione -->
-                <div class="col-md-3 text-white">
+                <div class="col-md-4 text-white ">
                     <a href="https://www.kecert.it/" title="KeCert" target="_blank">
                         <figure class="mb-0">
                             <picture>
@@ -718,25 +751,35 @@
                             </picture>
                         </figure>
                     </a>
-                    <p>La soluzione per garantire
+                    <p class="py-3">La soluzione per garantire
                         la sicurezza e l'autenticità
                         di certificati formativi.</p>
                 </div>
 
                 <!-- Link di navigazione -->
-                <div class="col-md-3">
-                    <h3 class="fw-bold">Blockchain</h3>
-                    <h3 class="fw-bold">KeCert®</h3>
+                <div class="col-md-4 d-flex flex-column align-items-center">
+                    <h3 class="fw-bold">Social</h3>
+                    <ul class="list-unstyled d-flex gap-3">
+                        <li>
+                            <a href="https://www.instagram.com/kedos.srl/" target="_blank"
+                                class="text-white fs-4 social-icon">
+                                <img src="./img/instagram.png" alt="Kedos-Instagram" style="height: 30px;">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/company/kedos-srl/" target="_blank"
+                                class="text-white fs-4 social-icon">
+                                <img src="./img/linkedin.png" alt="Kedos-Linkedin" style="height: 30px;">
+                            </a>
+                        </li>
+                    </ul>
                 </div>
 
-                <!-- Social -->
-                <div class="col-md-3">
-                    <h3 class="fw-bold">Contatti</h3>
-                    <h3 class="fw-bold">Configuratore</h3>
-                </div>
+
+
 
                 <!-- Contatti -->
-                <div class="col-md-3 text-white">
+                <div class="col-md-4 text-white">
                     <a href="https://www.kedos-srl.it/" title="Kedos" target="_blank">
                         <figure class="mb-0">
                             <picture>
@@ -748,7 +791,7 @@
                             </picture>
                         </figure>
                     </a>
-                    <p>È contributor diretto nello sviluppo
+                    <p class="py-3"> È contributor diretto nello sviluppo
                         di Blockcerts, progetto Open source
                         proposto dall'MIT.
                     </p>
@@ -764,6 +807,80 @@
             </div>
         </div>
     </footer>
+
+    <!-- Modali -->
+    <div class="modal fade" id="infoSingoloCorso" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="h2 text-center"><strong><span class="text-verdekd">Informazioni Offerta </span>1 Corso</strong></h3>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        Con questa offerta puoi rendere validi i certificati emessi dal tuo ente per un <strong>singolo corso</strong>,
+                        senza limiti di studenti iscritti
+                    </p>
+                    <h4 class="my-3"><strong>Esempio pratico:</strong></h4>
+                    <p>
+                        Un Istituto Tecnico Superiore (ITS) può certificare i diplomi di un <strong>numero illimitato di studenti</strong>
+                        <strong><span class="text-rossokd">MA</span></strong> soltanto per un <strong>unico corso</strong>,
+                        come ad esempio <em>Web Developer</em>, <em>Software Developer</em> o qualsiasi altro corso offerto dalla scuola.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-verdekd" data-bs-dismiss="modal">Chiudi</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="infoDieciCorsi" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="h2 text-center"><span class="text-verdekd">Informazioni Offerta </span><strong>10 Corsi</strong></h3>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        Con questa offerta puoi rendere validi i certificati emessi dal tuo ente per un massimo di <span class="text-rossokd"><strong>10 corsi diversi</strong></span>, con un limite complessivo di <span class="text-rossokd"><strong>30 studenti</strong></span>.
+                    </p>
+                    <h4 class="my-3"><strong>Esempio pratico:</strong></h4>
+                    <p>
+                        Un Istituto Tecnico Superiore (ITS) può certificare i diplomi di <strong>massimo 30 studenti</strong>, distribuiti su uno o più corsi
+                        (fino a 10),
+                        come ad esempio <em>Web Developer</em>, <em>Software Developer</em> o altri corsi offerti dalla scuola.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-verdekd" data-bs-dismiss="modal">Chiudi</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="infoCinquantaCorsi" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="h2 text-center"><span class="text-verdekd">Informazioni Offerta </span><strong>50 Corsi</strong></h3>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        Con questa offerta puoi rendere validi i certificati emessi dal tuo ente per un massimo di <span class="text-rossokd"><strong>50 corsi diversi</strong></span>, con un limite complessivo di <span class="text-rossokd"><strong>30 studenti</strong></span>.
+                    </p>
+                    <h4 class="my-3"><strong>Esempio pratico:</strong></h4>
+                    <p>
+                        Un Istituto Tecnico Superiore (ITS) può certificare i diplomi di <strong>massimo 30 studenti</strong>, distribuiti su uno o più corsi
+                        (fino a 50),
+                        come ad esempio <em>Web Developer</em>, <em>Software Developer</em> o altri corsi offerti dalla scuola.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-verdekd" data-bs-dismiss="modal">Chiudi</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script defer src="./scripts/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
