@@ -602,56 +602,55 @@
             <!-- Step 2 -->
             <div class="step mt-8" id="step-2">
 
-                <a href="#" class="link-rossokd" id="btnStep2Prev">← Indietro</a>
-                <h3 class="h2 text-center">Configuratore del pacchetto scelto</h3>
+                <a href="#" class="link-rossokd scopri-link" id="btnStep2Prev">← Indietro</a>
+                <h3 class="h2 text-center my-3"><strong><span class="text-verdekd">Configuratore del</span> <span class="text-rossokd">pacchetto scelto</span></strong></h3>
 
                 <div class="container">
                     <div class="row flex-md-row-reverse">
 
-                        <div class="col-12 col-md-6 mx-auto gap-3 bg-danger h-100 mb-3">
+                        <div class="col-12 col-md-6 mx-auto gap-3 bg-grigiokd-1 border border-grigiokd-1 rounded h-100 mb-3">
                             <!-- Card 1: Quantità Certificati -->
-                            <div class="card my-3" id="cardQty">
+                            <div class="card my-3 bg-grigiokd-2" id="cardQty">
                                 <div class="card-body">
-                                    <h5 class="card-title">Quantità Certificati</h5>
+                                    <h3 class="card-title"><strong><span class="text-verdekd">Quantità</span> <span class="text-rossokd">Certificati</span></strong></h3>
 
                                     <div class="row flex-column gap-3" id="certQtyOptions">
                                         <div class="col">
                                             <input type="radio" name="certQty" id="singleCert" value="single"
                                                 class="d-none">
                                             <label for="singleCert"
-                                                class="option-card d-flex align-items-center justify-content-between p-3 border rounded w-100">
+                                                class="bg-grigiokd-3 option-card d-flex align-items-center justify-content-between p-3 border border-grigiokd-3 rounded w-100">
                                                 <p class="mb-0 flex-grow-1">Certificati per singola persona</p>
-                                                <button type="button"
-                                                    class="btn btn-outline-dark select-btn me-3">Seleziona</button>
+                                                <button type="button" class="btn btn-verdekd-conf select-btn me-3">Seleziona</button>
                                             </label>
                                         </div>
 
                                         <div class="col">
                                             <input type="radio" name="certQty" id="multiCert" value="multi" class="d-none">
                                             <label for="multiCert"
-                                                class="option-card d-flex align-items-center justify-content-between p-3 border rounded w-100">
+                                                class="bg-grigiokd-3 option-card d-flex align-items-center justify-content-between p-3 border border-grigiokd-3 rounded w-100">
                                                 <p class="mb-0 flex-grow-1">Certificati per 30 persone</p>
                                                 <button type="button"
-                                                    class="btn btn-outline-dark select-btn me-3">Seleziona</button>
+                                                    class="btn btn-verdekd-conf select-btn me-3">Seleziona</button>
                                             </label>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <!-- Card 2: Durata Certificato -->
-                            <div class="card mb-3 card-mt-3">
+                            <div class="card mb-3 card-mt-3 bg-grigiokd-2">
                                 <div class="card-body">
-                                    <h3 class="card-title">Durata Certificato</h3>
+                                    <h3 class="card-title"><strong><span class="text-verdekd">Durata</span> <span class="text-rossokd">Certificato</span></strong></h3>
 
                                     <div class="row flex-column gap-3" id="certDurationOptions">
                                         <div class="col">
                                             <input class="d-none" type="radio" name="certDuration" id="dur10"
                                                 value="10">
                                             <label for="dur10"
-                                                class="option-card d-flex align-items-center justify-content-between p-3 border rounded w-100">
+                                                class="bg-grigiokd-3 option-card d-flex align-items-center justify-content-between p-3 border border-grigiokd-3 rounded w-100">
                                                 <p class="mb-0 flex-grow-1">Durata di 10 anni dal rilascio</p>
                                                 <button type="button"
-                                                    class="btn btn-outline-dark select-btn me-3">Seleziona</button>
+                                                    class="btn btn-verdekd-conf select-btn me-3">Seleziona</button>
                                             </label>
                                         </div>
 
@@ -659,10 +658,10 @@
                                             <input class="d-none" type="radio" name="certDuration" id="illimitata"
                                                 value="illimitata">
                                             <label for="illimitata"
-                                                class="option-card d-flex align-items-center justify-content-between p-3 border rounded w-100">
+                                                class="bg-grigiokd-3 option-card d-flex align-items-center justify-content-between p-3 border border-grigiokd-3 rounded w-100">
                                                 <p class="mb-0 flex-grow-1">Durata illimitata</p>
                                                 <button type="button"
-                                                    class="btn btn-outline-dark select-btn me-3">Seleziona</button>
+                                                    class="btn btn-verdekd-conf select-btn me-3">Seleziona</button>
                                             </label>
                                         </div>
                                     </div>
@@ -670,8 +669,8 @@
                             </div>
                             <!-- Card 3: Servizio API -->
                             <div class="card main-content mb-3">
-                                <div class="card-body">
-                                    <h3 class="card-title">Integrazione tramite API</h3>
+                                <div class="card-body bg-grigiokd-2">
+                                    <h3 class="card-title"><strong><span class="text-verdekd">Integrazione tramite</span> <span class="text-rossokd">API</span></strong></h3>
                                     <p class="card-text">
                                         Integra <strong>KeCert</strong> direttamente nei tuoi sistemi aziendali grazie
                                         all’accesso tramite API.<br><br>
@@ -682,34 +681,36 @@
                                         acquistabile anche in un secondo momento, senza vincoli di canone annuale.
                                     </p>
                                     <div class="form-check mt-2">
-                                        <input class="form-check-input" type="checkbox" id="apiAccess">
-                                        <label class="form-check-label" for="apiAccess">Attiva servizio API</label>
+                                        <input class="btn-check form-check-input" type="checkbox" id="apiAccess">
+                                        <label class="btn btn-verdekd form-check-label px-3 py-2 h-25" for="apiAccess">Attiva servizio API</label>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class=" col-12 col-md-6  d-flex flex-column my-3" id="summaryWrapper">
+                        <div class="col-12 col-md-6  d-flex flex-column my-3" id="summaryWrapper">
                             <div class="summary-popup summary-text text-center summary-text d-flex flex-column align-items-center justify-content-center"
                                 id="summaryContainer">
-                                <h3 class="mb-3">Riepilogo Corsi</h3>
+                                <h3 class="mb-3"><strong><span class="text-verdekd">Riepilogo</span> <span class="text-rossokd">Corsi</span></strong></h3>
                                 <p>Totale corsi: <span id="total-selected">0</span></p>
                                 <p>Quantità certificati: <span id="summary-cert-qty">-</span></p>
                                 <p>Durata certificato: <span id="summary-cert-duration">-</span></p>
                                 <p>Servizio API: <span id="summary-api">Non attivo</span></p>
 
 
-                                <div class="mt-auto">
-                                    <div class="d-flex justify-content-center mt-3">
-                                        <button class="btn btn-verdekd" id="toStep3">Calcola preventivo</button>
-                                    </div>
-                                    <div class="text-center">
-                                        <a href="#contattaKeCert" id="contactLinkStep2">Contattaci per personalizzare il
-                                            tuo pacchetto</a>
-                                    </div>
-                                </div>
+
                             </div>
                         </div>
 
+                        <div class="my-3">
+
+                            <div class="my-2 d-flex justify-content-center mt-3">
+                                <button class="btn btn-verdekd" id="toStep3">Calcola preventivo</button>
+                            </div>
+
+                            <div class="fs-3 my-4 text-center">
+                                <a class="h2 scopri-link" href="#contattaKeCert" id="contactLinkStep2"><span class="text-verdekd">Contattaci per personalizzare</span> <span class="text-rossokd">il tuo pacchetto</span></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -717,7 +718,7 @@
 
             <!-- Step 3 -->
             <div class="step mt-8" id="step-3">
-                <a href="#" class="link-rossokd" id="btnStep3Prev">← Indietro</a>
+                <a href="#" class="link-rossokd scopri-link" id="btnStep3Prev">← Indietro</a>
                 <div class="container">
                     <div class="row d-flex justify-content-center align-items-center text-center">
                         <div class="mt-3">

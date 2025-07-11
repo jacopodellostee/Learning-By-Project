@@ -20,6 +20,15 @@ $verdekd: #407667;
 $rossokd: #C72939;
 $blukd: #3A426E;
 
+// Colori Step 2 Configuratore 
+
+$grigiokd-1: #FCFCFD; 
+$grigiokd-2: #F9F9FB; 
+$grigiokd-3: #F5F5F8; 
+$grigiokd-4: #EEEEF2;
+$grigiokd-5: #E6E6EB;
+
+
 // 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
 
 @import "vendor/variables";
@@ -52,6 +61,11 @@ $theme-colors: (
   "verdekd": $verdekd,
   "rossokd": $rossokd,
   "blukd": $blukd,
+  "grigiokd-1": $grigiokd-1,
+  "grigiokd-2": $grigiokd-2,
+  "grigiokd-3": $grigiokd-3,
+  "grigiokd-4": $grigiokd-4,
+  "grigiokd-5": $grigiokd-5
 );
 
 
@@ -76,6 +90,7 @@ $theme-colors: (
 @import "vendor/carousel";
 @import "vendor/transitions";
 @import "vendor/modal";
+@import "vendor/forms/form-check";
 
 // 7. Optionally include utilities API last to generate classes based on the Sass map in _utilities.scss
 @import "vendor/utilities/api";
@@ -290,7 +305,8 @@ header {
   width: 190px;
 }
 
-.btn-verdekd {
+//btn-verdekd-conf serve per dare stile allo step 2 del configuratore, in quanto 'btn-verdekd' viene usato nel js per gli step e sminchia tutto
+.btn-verdekd, .btn-verdekd-conf{
   height: 50px;
   width: 190px;
   border: none;
