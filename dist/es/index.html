@@ -133,7 +133,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
             <li class="nav-item mt-xs-4">
-                <a class="nav-link active" href="index.html"><span class="roll active">Inicio</span></a>
+                <a id="homeButton" class="nav-link active" href="index.html"><span class="roll active">Inicio</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#contattaKeCert"><span class="roll">Contacto</span></a>
@@ -148,7 +148,7 @@
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Idioma</a>
                 <ul class="dropdown-menu dropdown-menu-end">
                     <li>
-                        <a class="dropdown-item d-flex align-items-center gap-2" href="../index.html">
+                        <a class="dropdown-item d-flex align-items-center gap-2" href="../index.html" data-lang="it">
                             <img src="../img/bandiera-italia.png" height="20" alt="IT">
                             Italiano
                         </a>
@@ -157,7 +157,7 @@
                         <hr class="dropdown-divider">
                     </li>
                     <li>
-                        <a class="dropdown-item d-flex align-items-center gap-2" href="../en/index.html">
+                        <a class="dropdown-item d-flex align-items-center gap-2" href="../en/index.html" data-lang="en">
                             <img src="../img/bandiera-inghilterra.png" height="20" alt="EN">
                             English
                         </a>
@@ -166,7 +166,7 @@
                         <hr class="dropdown-divider">
                     </li>
                     <li>
-                        <a class="dropdown-item d-flex align-items-center gap-2 active" href="index.html">
+                        <a class="dropdown-item d-flex align-items-center gap-2 active" href="index.html" data-lang="es">
                             <img src="../img/bandiera-spagna.png" height="20" alt="ES">
                             Español
                         </a>
@@ -446,7 +446,7 @@
                 <div class="row align-items-center g-4">
 
                     <!-- Form Column -->
-                    <div id="contactKeCert"
+                    <div id="contattaKeCert"
                         class="colForm col-12 col-md-6 d-flex justify-content-center order-0 order-md-0">
 
                         <div style="max-width: 400px;">
@@ -524,7 +524,7 @@
                                 data-courses="1">
                                 <div class="card imgConf">
                                     <div class="card-body">
-                                        <img src="../img/img-donna-pacchetto.webp" alt="">
+                                        <img src="../img/img-donna-pacchetto-1CLASSE-ES.webp" alt="">
                                         <!-- <h5 class="card-title">1 Curso</h5> -->
                                     </div>
                                 </div>
@@ -534,7 +534,7 @@
                                 data-courses="10">
                                 <div class="card imgConf">
                                     <div class="card-body">
-                                        <img src="../img/img-uomo-pacchetto.webp" alt="">
+                                        <img src="../img/img-uomo-pacchetto-10CLASSI-ES.webp" alt="">
                                         <!-- <h5 class="card-title">10 Cursos</h5> -->
                                     </div>
                                 </div>
@@ -544,7 +544,7 @@
                                 data-courses="50">
                                 <div class="card imgConf">
                                     <div class="card-body">
-                                        <img src="../img/img-donna-pacchetto-2.webp" alt="">
+                                        <img src="../img/img-donna2-pacchetto-50CLASSI-ESpng.webp" alt="">
                                         <!-- <h5 class="card-title">50 Cursos</h5> -->
                                     </div>
                                 </div>
@@ -563,49 +563,77 @@
             <!-- Paso 2 -->
             <div class="step mt-8" id="step-2">
 
-                <span>← </span><a href="#" class="link-rossokd" id="btnStep2Prev">Atrás</a>
+                <a href="#" class="link-rossokd" id="btnStep2Prev">← Atrás</a>
                 <h3 class="h2 text-center">Configurador para el paquete seleccionado</h3>
 
                 <div class="container">
                     <div class="row flex-md-row-reverse">
 
-                        <div class="col-12 col-md-6 mx-auto gap-3">
+                        <div class="col-12 col-md-6 mx-auto gap-3 bg-danger h-100 mb-3">
                             <!-- Tarjeta 1: Cantidad de certificados -->
                             <div class="card my-3" id="cardQty">
                                 <div class="card-body">
                                     <h5 class="card-title">Cantidad de certificados</h5>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="certQty" id="singleCert"
-                                            value="single">
-                                        <label class="form-check-label" for="singleCert">Certificados para una sola
-                                            persona</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="certQty" id="multiCert"
-                                            value="multi">
-                                        <label class="form-check-label" for="multiCert">Certificados para 30
-                                            personas</label>
+
+                                    <div class="row flex-column gap-3" id="certQtyOptions">
+                                        <div class="col">
+                                            <input type="radio" name="certQty" id="singleCert" value="single"
+                                                class="d-none">
+                                            <label for="singleCert"
+                                                class="option-card d-flex align-items-center justify-content-between p-3 border rounded w-100">
+                                                <p class="mb-0 flex-grow-1">Certificados para una sola persona</p>
+                                                <button type="button"
+                                                    class="btn btn-outline-dark select-btn me-3">Seleccionar</button>
+                                            </label>
+                                        </div>
+
+                                        <div class="col">
+                                            <input type="radio" name="certQty" id="multiCert" value="multi"
+                                                class="d-none">
+                                            <label for="multiCert"
+                                                class="option-card d-flex align-items-center justify-content-between p-3 border rounded w-100">
+                                                <p class="mb-0 flex-grow-1">Certificados para 30 personas</p>
+                                                <button type="button"
+                                                    class="btn btn-outline-dark select-btn me-3">Seleccionar</button>
+                                            </label>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+
                             <!-- Tarjeta 2: Duración del certificado -->
-                            <div class="card mb-3">
+                            <div class="card mb-3 card-mt-3">
                                 <div class="card-body">
                                     <h3 class="card-title">Duración del certificado</h3>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="certDuration" id="dur10"
-                                            value="10">
-                                        <label class="form-check-label" for="dur10">10 años desde la emisión</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="certDuration" id="illimitata"
-                                            value="unlimited">
-                                        <label class="form-check-label" for="illimitata">Duración ilimitada</label>
+
+                                    <div class="row flex-column gap-3" id="certDurationOptions">
+                                        <div class="col">
+                                            <input class="d-none" type="radio" name="certDuration" id="dur10"
+                                                value="10">
+                                            <label for="dur10"
+                                                class="option-card d-flex align-items-center justify-content-between p-3 border rounded w-100">
+                                                <p class="mb-0 flex-grow-1">10 años desde la emisión</p>
+                                                <button type="button"
+                                                    class="btn btn-outline-dark select-btn me-3">Seleccionar</button>
+                                            </label>
+                                        </div>
+
+                                        <div class="col">
+                                            <input class="d-none" type="radio" name="certDuration" id="illimitata"
+                                                value="illimitata">
+                                            <label for="illimitata"
+                                                class="option-card d-flex align-items-center justify-content-between p-3 border rounded w-100">
+                                                <p class="mb-0 flex-grow-1">Duración ilimitada</p>
+                                                <button type="button"
+                                                    class="btn btn-outline-dark select-btn me-3">Seleccionar</button>
+                                            </label>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+
                             <!-- Tarjeta 3: Servicio API -->
-                            <div class="card main-content">
+                            <div class="card main-content mb-3">
                                 <div class="card-body">
                                     <h3 class="card-title">Integración API</h3>
                                     <p class="card-text">
@@ -624,6 +652,7 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class=" col-12 col-md-6  d-flex flex-column my-3" id="summaryWrapper">
                             <div class="summary-popup summary-text text-center summary-text d-flex flex-column align-items-center justify-content-center"
                                 id="summaryContainer">
@@ -638,7 +667,8 @@
                                         <button class="btn btn-verdekd" id="toStep3">Calcular presupuesto</button>
                                     </div>
                                     <div class="text-center">
-                                        <a href="#">Contáctanos para personalizar tu paquete</a>
+                                        <a href="#contattaKeCert" id="contactLinkStep2">Contáctanos para personalizar tu
+                                            paquete</a>
                                     </div>
                                 </div>
                             </div>
