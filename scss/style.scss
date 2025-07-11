@@ -544,19 +544,6 @@ h2 {
   flex:1;
 }
 
-.w-nav {
-  margin: 0 auto;
-  max-width: 300px;
-
-  @include media-breakpoint-up(md) {
-    min-width: 400px;
-  }
-
-  @include media-breakpoint-up(lg) {
-    max-width: 900px;
-  }
-}
-
 .mt-xs-4 {
   margin-top: 1.5rem;
 
