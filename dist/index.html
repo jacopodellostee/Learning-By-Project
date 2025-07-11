@@ -545,11 +545,13 @@
                                     <div class="card-body">
                                         <img src="img/img-uomo-pacchetto-10CLASSI-ITA.webp">
                                         <!-- <h5 class="card-title">10 Corsi</h5> -->
-                                        <button type="button" class="btn d-inline-flex align-items-center justify-content-center gap-2 text-verdekd mt-3"
+                                        <button type="button"
+                                            class="btn d-inline-flex align-items-center justify-content-center gap-2 text-verdekd mt-3"
                                             data-bs-toggle="modal" data-bs-target="#infoDieciCorsi">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-info-circle"
-                                                viewBox="0 0 16 16">
-                                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                                                fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
                                                 <path
                                                     d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0" />
                                             </svg>
@@ -565,11 +567,13 @@
                                     <div class="card-body">
                                         <img src="img/img-donna2-pacchetto-50CLASSI-ITA.webp">
                                         <!-- <h5 class="card-title">50 Corsi</h5> -->
-                                        <button type="button" class="btn d-inline-flex align-items-center justify-content-center gap-2 text-verdekd mt-3"
+                                        <button type="button"
+                                            class="btn d-inline-flex align-items-center justify-content-center gap-2 text-verdekd mt-3"
                                             data-bs-toggle="modal" data-bs-target="#infoCinquantaCorsi">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-info-circle"
-                                                viewBox="0 0 16 16">
-                                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                                                fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
                                                 <path
                                                     d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0" />
                                             </svg>
@@ -591,95 +595,93 @@
 
             <!-- Step 2 -->
             <div class="step mt-8" id="step-2">
-
-                <a href="#" class="link-rossokd" id="btnStep2Prev">← Indietro</a>
-                <h3 class="h2 text-center">Configuratore del pacchetto scelto</h3>
+                <a href="#" class="link-rossokd mb-4 d-inline-block" id="btnStep2Prev">← Indietro</a>
+                <h2 class="text-center mb-5">Configuratore del pacchetto scelto</h2>
 
                 <div class="container">
-                    <div class="row flex-md-row-reverse">
+                    <div class="row flex-md-row-reverse g-4">
 
-                        <div class="col-12 col-md-6 mx-auto gap-3 bg-danger h-100 mb-3">
-                            <!-- Card 1: Quantità Certificati -->
-                            <div class="card my-3" id="cardQty">
+                        <!-- Colonna Sinistra -->
+                        <div class="col-12 col-md-6 mb-4">
+                            <!-- Card 1 Quantità Certificati-->
+                            <div class="card shadow-sm border-0 mb-4" id="cardQty">
                                 <div class="card-body">
-                                    <h5 class="card-title">Quantità Certificati</h5>
-
-                                    <div class="row flex-column gap-3" id="certQtyOptions">
-                                        <div class="col">
+                                    <h3 class="card-title mb-3">Quantità Certificati</h3>
+                                    <div class="vstack gap-3" id="certQtyOptions">
+                                        <div>
                                             <input type="radio" name="certQty" id="singleCert" value="single"
                                                 class="d-none">
                                             <label for="singleCert"
-                                                class="option-card d-flex align-items-center justify-content-between p-3 border rounded w-100">
+                                                class="option-card d-flex align-items-center justify-content-between p-3 border rounded shadow-sm hover-shadow transition">
                                                 <p class="mb-0 flex-grow-1">Certificati per singola persona</p>
-                                                <button type="button"
-                                                    class="btn btn-outline-dark select-btn me-3">Seleziona</button>
+                                                <button type="button" class="btn btn-outline-dark select-btn me-3">Seleziona</button>
                                             </label>
                                         </div>
 
-                                        <div class="col">
-                                            <input type="radio" name="certQty" id="multiCert" value="multi" class="d-none">
+                                        <div>
+                                            <input type="radio" name="certQty" id="multiCert" value="multi"
+                                                class="d-none">
                                             <label for="multiCert"
-                                                class="option-card d-flex align-items-center justify-content-between p-3 border rounded w-100">
+                                                class="option-card d-flex align-items-center justify-content-between p-3 border rounded shadow-sm hover-shadow transition">
                                                 <p class="mb-0 flex-grow-1">Certificati per 30 persone</p>
-                                                <button type="button"
-                                                    class="btn btn-outline-dark select-btn me-3">Seleziona</button>
+                                                <button type="button" class="btn btn-outline-dark select-btn me-3">Seleziona</button>
                                             </label>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- Card 2: Durata Certificato -->
-                            <div class="card mb-3 card-mt-3">
-                                <div class="card-body">
-                                    <h3 class="card-title">Durata Certificato</h3>
 
-                                    <div class="row flex-column gap-3" id="certDurationOptions">
-                                        <div class="col">
+                            <!-- Card 2 Durata Certificato-->
+                            <div class="card shadow-sm border-0 mb-4 card-mt-3">
+                                <div class="card-body">
+                                    <h3 class="card-title mb-3">Durata Certificato</h3>
+                                    <div class="vstack gap-3" id="certDurationOptions">
+                                        <div>
                                             <input class="d-none" type="radio" name="certDuration" id="dur10"
                                                 value="10">
                                             <label for="dur10"
-                                                class="option-card d-flex align-items-center justify-content-between p-3 border rounded w-100">
-                                                <p class="mb-0 flex-grow-1">Durata di 10 anni dal rilascio</p>
-                                                <button type="button"
-                                                    class="btn btn-outline-dark select-btn me-3">Seleziona</button>
+                                                class="option-card d-flex align-items-center justify-content-between p-3 border rounded shadow-sm hover-shadow transition">
+                                                <p class="mb-0">Durata di 10 anni dal rilascio</p>
+                                                <button type="button" class="btn btn-outline-dark select-btn me-3">Seleziona</button>
                                             </label>
                                         </div>
 
-                                        <div class="col">
+                                        <div>
                                             <input class="d-none" type="radio" name="certDuration" id="illimitata"
                                                 value="illimitata">
                                             <label for="illimitata"
-                                                class="option-card d-flex align-items-center justify-content-between p-3 border rounded w-100">
-                                                <p class="mb-0 flex-grow-1">Durata illimitata</p>
-                                                <button type="button"
-                                                    class="btn btn-outline-dark select-btn me-3">Seleziona</button>
+                                                class="option-card d-flex align-items-center justify-content-between p-3 border rounded shadow-sm hover-shadow transition">
+                                                <p class="mb-0">Durata illimitata</p>
+                                                <button type="button" class="btn btn-outline-dark select-btn me-3">Seleziona</button>
                                             </label>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- Card 3: Servizio API -->
-                            <div class="card main-content mb-3">
+
+                            <!-- Card 3 Servizio API-->
+                            <div class="card shadow-sm border-0">
                                 <div class="card-body">
-                                    <h3 class="card-title">Integrazione tramite API</h3>
-                                    <p class="card-text">
-                                        Integra <strong>KeCert</strong> direttamente nei tuoi sistemi aziendali grazie
-                                        all’accesso tramite API.<br><br>
-                                        Questa opzione ti consente di automatizzare l’emissione dei certificati
-                                        blockchain,
-                                        migliorando efficienza e scalabilità nei tuoi flussi operativi.<br><br>
-                                        L’attivazione ha un costo una tantum di <strong>5.000€</strong> per cliente ed è
-                                        acquistabile anche in un secondo momento, senza vincoli di canone annuale.
+                                    <h3 class="card-title mb-3">Integrazione tramite API</h3>
+                                    <p class="card-text mb-4">
+                                        Integra <strong>KeCert</strong> direttamente nei tuoi sistemi aziendali tramite
+                                        API.<br><br>
+                                        Automatizza l’emissione dei certificati blockchain, migliorando l’efficienza nei
+                                        flussi operativi.<br><br>
+                                        Costo una tantum di <strong>5.000€</strong>, acquistabile anche in un secondo
+                                        momento.
                                     </p>
-                                    <div class="form-check mt-2">
+                                    <div class="form-check">
                                         <input class="form-check-input" type="checkbox" id="apiAccess">
                                         <label class="form-check-label" for="apiAccess">Attiva servizio API</label>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class=" col-12 col-md-6  d-flex flex-column my-3" id="summaryWrapper">
-                            <div class="summary-popup summary-text text-center summary-text d-flex flex-column align-items-center justify-content-center"
+
+                        <!-- Colonna Destra: Riepilogo -->
+                        <div class="col-12 col-md-6 d-flex mb-4" id="summaryWrapper">
+                            <div class="summary-popup summary-text w-100 p-4 border rounded shadow-sm d-flex flex-column align-items-center bg-light"
                                 id="summaryContainer">
                                 <h3 class="mb-3">Riepilogo Corsi</h3>
                                 <p>Totale corsi: <span id="total-selected">0</span></p>
@@ -687,14 +689,14 @@
                                 <p>Durata certificato: <span id="summary-cert-duration">-</span></p>
                                 <p>Servizio API: <span id="summary-api">Non attivo</span></p>
 
-
-                                <div class="mt-auto">
-                                    <div class="d-flex justify-content-center mt-3">
-                                        <button class="btn btn-verdekd" id="toStep3">Calcola preventivo</button>
+                                <div class="mt-auto w-100">
+                                    <div class="d-grid mb-3">
+                                        <button class="btn btn-verdekd w-100" id="toStep3">Calcola preventivo</button>
                                     </div>
                                     <div class="text-center">
-                                        <a href="#contattaKeCert" id="contactLinkStep2">Contattaci per personalizzare il
-                                            tuo pacchetto</a>
+                                        <a href="#contattaKeCert" id="contactLinkStep2"
+                                            class="text-decoration-none">Contattaci per personalizzare il tuo
+                                            pacchetto</a>
                                     </div>
                                 </div>
                             </div>
@@ -702,8 +704,8 @@
 
                     </div>
                 </div>
-
             </div>
+
 
             <!-- Step 3 -->
             <div class="step mt-8" id="step-3">
@@ -827,18 +829,23 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h3 class="h2 text-center"><strong><span class="text-verdekd">Informazioni Offerta </span>1 Corso</strong></h3>
+                    <h3 class="h2 text-center"><strong><span class="text-verdekd">Informazioni Offerta </span>1
+                            Corso</strong></h3>
                 </div>
                 <div class="modal-body">
                     <p>
-                        Con questa offerta puoi rendere validi i certificati emessi dal tuo ente per un <strong>singolo corso</strong>,
+                        Con questa offerta puoi rendere validi i certificati emessi dal tuo ente per un <strong>singolo
+                            corso</strong>,
                         senza limiti di studenti iscritti
                     </p>
                     <h4 class="my-3"><strong>Esempio pratico:</strong></h4>
                     <p>
-                        Un Istituto Tecnico Superiore (ITS) può certificare i diplomi di un <strong>numero illimitato di studenti</strong>
-                        <strong><span class="text-rossokd">MA</span></strong> soltanto per un <strong>unico corso</strong>,
-                        come ad esempio <em>Web Developer</em>, <em>Software Developer</em> o qualsiasi altro corso offerto dalla scuola.
+                        Un Istituto Tecnico Superiore (ITS) può certificare i diplomi di un <strong>numero illimitato di
+                            studenti</strong>
+                        <strong><span class="text-rossokd">MA</span></strong> soltanto per un <strong>unico
+                            corso</strong>,
+                        come ad esempio <em>Web Developer</em>, <em>Software Developer</em> o qualsiasi altro corso
+                        offerto dalla scuola.
                     </p>
                 </div>
                 <div class="modal-footer">
@@ -852,17 +859,22 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h3 class="h2 text-center"><span class="text-verdekd">Informazioni Offerta </span><strong>10 Corsi</strong></h3>
+                    <h3 class="h2 text-center"><span class="text-verdekd">Informazioni Offerta </span><strong>10
+                            Corsi</strong></h3>
                 </div>
                 <div class="modal-body">
                     <p>
-                        Con questa offerta puoi rendere validi i certificati emessi dal tuo ente per un massimo di <span class="text-rossokd"><strong>10 corsi diversi</strong></span>, con un limite complessivo di <span class="text-rossokd"><strong>30 studenti</strong></span>.
+                        Con questa offerta puoi rendere validi i certificati emessi dal tuo ente per un massimo di <span
+                            class="text-rossokd"><strong>10 corsi diversi</strong></span>, con un limite complessivo di
+                        <span class="text-rossokd"><strong>30 studenti</strong></span>.
                     </p>
                     <h4 class="my-3"><strong>Esempio pratico:</strong></h4>
                     <p>
-                        Un Istituto Tecnico Superiore (ITS) può certificare i diplomi di <strong>massimo 30 studenti</strong>, distribuiti su uno o più corsi
+                        Un Istituto Tecnico Superiore (ITS) può certificare i diplomi di <strong>massimo 30
+                            studenti</strong>, distribuiti su uno o più corsi
                         (fino a 10),
-                        come ad esempio <em>Web Developer</em>, <em>Software Developer</em> o altri corsi offerti dalla scuola.
+                        come ad esempio <em>Web Developer</em>, <em>Software Developer</em> o altri corsi offerti dalla
+                        scuola.
                     </p>
                 </div>
                 <div class="modal-footer">
@@ -872,21 +884,27 @@
         </div>
     </div>
 
-    <div class="modal fade" id="infoCinquantaCorsi" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="infoCinquantaCorsi" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h3 class="h2 text-center"><span class="text-verdekd">Informazioni Offerta </span><strong>50 Corsi</strong></h3>
+                    <h3 class="h2 text-center"><span class="text-verdekd">Informazioni Offerta </span><strong>50
+                            Corsi</strong></h3>
                 </div>
                 <div class="modal-body">
                     <p>
-                        Con questa offerta puoi rendere validi i certificati emessi dal tuo ente per un massimo di <span class="text-rossokd"><strong>50 corsi diversi</strong></span>, con un limite complessivo di <span class="text-rossokd"><strong>30 studenti</strong></span>.
+                        Con questa offerta puoi rendere validi i certificati emessi dal tuo ente per un massimo di <span
+                            class="text-rossokd"><strong>50 corsi diversi</strong></span>, con un limite complessivo di
+                        <span class="text-rossokd"><strong>30 studenti</strong></span>.
                     </p>
                     <h4 class="my-3"><strong>Esempio pratico:</strong></h4>
                     <p>
-                        Un Istituto Tecnico Superiore (ITS) può certificare i diplomi di <strong>massimo 30 studenti</strong>, distribuiti su uno o più corsi
+                        Un Istituto Tecnico Superiore (ITS) può certificare i diplomi di <strong>massimo 30
+                            studenti</strong>, distribuiti su uno o più corsi
                         (fino a 50),
-                        come ad esempio <em>Web Developer</em>, <em>Software Developer</em> o altri corsi offerti dalla scuola.
+                        come ad esempio <em>Web Developer</em>, <em>Software Developer</em> o altri corsi offerti dalla
+                        scuola.
                     </p>
                 </div>
                 <div class="modal-footer">
