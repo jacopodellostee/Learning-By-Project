@@ -627,22 +627,22 @@ document.addEventListener('DOMContentLoaded', () => {
   const navConfiguratorLink = document.getElementById('navConfiguratorLink');
   const introSection = document.getElementById('introSection');
   const configurator = document.getElementById('configurator');
+  const contactLinkStep2 = document.getElementById('contactLinkStep2');
 
   if (navConfiguratorLink && introSection && configurator) {
     navConfiguratorLink.addEventListener('click', (e) => {
-      e.preventDefault(); // Evita il comportamento del link
+      e.preventDefault(); 
 
-      // Nasconde la intro e mostra il configuratore
       introSection.style.display = 'none';
       configurator.style.display = 'block';
 
-      // Scrolla alla sezione (opzionale)
       configurator.scrollIntoView({ behavior: 'smooth' });
     });
   }
 
   // Quando clicco su una voce di menù mi reindirizza senza lasciare l'hamburger aperto
   const navLinks = document.querySelectorAll('.navbar-collapse .nav-link');
+  
   const navbarCollapse = document.querySelector('.navbar-collapse');
 
   navLinks.forEach(link => {
@@ -658,7 +658,16 @@ document.addEventListener('DOMContentLoaded', () => {
     link.addEventListener('click', (e) => {
       e.preventDefault();
       const lang = e.currentTarget.dataset.lang;
-      changeLanguage(lang); // chiama la funzione di cambio lingua
+      changeLanguage(lang); 
     });
   });
+
+  // Torna alla sezione di contatto
+  if (contactLinkStep2 && introSection && configurator) {
+
+    contactLinkStep2.addEventListener('click', (e) => {
+      configurator.style.display = 'none';
+      introSection.style.display = 'block';
+    });
+  }
 });
