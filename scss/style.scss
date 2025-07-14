@@ -20,6 +20,15 @@ $verdekd: #407667;
 $rossokd: #C72939;
 $blukd: #3A426E;
 
+// Colori Step 2 Configuratore 
+
+$grigiokd-1: #FCFCFD; 
+$grigiokd-2: #F9F9FB; 
+$grigiokd-3: #F5F5F8; 
+$grigiokd-4: #EEEEF2;
+$grigiokd-5: #E6E6EB;
+
+
 // 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
 
 @import "vendor/variables";
@@ -52,6 +61,11 @@ $theme-colors: (
   "verdekd": $verdekd,
   "rossokd": $rossokd,
   "blukd": $blukd,
+  "grigiokd-1": $grigiokd-1,
+  "grigiokd-2": $grigiokd-2,
+  "grigiokd-3": $grigiokd-3,
+  "grigiokd-4": $grigiokd-4,
+  "grigiokd-5": $grigiokd-5
 );
 
 
@@ -76,6 +90,7 @@ $theme-colors: (
 @import "vendor/carousel";
 @import "vendor/transitions";
 @import "vendor/modal";
+@import "vendor/forms/form-check";
 
 // 7. Optionally include utilities API last to generate classes based on the Sass map in _utilities.scss
 @import "vendor/utilities/api";
@@ -260,7 +275,7 @@ header {
 
   .card:hover {
     transform: scale(1.05);
-    box-shadow: 0 10px 20px  rgba(15, 123, 97, 0.4);
+    box-shadow: 0 10px 20px  rgba(142, 140, 207, 1);
     border-radius: 24px;
   }
 
@@ -274,13 +289,8 @@ header {
 }
 
 .scopri-link {
-  text-decoration: none;
-  font-weight: bold;
+  text-decoration-color: #407667;
   transition: color 0.3s ease, text-decoration 0.3s ease;
-}
-
-.scopri-link:hover {
-  text-decoration: underline;
 }
 
 // Fine Jacopo
@@ -290,7 +300,8 @@ header {
   width: 190px;
 }
 
-.btn-verdekd {
+//btn-verdekd-conf serve per dare stile allo step 2 del configuratore, in quanto 'btn-verdekd' viene usato nel js per gli step e sminchia tutto
+.btn-verdekd, .btn-verdekd-conf{
   height: 50px;
   width: 190px;
   border: none;
@@ -300,7 +311,7 @@ header {
   color: #fff;
   font-weight: 600;
   letter-spacing: 0.5px;
-  box-shadow: 0 8px 20px rgba(15, 123, 97, 0.3);
+  box-shadow: 0 8px 20px rgba(142, 140, 207, 1);
   transition: all 0.4s ease;
   cursor: pointer;
   position: relative;
@@ -624,7 +635,7 @@ h2 {
     padding: 1rem;
     border-top: 2px solid #ccc;
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.15);
-    z-index: 1050;
+    z-index: 100;
   }
   
 
@@ -633,13 +644,38 @@ h2 {
     bottom: 100%;
   }
 
-  .main-content {
-    padding-bottom: 325px;
-  }
 }
 .summary-text{
   flex:1;
 }
 .card-body {
   justify-content: normal;
+}
+
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+
+  img {
+    height: 30px;
+    width: auto;
+    filter: brightness(0) invert(1); // rende bianco su sfondi scuri
+    transition: filter 0.3s ease;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+
+    img {
+      filter: brightness(0) invert(0.7); // effetto hover leggermente più scuro
+    }
+  }
+
+  &:focus {
+    outline: none;
+    transform: scale(1.05);
+  }
 }

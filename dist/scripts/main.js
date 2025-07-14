@@ -11,6 +11,8 @@ const translations = {
     api_not_active: 'Servizio API non attivato',
     active: 'Attivo',
     not_active: 'Non attivo',
+    select: 'Seleziona',
+    select_button: 'Selezionato',
     price_currency: '€',
     summary_dash: '-',
   },
@@ -25,6 +27,8 @@ const translations = {
     api_not_active: 'API service not enabled',
     active: 'Active',
     not_active: 'Not active',
+    select: 'Select',
+    select_button: 'Selected',
     price_currency: '£',
     summary_dash: '-',
   },
@@ -39,6 +43,8 @@ const translations = {
     api_not_active: 'Servicio API no activado',
     active: 'Activo',
     not_active: 'No activo',
+    select: 'Seleccionar',
+    select_button: 'Seleccionado',
     price_currency: '€',
     summary_dash: '-',
   }
@@ -213,11 +219,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (!stepFromURL) {
     // Nessun parametro step = siamo nella home
-    console.log(savedStep);
     introSection.style.display = 'block';
     configurator.style.display = 'none';
   } else if (savedStep === 'step1') {
-    console.log(savedStep);
     introSection.style.display = 'none';
     configurator.style.display = 'block';
     showStep(1);
@@ -232,7 +236,6 @@ document.addEventListener('DOMContentLoaded', () => {
       updateSummarySelections();
     }, 0);
   } else if (savedStep === 'step3') {
-    console.log(savedStep);
     introSection.style.display = 'none';
     configurator.style.display = 'block';
     restoreSummary();
@@ -544,6 +547,12 @@ function updateSummarySelections() {
   const certQtyInput = document.querySelector('input[name="certQty"]:checked');
   const certDurationInput = document.querySelector('input[name="certDuration"]:checked');
   const apiCheckbox = document.getElementById('apiAccess');
+  function getLabelText(input) {
+    if (!input) return '';
+    const label = input.closest('label');
+    const paragraph = label.querySelector('p');
+    return paragraph ? paragraph.innerText.trim() : '';
+  }
 
   const quantità = certQtyInput ? certQtyInput.value : null;
   const durata = certDurationInput ? certDurationInput.value : null;
@@ -562,10 +571,12 @@ function updateSummarySelections() {
   if (apiCheckbox?.checked) prezzo += 5000;
 
   function getLabelText(input) {
-    if (!input) return '-';
-    const label = input.nextElementSibling;
-    return label ? label.textContent.trim() : '-';
+    if (!input) return '';
+    const label = document.querySelector(`label[for="${input.id}"]`);
+    const paragraph = label?.querySelector('p');
+    return paragraph ? paragraph.innerText.trim() : '';
   }
+
 
   const summaryQtyElement = document.getElementById('summary-cert-qty');
   if (corsoSelezionato === "1") {
@@ -602,9 +613,35 @@ document.addEventListener("DOMContentLoaded", function () {
   const summary = document.getElementById("summaryContainer");
   const footer = document.querySelector("footer");
   const wrapper = document.getElementById("summaryWrapper");
+  const mainContent = document.querySelector(".main-content");
 
-  if (!summary || !footer || !wrapper) return;
+  if (!summary || !footer || !wrapper || !mainContent) return;
 
+  // Match media per mobile (puoi cambiare la soglia se vuoi)
+  const mobileMedia = window.matchMedia("(max-width: 768px)");
+
+  function updateMainContentSpacing() {
+    if (mobileMedia.matches) {
+      const summaryHeight = summary.offsetHeight;
+      mainContent.style.paddingBottom = summaryHeight + "px";
+    } else {
+      // Rimuovi il margin se non siamo su mobile
+      mainContent.style.paddingBottom = "";
+    }
+  }
+
+  // Chiamala inizialmente e al resize / load
+  updateMainContentSpacing();
+  window.addEventListener("resize", updateMainContentSpacing);
+  window.addEventListener("load", updateMainContentSpacing);
+
+  // Rileva anche i cambiamenti nel contenuto del riepilogo
+  if (window.ResizeObserver) {
+    const resizeObserver = new ResizeObserver(updateMainContentSpacing);
+    resizeObserver.observe(summary);
+  }
+
+  // IntersectionObserver per fissare/fermare il summary in fondo
   const observer = new IntersectionObserver(
     ([entry]) => {
       if (entry.isIntersecting) {
@@ -622,47 +659,134 @@ document.addEventListener("DOMContentLoaded", function () {
   observer.observe(footer);
 });
 
-//Vai al configuratore dalla nav
+
+// Vai al configuratore dalla nav
 document.addEventListener('DOMContentLoaded', () => {
   const navConfiguratorLink = document.getElementById('navConfiguratorLink');
   const introSection = document.getElementById('introSection');
   const configurator = document.getElementById('configurator');
+  const contactLinkStep2 = document.getElementById('contactLinkStep2');
+  const blockchainLinkStep2 = document.getElementById('blockchainLinkStep2');
+
 
   if (navConfiguratorLink && introSection && configurator) {
     navConfiguratorLink.addEventListener('click', (e) => {
-      e.preventDefault(); // Evita il comportamento del link
+      e.preventDefault();
 
-      // Nasconde la intro e mostra il configuratore
       introSection.style.display = 'none';
       configurator.style.display = 'block';
 
-      // Scrolla alla sezione (opzionale)
       configurator.scrollIntoView({ behavior: 'smooth' });
     });
   }
-});
 
-// quando clicco su una voce di menù mi reinderizza senza lasciare l'hamburger aperto
-const navLinks = document.querySelectorAll('.navbar-collapse .nav-link');
-const navbarCollapse = document.querySelector('.navbar-collapse');
+  // Quando clicco su una voce di menù mi reindirizza senza lasciare l'hamburger aperto
+  const navLinks = document.querySelectorAll('.navbar-collapse .nav-link');
+  const navbarCollapse = document.querySelector('.navbar-collapse');
 
-navLinks.forEach(link => {
-  link.addEventListener('click', () => {
-    if (navbarCollapse.classList.contains('show')) {
-      new bootstrap.Collapse(navbarCollapse).hide();
-    }
+  navLinks.forEach(link => {
+    link.addEventListener('click', (event) => {
+      // Se il link ha la classe 'no-collapse', non chiudere
+      if (link.classList.contains('no-collapse')) return;
+
+      if (navbarCollapse.classList.contains('show')) {
+        new bootstrap.Collapse(navbarCollapse).hide();
+      }
+    });
   });
-});
 
-
-
-
-
+  // Cambio lingua
   document.querySelectorAll('[data-lang]').forEach(link => {
     link.addEventListener('click', (e) => {
       e.preventDefault();
       const lang = e.currentTarget.dataset.lang;
-      changeLanguage(lang); // chiama la funzione di cambio lingua
+      changeLanguage(lang);
     });
   });
 
+  // Torna alla sezione di contatto
+  if (contactLinkStep2 && introSection && configurator) {
+    contactLinkStep2.addEventListener("click", function (e) {
+      e.preventDefault(); // blocca il comportamento nativo dell'anchor
+
+      // Se il configuratore è visibile, lo nascondo e mostro la home
+      if (configurator.style.display !== "none") {
+        configurator.style.display = "none";
+        introSection.style.display = "block";
+
+        // Aspetto che il DOM venga aggiornato, poi scrollo alla sezione
+        setTimeout(() => {
+          const target = document.getElementById("contattaKeCert");
+          if (target) {
+            target.scrollIntoView({ behavior: "smooth" });
+          }
+        }, 100);
+      } else {
+        // Se sono già nella home, scrollo direttamente
+        const target = document.getElementById("contattaKeCert");
+        if (target) {
+          target.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+    });
+  }
+  if (blockchainLinkStep2 && introSection && configurator) {
+    blockchainLinkStep2.addEventListener("click", function (e) {
+      e.preventDefault(); // blocca il comportamento nativo dell'anchor
+
+      // Se il configuratore è visibile, lo nascondo e mostro la home
+      if (configurator.style.display !== "none") {
+        configurator.style.display = "none";
+        introSection.style.display = "block";
+
+        // Aspetto che il DOM venga aggiornato, poi scrollo alla sezione
+        setTimeout(() => {
+          const target = document.getElementById("blockchainInfo");
+          if (target) {
+            target.scrollIntoView({ behavior: "smooth" });
+          }
+        }, 100);
+      } else {
+        // Se sono già nella home, scrollo direttamente
+        const target = document.getElementById("blockchainInfo");
+        if (target) {
+          target.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+    });
+  }
+});
+//Selezionato sui pulsanti
+document.querySelectorAll('.select-btn').forEach(button => {
+  button.addEventListener('click', function () {
+    const label = this.closest('label');
+    const input = label.previousElementSibling;
+    const groupName = input.name;
+
+    // Seleziona il radio
+    input.checked = true;
+
+    // Resetta tutti i bottoni nella stessa sezione
+    document.querySelectorAll(`input[name="${groupName}"]`).forEach(radio => {
+      const btn = radio.nextElementSibling.querySelector('.select-btn');
+      if (btn) btn.textContent = translations[lang].select;
+    });
+
+    // Imposta il testo del bottone selezionato
+    this.textContent = translations[lang].select_button;
+  });
+});
+
+// Se cambi lingua dinamicamente nel tuo sito, chiama questa funzione:
+function updateSelectButtonsText() {
+  document.querySelectorAll('.select-btn').forEach(button => {
+    const label = button.closest('label');
+    const input = label.previousElementSibling;
+
+    if (input.checked) {
+      button.textContent = translations[lang].select_button;
+    } else {
+      button.textContent = translations[lang].select;
+    }
+  });
+}
