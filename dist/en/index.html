@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -128,22 +129,23 @@
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
         <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
             <li class="nav-item mt-xs-4">
                 <a id="homeButton" class="nav-link active" href="index.html"><span class="roll active">Home</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#contattaKeCert"><span class="roll">Contact</span></a>
+                <a class="nav-link" href="#contattaKeCert"><span class="roll" id="contactLinkStep2">Contact</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" id="navConfiguratorLink"><span class="roll">Configurator</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#blockchainInfo"><span class="roll">Blockchain Information</span></a>
+                <a class="nav-link" href="#blockchainInfo" id="blockchainLinkStep2"><span class="roll">Blockchain Information</span></a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Language</a>
+                <a class="nav-link dropdown-toggle no-collapse" href="#" role="button"
+                    data-bs-toggle="dropdown">Language</a>
                 <ul class="dropdown-menu dropdown-menu-end">
                     <li>
                         <a class="dropdown-item d-flex align-items-center gap-2" href="../index.html" data-lang="it">
@@ -693,27 +695,20 @@
                                 <p>Certificate quantity: <span id="summary-cert-qty">-</span></p>
                                 <p>Certificate duration: <span id="summary-cert-duration">-</span></p>
                                 <p>API service: <span id="summary-api">Not active</span></p>
+
+                                <div class="my-3">
+
+                                    <div class="my-2 d-flex justify-content-center mt-3">
+                                        <button class="btn btn-verdekd" id="toStep3">Calculate estimate</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="my-3">
-
-                            <div class="my-2 d-flex justify-content-center mt-3">
-                                <button class="btn btn-verdekd" id="toStep3">Calculate estimate</button>
-                            </div>
-
-                            <div class="fs-3 my-4 text-center">
-                                <a class="h2 scopri-link" href="#contattaKeCert" id="contactLinkStep2"><span
-                                        class="text-verdekd">Contact us to customize</span> <span
-                                        class="text-rossokd">your
-                                        package</span></a>
-                            </div>
-                        </div>
                     </div>
                 </div>
 
             </div>
-
             <!-- Step 3 -->
             <div class="step mt-8" id="step-3">
                 <a href="#" class="link-rossokd scopri-link" id="btnStep3Prev">← Back</a>
@@ -728,7 +723,9 @@
 
                             <div class="my-1">
                                 <h6 class="fs-2"><strong>Interested in this offer?</strong></h6>
-                                <p>Leave your contact details and our team will get back to you as soon as possible with
+                                <p>Leave your contact details and our team will get back to you as soon as
+                                    possible
+                                    with
                                     all
                                     the details.</p>
                             </div>
@@ -758,7 +755,7 @@
     </div>
 
 
-    <footer class="site-footer bg-blukd text-light py-5 fade-in-up page-footer">
+    <footer class="site-footer bg-blukd text-light py-5 fade-in-up page-footer" id="footer">
         <div class="container">
             <div class="row gy-4">
 
@@ -775,7 +772,8 @@
                             </picture>
                         </figure>
                     </a>
-                    <p class="py-3">The solution to ensure the security and authenticity of training certificates.
+                    <p class="py-3">The solution to ensure the security and authenticity of training
+                        certificates.
                     </p>
                 </div>
 
@@ -823,7 +821,8 @@
 
                 <!-- Copyright -->
                 <div class="text-center mt-4 small text-footer fw-light">
-                    &copy; 2025 <strong>WebCrafters</strong> <span class="fst-italic">Gli Artigiani del web</span>
+                    &copy; 2025 <strong>WebCrafters</strong> <span class="fst-italic">Gli Artigiani del
+                        web</span>
                 </div>
 
 
@@ -847,11 +846,15 @@
                     </p>
                     <h4 class="my-3"><strong>Practical example:</strong></h4>
                     <p>
-                        A Higher Technical Institute (ITS) can certify the diplomas of an <strong>unlimited number of
+                        A Higher Technical Institute (ITS) can certify the diplomas of an <strong>unlimited
+                            number
+                            of
                             students</strong>
                         <strong><span class="text-rossokd">BUT</span></strong> only for a <strong>single
                             course</strong>,
-                        such as <em>Web Developer</em>, <em>Software Developer</em> or any other course offered by the
+                        such as <em>Web Developer</em>, <em>Software Developer</em> or any other course offered
+                        by
+                        the
                         school.
                     </p>
                 </div>
@@ -871,8 +874,10 @@
                 </div>
                 <div class="modal-body">
                     <p>
-                        With this offer, you can validate the certificates issued by your institution for up to <span
-                            class="text-rossokd"><strong>10 different courses</strong></span>, with a total limit of
+                        With this offer, you can validate the certificates issued by your institution for up to
+                        <span class="text-rossokd"><strong>10 different courses</strong></span>, with a total
+                        limit
+                        of
                         <span class="text-rossokd"><strong>30 students</strong></span>.
                     </p>
                     <h4 class="my-3"><strong>Practical example:</strong></h4>
@@ -880,7 +885,8 @@
                         A Higher Technical Institute (ITS) can certify the diplomas of <strong>up to 30
                             students</strong>, distributed across one or more courses
                         (up to 10),
-                        such as <em>Web Developer</em>, <em>Software Developer</em> or other courses offered by the
+                        such as <em>Web Developer</em>, <em>Software Developer</em> or other courses offered by
+                        the
                         school.
                     </p>
                 </div>
@@ -901,8 +907,10 @@
                 </div>
                 <div class="modal-body">
                     <p>
-                        With this offer, you can validate the certificates issued by your institution for up to <span
-                            class="text-rossokd"><strong>50 different courses</strong></span>, with a total limit of
+                        With this offer, you can validate the certificates issued by your institution for up to
+                        <span class="text-rossokd"><strong>50 different courses</strong></span>, with a total
+                        limit
+                        of
                         <span class="text-rossokd"><strong>30 students</strong></span>.
                     </p>
                     <h4 class="my-3"><strong>Practical example:</strong></h4>
@@ -910,7 +918,8 @@
                         A Higher Technical Institute (ITS) can certify the diplomas of <strong>up to 30
                             students</strong>, distributed across one or more courses
                         (up to 50),
-                        such as <em>Web Developer</em>, <em>Software Developer</em> or other courses offered by the
+                        such as <em>Web Developer</em>, <em>Software Developer</em> or other courses offered by
+                        the
                         school.
                     </p>
                 </div>

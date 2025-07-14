@@ -136,16 +136,16 @@
                 <a id="homeButton" class="nav-link active" href="index.html"><span class="roll active">Home</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#contattaKeCert">Contatti</a>
+                <a class="nav-link" href="#contattaKeCert" id="contactLinkStep2">Contatti</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" id="navConfiguratorLink">Configuratore</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#blockchainInfo">Informazioni sulla Blockchain</a>
+                <a class="nav-link" href="#blockchainInfo" id="blockchainLinkStep2">Informazioni sulla Blockchain</a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Lingua</a>
+                <a class="nav-link dropdown-toggle no-collapse" href="#" role="button" data-bs-toggle="dropdown">Lingua</a>
                 <ul class="dropdown-menu dropdown-menu-end">
                     <li>
                         <a class="dropdown-item d-flex align-items-center gap-2 active" href="index.html"
@@ -673,21 +673,15 @@
                                 <p>Durata certificato: <span id="summary-cert-duration">-</span></p>
                                 <p>Servizio API: <span id="summary-api">Non attivo</span></p>
 
-
-
+                                <div class="my-3">
+        
+                                    <div class="my-2 d-flex justify-content-center mt-3">
+                                        <button class="btn btn-verdekd" id="toStep3">Calcola preventivo</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="my-3">
-
-                            <div class="my-2 d-flex justify-content-center mt-3">
-                                <button class="btn btn-verdekd" id="toStep3">Calcola preventivo</button>
-                            </div>
-
-                            <div class="fs-3 my-4 text-center">
-                                <a class="h2 scopri-link" href="#contattaKeCert" id="contactLinkStep2"><span class="text-verdekd">Contattaci per personalizzare</span> <span class="text-rossokd">il tuo pacchetto</span></a>
-                            </div>
-                        </div>
                     </div>
                 </div>
 
@@ -736,7 +730,7 @@
         </div>
     </div>
 
-    <footer class="site-footer bg-blukd text-light py-5 fade-in-up page-footer">
+    <footer class="site-footer bg-blukd text-light py-5 fade-in-up page-footer" id="footer">
         <div class="container">
             <div class="row gy-4">
 
