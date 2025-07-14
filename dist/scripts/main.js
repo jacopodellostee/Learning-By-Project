@@ -52,12 +52,16 @@ const translations = {
 
 // Rileva la lingua dalla cartella prima di index.html (dist/, dist/en/, dist/es/)
 function detectLanguage() {
+
   const pathParts = window.location.pathname.split('/');
-  const distIndex = pathParts.indexOf('dist');
-  if (distIndex !== -1 && pathParts.length > distIndex + 1) {
-    const langCandidate = pathParts[distIndex + 1];
-    if (['en', 'es'].includes(langCandidate)) return langCandidate;
+
+  if (pathParts.length > 1) {
+    const langCandidate = pathParts[1];
+
+    if (['en', 'es'].includes(langCandidate)) 
+      return langCandidate;
   }
+
   return 'it';
 }
 
@@ -68,10 +72,13 @@ function t(key) {
 }
 
 function changeLanguage(newLang) {
+
   sessionStorage.removeItem('configuratorActive');
 
   const currentStep = sessionStorage.getItem('currentStep') || 'step1';
-  const newPath = newLang === 'it' ? '/dist/' : `/dist/${newLang}/`;
+  
+  const newPath = newLang === 'it' ? '/' : `/${newLang}/`;
+
   window.location.href = newPath + 'index.html?step=' + currentStep;
 }
 
